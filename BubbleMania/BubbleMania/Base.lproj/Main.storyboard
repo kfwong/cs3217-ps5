@@ -275,6 +275,9 @@
                                             <outlet property="dataSource" destination="SuD-4O-PaI" id="NgT-Jk-2bm"/>
                                         </connections>
                                     </collectionView>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cannon-base" translatesAutoresizingMaskIntoConstraints="NO" id="MtB-82-g2p">
+                                        <rect key="frame" x="317.5" y="860" width="133" height="139"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="do8-6k-DCt">
                                         <rect key="frame" x="713" y="962" width="55" height="42"/>
                                         <color key="backgroundColor" white="1" alpha="0.20000000000000001" colorSpace="calibratedWhite"/>
@@ -293,9 +296,11 @@
                                     <constraint firstAttribute="bottom" secondItem="BeK-4h-Gqx" secondAttribute="bottom" id="1Th-FA-UUI"/>
                                     <constraint firstAttribute="bottom" secondItem="do8-6k-DCt" secondAttribute="bottom" id="3Wa-1w-e7A"/>
                                     <constraint firstAttribute="trailing" secondItem="BeK-4h-Gqx" secondAttribute="trailing" id="563-J9-EWD"/>
+                                    <constraint firstItem="MtB-82-g2p" firstAttribute="centerX" secondItem="SiT-pU-OaX" secondAttribute="centerX" id="5hh-KZ-y7e"/>
                                     <constraint firstItem="zsV-sQ-7R1" firstAttribute="top" secondItem="SiT-pU-OaX" secondAttribute="top" id="Ddk-T1-DJZ"/>
                                     <constraint firstItem="BeK-4h-Gqx" firstAttribute="leading" secondItem="SiT-pU-OaX" secondAttribute="leading" id="Eh8-Ii-cgO"/>
                                     <constraint firstAttribute="trailing" secondItem="do8-6k-DCt" secondAttribute="trailing" id="F0C-AB-nDv"/>
+                                    <constraint firstAttribute="bottom" secondItem="MtB-82-g2p" secondAttribute="bottom" constant="5" id="Guu-gl-ik3"/>
                                     <constraint firstAttribute="trailing" secondItem="zsV-sQ-7R1" secondAttribute="trailing" id="I5j-PP-0Uf"/>
                                     <constraint firstItem="BeK-4h-Gqx" firstAttribute="top" secondItem="SiT-pU-OaX" secondAttribute="top" id="QUt-JC-CiV"/>
                                     <constraint firstAttribute="bottom" secondItem="zsV-sQ-7R1" secondAttribute="bottom" id="RqD-Se-NhL"/>
@@ -329,6 +334,7 @@
         <image name="bubble-green" width="168" height="168"/>
         <image name="bubble-orange" width="168" height="168"/>
         <image name="bubble-red" width="168" height="168"/>
+        <image name="cannon-base" width="133" height="139"/>
         <image name="erase" width="168" height="168"/>
     </resources>
 </document>

@@ -61,6 +61,14 @@ class LevelDesignerController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait //return the value as per the required orientation
+    }
+    
+    override var shouldAutorotate: Bool {
+        return false
+    }
 
     // Deselect any brushes when user tap on gray palette area
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
