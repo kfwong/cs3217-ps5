@@ -1,0 +1,22 @@
+PODS:
+  - PhysicsEngine (1.0.0)
+
+DEPENDENCIES:
+  - PhysicsEngine (from `https://github.com/cs3217/2018-ps4-kfwong`, branch `cocoapods`)
+
+EXTERNAL SOURCES:
+  PhysicsEngine:
+    :branch: cocoapods
+    :git: https://github.com/cs3217/2018-ps4-kfwong
+
+CHECKOUT OPTIONS:
+  PhysicsEngine:
+    :commit: dc3b8fb3a740a3a0e851f0a45b3539b2abefbe47
+    :git: https://github.com/cs3217/2018-ps4-kfwong
+
+SPEC CHECKSUMS:
+  PhysicsEngine: efdc2b5265f1323ace5d4a93f7a284a4b56f6061
+
+PODFILE CHECKSUM: 98717f7c133fc98ffd3e55456cfa357018b42fa9
+
+COCOAPODS: 1.2.0

@@ -9,7 +9,7 @@
 import Foundation
 
 // An object that is packed in Hexagonal Grid can find their neighbour indexes
-protocol Hexagonal {
+public protocol Hexagonal {
     var row: Int { get }
     var col: Int { get }
 
@@ -21,7 +21,7 @@ extension Hexagonal where Self: GameObject {
     // precondition: the grid is using odd-r coordinates
     // calculate the neighbour indexes using offset vectors
     // this method assume infinite grid with both positive and negative indexes
-    func neighbourIndexes() -> [IndexPath] {
+    public func neighbourIndexes() -> [IndexPath] {
         let oddRowOffsetVectors = [(0, 1), (-1, 1), (-1, 0), (0, -1), (1, 0), (1, 1)]
         let evenRowOffsetVectors = [(0, 1), (-1, 0), (-1, -1), (0, -1), (1, -1), (1, 0)]
         let neighbourOffsetVectors = [evenRowOffsetVectors, oddRowOffsetVectors]

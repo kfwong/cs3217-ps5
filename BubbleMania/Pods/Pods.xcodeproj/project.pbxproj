@@ -1,0 +1,880 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		13D243C4C46E2D368096EAFE6B9F8346 /* Pods-BubbleManiaTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C11846B2A98B3DDC589979302574373C /* Pods-BubbleManiaTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22B0EFBF0868AF668C5733C4FD778AAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
+		26122285539E2C939E2629FACAD97AC7 /* Pods-BubbleManiaUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A004A5B44A86ACF890A0E7C713F18C72 /* Pods-BubbleManiaUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		269722F4B69C883C56242B239A7F8927 /* Pods-BubbleManiaTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5F30B9FBB86F49401B15EF77202056 /* Pods-BubbleManiaTests-dummy.m */; };
+		2C3FC13256A165F1826C8F2036296097 /* Pods-BubbleMania-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 98115DA36CBAA93BF468F37D166DD843 /* Pods-BubbleMania-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A2E67AE94CA50A76DEF756EDB28D688 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */; };
+		6B978EE6232BCD4C1CB612A311829119 /* PhysicsEngine-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7755F6658C6CD80BE08D3E11F4415368 /* PhysicsEngine-dummy.m */; };
+		9E0C6471AA164DA59F6ADC85FFAB1DBE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
+		A5461D62902258305D2E7FD99B4D694D /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485A2B37D00CDC2805223170B637162 /* GameObject.swift */; };
+		AEBA622FEC907EB61774762D450D0E16 /* CollidableCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB2EDC43A032046042EFF38F4251CCD /* CollidableCircle.swift */; };
+		B19ABD0B365DF3F32B66FE4F308D7294 /* PhysicsEngine-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DD3616D65457AA046B304384D61A3DB3 /* PhysicsEngine-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C300F850382EA26E6E81883F224C856F /* Pods-BubbleManiaUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D04E60D958B139A949185D9A94763F9B /* Pods-BubbleManiaUITests-dummy.m */; };
+		CD2B5463AB1967583BBF68C95CD451F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
+		F77BCE8041505C51899653499F80A94C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
+		F7A2F3B20C868868F807CC91BB249AD4 /* Geometrical.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFCC71F65F03D0908C1356A3984B8D1 /* Geometrical.swift */; };
+		F7D3F1BB97127AF3A9EA6A43ADF44746 /* Hexagonal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA86CC535F2E0335E1F4D92FC5F16DB /* Hexagonal.swift */; };
+		FCEF6C8BA82A92161FF311CD9C76988A /* Pods-BubbleMania-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EEFF9EBA4574712A2F75C8292B8F3F86 /* Pods-BubbleMania-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A2485C9903388406D137D0181D91FCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF946FCD80A4D6DB196E62818C291B0D;
+			remoteInfo = PhysicsEngine;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0DB524100609DC2228C48F81D724A614 /* PhysicsEngine.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PhysicsEngine.modulemap; sourceTree = "<group>"; };
+		1504398DEFA178C807382D1CD8659D9E /* Pods-BubbleManiaTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BubbleManiaTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		1A6A9C8843909106FDCE28D52E068157 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BC73E3470E6C279858633AC8253F1EA /* Pods-BubbleManiaTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BubbleManiaTests-resources.sh"; sourceTree = "<group>"; };
+		1C5F30B9FBB86F49401B15EF77202056 /* Pods-BubbleManiaTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BubbleManiaTests-dummy.m"; sourceTree = "<group>"; };
+		220B488752C459568858D62CD8CF2AFB /* Pods-BubbleManiaTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BubbleManiaTests-frameworks.sh"; sourceTree = "<group>"; };
+		2E8154365EDAFDFFBAA9497A977E5F6A /* Pods-BubbleManiaUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BubbleManiaUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		4119095A8BE3B7FE1B98A29D4BCDA14F /* PhysicsEngine-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PhysicsEngine-prefix.pch"; sourceTree = "<group>"; };
+		417F67FF736EE388587BCCD19A179D27 /* Pods-BubbleManiaUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BubbleManiaUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4304FDFFCADB0DEC3DFFFCE66FB6654A /* Pods-BubbleMania.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BubbleMania.release.xcconfig"; sourceTree = "<group>"; };
+		46D69297C794CF9F589A27847808B6F0 /* Pods-BubbleMania-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BubbleMania-acknowledgements.plist"; sourceTree = "<group>"; };
+		4A92EE6C0A0306AF4271E5A090032DBA /* PhysicsEngine.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PhysicsEngine.xcconfig; sourceTree = "<group>"; };
+		51FA0A42C914D78386CB0B76056DE6B9 /* PhysicsEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhysicsEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52BF82BA4DC36F036336FD6D9FE93654 /* Pods-BubbleMania.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BubbleMania.debug.xcconfig"; sourceTree = "<group>"; };
+		58778B585A74DB60CFA82D5D2DC61352 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59CBE65882D4126B1E1372C43D354221 /* Pods-BubbleMania.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BubbleMania.modulemap"; sourceTree = "<group>"; };
+		5BB2EDC43A032046042EFF38F4251CCD /* CollidableCircle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollidableCircle.swift; path = BubbleMania/BubbleMania/GameEngine/PhysicsEngine/CollidableCircle.swift; sourceTree = "<group>"; };
+		5C5FB18015368B00778B04DFA9AD99D2 /* Pods-BubbleMania-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BubbleMania-acknowledgements.markdown"; sourceTree = "<group>"; };
+		616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6EDC02984ECF1855469A4A5FE02220D2 /* Pods_BubbleManiaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BubbleManiaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73DCD7F6BAD5D70269761016DC1933A1 /* Pods-BubbleManiaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BubbleManiaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7755F6658C6CD80BE08D3E11F4415368 /* PhysicsEngine-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PhysicsEngine-dummy.m"; sourceTree = "<group>"; };
+		7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		8485A2B37D00CDC2805223170B637162 /* GameObject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameObject.swift; path = BubbleMania/BubbleMania/GameEngine/PhysicsEngine/GameObject.swift; sourceTree = "<group>"; };
+		8C481572B2BBF601D58F8F990754371C /* Pods-BubbleManiaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BubbleManiaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8FFD06C19E370A4A67294621A39B2EA5 /* Pods-BubbleManiaTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BubbleManiaTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93E23A73D48F71156CB2F01771C80F7D /* Pods-BubbleManiaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BubbleManiaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		94B14CEDCCD8B91DC3EF579108D4DF56 /* Pods-BubbleManiaUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BubbleManiaUITests-frameworks.sh"; sourceTree = "<group>"; };
+		98115DA36CBAA93BF468F37D166DD843 /* Pods-BubbleMania-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BubbleMania-umbrella.h"; sourceTree = "<group>"; };
+		98F558D8A71411FD286F313325C78492 /* Pods_BubbleManiaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BubbleManiaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F4AC4C05FEF945D5180B30EEAF0650D /* Pods-BubbleManiaUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BubbleManiaUITests.modulemap"; sourceTree = "<group>"; };
+		9FDD416BCCB3D8FC776330351D868F3F /* Pods-BubbleMania-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BubbleMania-resources.sh"; sourceTree = "<group>"; };
+		9FF85BB4D5DBF975923EA8623DB381A0 /* Pods-BubbleMania-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BubbleMania-frameworks.sh"; sourceTree = "<group>"; };
+		A004A5B44A86ACF890A0E7C713F18C72 /* Pods-BubbleManiaUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BubbleManiaUITests-umbrella.h"; sourceTree = "<group>"; };
+		BAC461FD0B26E647A9C2FA4931FD0AB8 /* Pods_BubbleMania.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BubbleMania.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C11846B2A98B3DDC589979302574373C /* Pods-BubbleManiaTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BubbleManiaTests-umbrella.h"; sourceTree = "<group>"; };
+		CBFCC71F65F03D0908C1356A3984B8D1 /* Geometrical.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Geometrical.swift; path = BubbleMania/BubbleMania/GameEngine/PhysicsEngine/Geometrical.swift; sourceTree = "<group>"; };
+		CDA86CC535F2E0335E1F4D92FC5F16DB /* Hexagonal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Hexagonal.swift; path = BubbleMania/BubbleMania/GameEngine/PhysicsEngine/Hexagonal.swift; sourceTree = "<group>"; };
+		CE030423F97E8C46B44D4E34186D9D6F /* Pods-BubbleManiaUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BubbleManiaUITests-resources.sh"; sourceTree = "<group>"; };
+		D04E60D958B139A949185D9A94763F9B /* Pods-BubbleManiaUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BubbleManiaUITests-dummy.m"; sourceTree = "<group>"; };
+		D3A98EC0DE04C1206A453507871584D8 /* Pods-BubbleManiaTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BubbleManiaTests.modulemap"; sourceTree = "<group>"; };
+		DD3616D65457AA046B304384D61A3DB3 /* PhysicsEngine-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PhysicsEngine-umbrella.h"; sourceTree = "<group>"; };
+		DF8E16F372A4CAEBB883A282FAD8C43A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEFF9EBA4574712A2F75C8292B8F3F86 /* Pods-BubbleMania-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BubbleMania-dummy.m"; sourceTree = "<group>"; };
+		FB9D1013735927BF1741CE20C36DAF64 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF8E6852377CB4C1718B333213F0C0A4 /* Pods-BubbleManiaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BubbleManiaTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11E625811C9A0DD6B17609CA3A310157 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD2B5463AB1967583BBF68C95CD451F3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F008FD26F9DE9AFB3A402F76403164D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E0C6471AA164DA59F6ADC85FFAB1DBE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D81BB7EEDDFA5D7F342D603613F92E40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22B0EFBF0868AF668C5733C4FD778AAE /* Foundation.framework in Frameworks */,
+				5A2E67AE94CA50A76DEF756EDB28D688 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5B87139BC8C8E2017B26A410825EA8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F77BCE8041505C51899653499F80A94C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0CBB29771C92D4C34347F891F306B2B2 /* Pods-BubbleMania */ = {
+			isa = PBXGroup;
+			children = (
+				FB9D1013735927BF1741CE20C36DAF64 /* Info.plist */,
+				59CBE65882D4126B1E1372C43D354221 /* Pods-BubbleMania.modulemap */,
+				5C5FB18015368B00778B04DFA9AD99D2 /* Pods-BubbleMania-acknowledgements.markdown */,
+				46D69297C794CF9F589A27847808B6F0 /* Pods-BubbleMania-acknowledgements.plist */,
+				EEFF9EBA4574712A2F75C8292B8F3F86 /* Pods-BubbleMania-dummy.m */,
+				9FF85BB4D5DBF975923EA8623DB381A0 /* Pods-BubbleMania-frameworks.sh */,
+				9FDD416BCCB3D8FC776330351D868F3F /* Pods-BubbleMania-resources.sh */,
+				98115DA36CBAA93BF468F37D166DD843 /* Pods-BubbleMania-umbrella.h */,
+				52BF82BA4DC36F036336FD6D9FE93654 /* Pods-BubbleMania.debug.xcconfig */,
+				4304FDFFCADB0DEC3DFFFCE66FB6654A /* Pods-BubbleMania.release.xcconfig */,
+			);
+			name = "Pods-BubbleMania";
+			path = "Target Support Files/Pods-BubbleMania";
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6EE98446B568159EE277B68FD442AF0 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		530442E9AEB9CE5F7814EA14CB314D2F /* Pods-BubbleManiaTests */ = {
+			isa = PBXGroup;
+			children = (
+				DF8E16F372A4CAEBB883A282FAD8C43A /* Info.plist */,
+				D3A98EC0DE04C1206A453507871584D8 /* Pods-BubbleManiaTests.modulemap */,
+				8FFD06C19E370A4A67294621A39B2EA5 /* Pods-BubbleManiaTests-acknowledgements.markdown */,
+				1504398DEFA178C807382D1CD8659D9E /* Pods-BubbleManiaTests-acknowledgements.plist */,
+				1C5F30B9FBB86F49401B15EF77202056 /* Pods-BubbleManiaTests-dummy.m */,
+				220B488752C459568858D62CD8CF2AFB /* Pods-BubbleManiaTests-frameworks.sh */,
+				1BC73E3470E6C279858633AC8253F1EA /* Pods-BubbleManiaTests-resources.sh */,
+				C11846B2A98B3DDC589979302574373C /* Pods-BubbleManiaTests-umbrella.h */,
+				8C481572B2BBF601D58F8F990754371C /* Pods-BubbleManiaTests.debug.xcconfig */,
+				FF8E6852377CB4C1718B333213F0C0A4 /* Pods-BubbleManiaTests.release.xcconfig */,
+			);
+			name = "Pods-BubbleManiaTests";
+			path = "Target Support Files/Pods-BubbleManiaTests";
+			sourceTree = "<group>";
+		};
+		59A19C9F7CA4D6073326D5B1F2525AA9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1A6A9C8843909106FDCE28D52E068157 /* Info.plist */,
+				0DB524100609DC2228C48F81D724A614 /* PhysicsEngine.modulemap */,
+				4A92EE6C0A0306AF4271E5A090032DBA /* PhysicsEngine.xcconfig */,
+				7755F6658C6CD80BE08D3E11F4415368 /* PhysicsEngine-dummy.m */,
+				4119095A8BE3B7FE1B98A29D4BCDA14F /* PhysicsEngine-prefix.pch */,
+				DD3616D65457AA046B304384D61A3DB3 /* PhysicsEngine-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PhysicsEngine";
+			sourceTree = "<group>";
+		};
+		64001E2BCF2AD73936421294A5649A47 /* Pods-BubbleManiaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				58778B585A74DB60CFA82D5D2DC61352 /* Info.plist */,
+				9F4AC4C05FEF945D5180B30EEAF0650D /* Pods-BubbleManiaUITests.modulemap */,
+				417F67FF736EE388587BCCD19A179D27 /* Pods-BubbleManiaUITests-acknowledgements.markdown */,
+				2E8154365EDAFDFFBAA9497A977E5F6A /* Pods-BubbleManiaUITests-acknowledgements.plist */,
+				D04E60D958B139A949185D9A94763F9B /* Pods-BubbleManiaUITests-dummy.m */,
+				94B14CEDCCD8B91DC3EF579108D4DF56 /* Pods-BubbleManiaUITests-frameworks.sh */,
+				CE030423F97E8C46B44D4E34186D9D6F /* Pods-BubbleManiaUITests-resources.sh */,
+				A004A5B44A86ACF890A0E7C713F18C72 /* Pods-BubbleManiaUITests-umbrella.h */,
+				73DCD7F6BAD5D70269761016DC1933A1 /* Pods-BubbleManiaUITests.debug.xcconfig */,
+				93E23A73D48F71156CB2F01771C80F7D /* Pods-BubbleManiaUITests.release.xcconfig */,
+			);
+			name = "Pods-BubbleManiaUITests";
+			path = "Target Support Files/Pods-BubbleManiaUITests";
+			sourceTree = "<group>";
+		};
+		64998DB49598FFE9D08372B7436B2BF2 /* PhysicsEngine */ = {
+			isa = PBXGroup;
+			children = (
+				5BB2EDC43A032046042EFF38F4251CCD /* CollidableCircle.swift */,
+				8485A2B37D00CDC2805223170B637162 /* GameObject.swift */,
+				CBFCC71F65F03D0908C1356A3984B8D1 /* Geometrical.swift */,
+				CDA86CC535F2E0335E1F4D92FC5F16DB /* Hexagonal.swift */,
+				59A19C9F7CA4D6073326D5B1F2525AA9 /* Support Files */,
+			);
+			path = PhysicsEngine;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				B43C6259BB611C42562AB60519224BA6 /* Pods */,
+				C0CE8FA76332AF6FA91AD5A181345314 /* Products */,
+				F382C5728FBD8514703A949ADA404476 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		B43C6259BB611C42562AB60519224BA6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				64998DB49598FFE9D08372B7436B2BF2 /* PhysicsEngine */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C0CE8FA76332AF6FA91AD5A181345314 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				51FA0A42C914D78386CB0B76056DE6B9 /* PhysicsEngine.framework */,
+				BAC461FD0B26E647A9C2FA4931FD0AB8 /* Pods_BubbleMania.framework */,
+				6EDC02984ECF1855469A4A5FE02220D2 /* Pods_BubbleManiaTests.framework */,
+				98F558D8A71411FD286F313325C78492 /* Pods_BubbleManiaUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E6EE98446B568159EE277B68FD442AF0 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */,
+				7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		F382C5728FBD8514703A949ADA404476 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB29771C92D4C34347F891F306B2B2 /* Pods-BubbleMania */,
+				530442E9AEB9CE5F7814EA14CB314D2F /* Pods-BubbleManiaTests */,
+				64001E2BCF2AD73936421294A5649A47 /* Pods-BubbleManiaUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0784037F7E6C2335E4B709BCFC6B45FC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26122285539E2C939E2629FACAD97AC7 /* Pods-BubbleManiaUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		269F83F43B1BDBD2F8879722C6517FBD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13D243C4C46E2D368096EAFE6B9F8346 /* Pods-BubbleManiaTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D0E0770DFB2109418C24F2341A47364 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C3FC13256A165F1826C8F2036296097 /* Pods-BubbleMania-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64CF3EA7DC6581ED8EB41BA1AE1C1F39 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B19ABD0B365DF3F32B66FE4F308D7294 /* PhysicsEngine-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4661FE00126387BCF9E1D3AB2BD3B1B7 /* Pods-BubbleManiaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67572D6DBC08EC5E8024E51BD4B0E759 /* Build configuration list for PBXNativeTarget "Pods-BubbleManiaUITests" */;
+			buildPhases = (
+				C360B5EBA50B0641E48800A4AF7D3794 /* Sources */,
+				11E625811C9A0DD6B17609CA3A310157 /* Frameworks */,
+				0784037F7E6C2335E4B709BCFC6B45FC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-BubbleManiaUITests";
+			productName = "Pods-BubbleManiaUITests";
+			productReference = 98F558D8A71411FD286F313325C78492 /* Pods_BubbleManiaUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7EB0B3DFD783A0FA75402E7A9A0CA218 /* Pods-BubbleMania */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A0F6E92CD00DDE2892825BB53DEB763 /* Build configuration list for PBXNativeTarget "Pods-BubbleMania" */;
+			buildPhases = (
+				6F304E3B6A6A16C5915D70F4DF1FCD16 /* Sources */,
+				F5B87139BC8C8E2017B26A410825EA8C /* Frameworks */,
+				5D0E0770DFB2109418C24F2341A47364 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC0399142B24241472F38089DC69B70C /* PBXTargetDependency */,
+			);
+			name = "Pods-BubbleMania";
+			productName = "Pods-BubbleMania";
+			productReference = BAC461FD0B26E647A9C2FA4931FD0AB8 /* Pods_BubbleMania.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AF946FCD80A4D6DB196E62818C291B0D /* PhysicsEngine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C83DC6808DEBD8E822C74CA3651BC8D7 /* Build configuration list for PBXNativeTarget "PhysicsEngine" */;
+			buildPhases = (
+				DDE3C44BADB0CA62CD29377A22A15FAC /* Sources */,
+				D81BB7EEDDFA5D7F342D603613F92E40 /* Frameworks */,
+				64CF3EA7DC6581ED8EB41BA1AE1C1F39 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhysicsEngine;
+			productName = PhysicsEngine;
+			productReference = 51FA0A42C914D78386CB0B76056DE6B9 /* PhysicsEngine.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B03678A02EE07E093B240E688F0F3FBB /* Pods-BubbleManiaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CAFEBB958B77802C2BC6C489120053F /* Build configuration list for PBXNativeTarget "Pods-BubbleManiaTests" */;
+			buildPhases = (
+				564377D4EEF5935DD61D1C5823CAF39D /* Sources */,
+				7F008FD26F9DE9AFB3A402F76403164D /* Frameworks */,
+				269F83F43B1BDBD2F8879722C6517FBD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-BubbleManiaTests";
+			productName = "Pods-BubbleManiaTests";
+			productReference = 6EDC02984ECF1855469A4A5FE02220D2 /* Pods_BubbleManiaTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0920;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = C0CE8FA76332AF6FA91AD5A181345314 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF946FCD80A4D6DB196E62818C291B0D /* PhysicsEngine */,
+				7EB0B3DFD783A0FA75402E7A9A0CA218 /* Pods-BubbleMania */,
+				B03678A02EE07E093B240E688F0F3FBB /* Pods-BubbleManiaTests */,
+				4661FE00126387BCF9E1D3AB2BD3B1B7 /* Pods-BubbleManiaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		564377D4EEF5935DD61D1C5823CAF39D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				269722F4B69C883C56242B239A7F8927 /* Pods-BubbleManiaTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F304E3B6A6A16C5915D70F4DF1FCD16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCEF6C8BA82A92161FF311CD9C76988A /* Pods-BubbleMania-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C360B5EBA50B0641E48800A4AF7D3794 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C300F850382EA26E6E81883F224C856F /* Pods-BubbleManiaUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDE3C44BADB0CA62CD29377A22A15FAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEBA622FEC907EB61774762D450D0E16 /* CollidableCircle.swift in Sources */,
+				A5461D62902258305D2E7FD99B4D694D /* GameObject.swift in Sources */,
+				F7A2F3B20C868868F807CC91BB249AD4 /* Geometrical.swift in Sources */,
+				F7D3F1BB97127AF3A9EA6A43ADF44746 /* Hexagonal.swift in Sources */,
+				6B978EE6232BCD4C1CB612A311829119 /* PhysicsEngine-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BC0399142B24241472F38089DC69B70C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PhysicsEngine;
+			target = AF946FCD80A4D6DB196E62818C291B0D /* PhysicsEngine */;
+			targetProxy = 3A2485C9903388406D137D0181D91FCF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		479E5BC093F79941A10C8319F371F294 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73DCD7F6BAD5D70269761016DC1933A1 /* Pods-BubbleManiaUITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-BubbleManiaUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BubbleManiaUITests/Pods-BubbleManiaUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BubbleManiaUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		673254EEAF0B5BF4596080C749645884 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		776700E9F99C6E8193D8FB8FE9CC2C4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A92EE6C0A0306AF4271E5A090032DBA /* PhysicsEngine.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PhysicsEngine/PhysicsEngine-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PhysicsEngine/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PhysicsEngine/PhysicsEngine.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = PhysicsEngine;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8066F14C99A4F9CA8507C8A159B25A9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A92EE6C0A0306AF4271E5A090032DBA /* PhysicsEngine.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PhysicsEngine/PhysicsEngine-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PhysicsEngine/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PhysicsEngine/PhysicsEngine.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = PhysicsEngine;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		819FD6E56B43566D63E6C8ADEF83140F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52BF82BA4DC36F036336FD6D9FE93654 /* Pods-BubbleMania.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-BubbleMania/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BubbleMania/Pods-BubbleMania.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BubbleMania;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8232BDA28A396E77B6387DFF2C248035 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C481572B2BBF601D58F8F990754371C /* Pods-BubbleManiaTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-BubbleManiaTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BubbleManiaTests/Pods-BubbleManiaTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BubbleManiaTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		956F3233539E30EAA8DF1BD377DF9FCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4304FDFFCADB0DEC3DFFFCE66FB6654A /* Pods-BubbleMania.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-BubbleMania/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BubbleMania/Pods-BubbleMania.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BubbleMania;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E181D413C1F982A93B7B322555E8538F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93E23A73D48F71156CB2F01771C80F7D /* Pods-BubbleManiaUITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-BubbleManiaUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BubbleManiaUITests/Pods-BubbleManiaUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BubbleManiaUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E41522E4D2D2182ECF9127DC414F9B63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF8E6852377CB4C1718B333213F0C0A4 /* Pods-BubbleManiaTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-BubbleManiaTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BubbleManiaTests/Pods-BubbleManiaTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BubbleManiaTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A0F6E92CD00DDE2892825BB53DEB763 /* Build configuration list for PBXNativeTarget "Pods-BubbleMania" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				819FD6E56B43566D63E6C8ADEF83140F /* Debug */,
+				956F3233539E30EAA8DF1BD377DF9FCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */,
+				673254EEAF0B5BF4596080C749645884 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CAFEBB958B77802C2BC6C489120053F /* Build configuration list for PBXNativeTarget "Pods-BubbleManiaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8232BDA28A396E77B6387DFF2C248035 /* Debug */,
+				E41522E4D2D2182ECF9127DC414F9B63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67572D6DBC08EC5E8024E51BD4B0E759 /* Build configuration list for PBXNativeTarget "Pods-BubbleManiaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				479E5BC093F79941A10C8319F371F294 /* Debug */,
+				E181D413C1F982A93B7B322555E8538F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C83DC6808DEBD8E822C74CA3651BC8D7 /* Build configuration list for PBXNativeTarget "PhysicsEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8066F14C99A4F9CA8507C8A159B25A9A /* Debug */,
+				776700E9F99C6E8193D8FB8FE9CC2C4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

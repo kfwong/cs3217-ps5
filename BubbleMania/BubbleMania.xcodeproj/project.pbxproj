@@ -25,15 +25,14 @@
 		4A6931332032D4F0003A59B1 /* GameBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6931312032D4F0003A59B1 /* GameBubble.swift */; };
 		4A6931362032D503003A59B1 /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6931342032D503003A59B1 /* GameEngine.swift */; };
 		4A6931372032D503003A59B1 /* GameRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6931352032D503003A59B1 /* GameRenderer.swift */; };
-		4A69313E2032D51B003A59B1 /* GameObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6931392032D51B003A59B1 /* GameObserver.swift */; };
-		4A69313F2032D51B003A59B1 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69313A2032D51B003A59B1 /* GameObject.swift */; };
-		4A6931402032D51B003A59B1 /* CollidableCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69313B2032D51B003A59B1 /* CollidableCircle.swift */; };
-		4A6931412032D51B003A59B1 /* GameObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69313C2032D51B003A59B1 /* GameObservable.swift */; };
-		4A6931422032D51B003A59B1 /* Geometrical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69313D2032D51B003A59B1 /* Geometrical.swift */; };
 		4A69314420332AA8003A59B1 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69314320332AA8003A59B1 /* GameController.swift */; };
 		4A693146203331D3003A59B1 /* GameController+BubbleGridRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A693145203331D3003A59B1 /* GameController+BubbleGridRenderer.swift */; };
-		4ACCB2D62036D6AF0014DA4B /* Hexagonal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCB2D52036D6AF0014DA4B /* Hexagonal.swift */; };
 		4ACCB2D920370B160014DA4B /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCB2D820370B160014DA4B /* Queue.swift */; };
+		4AE4AC9420456CB6008044EF /* GameObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE4AC9220456CB5008044EF /* GameObservable.swift */; };
+		4AE4AC9520456CB6008044EF /* GameObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE4AC9320456CB6008044EF /* GameObserver.swift */; };
+		587AD12E0744EE5E68310A42 /* Pods_BubbleMania.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC0FC48E126A3E8A7E9DF36 /* Pods_BubbleMania.framework */; };
+		5E1B0ED26C04E8C078838C7B /* Pods_BubbleManiaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC7C4D06043FC7162FD55A6 /* Pods_BubbleManiaTests.framework */; };
+		AC438C688659DF3763AA7361 /* Pods_BubbleManiaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC62D1F09AE56FF9F424C7C6 /* Pods_BubbleManiaUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02C51E5DE5053C657EA56669 /* Pods-BubbleManiaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BubbleManiaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BubbleManiaUITests/Pods-BubbleManiaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		203F69B821A8D48E05564F59 /* Pods-BubbleMania.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BubbleMania.release.xcconfig"; path = "Pods/Target Support Files/Pods-BubbleMania/Pods-BubbleMania.release.xcconfig"; sourceTree = "<group>"; };
+		25D825727288781EBBF232A6 /* Pods-BubbleManiaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BubbleManiaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BubbleManiaTests/Pods-BubbleManiaTests.release.xcconfig"; sourceTree = "<group>"; };
 		4A08B50320248C9D003F1B8F /* BubbleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleCell.swift; sourceTree = "<group>"; };
 		4A0FAAF720222C8200B51C86 /* BubbleMania.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubbleMania.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0FAAF920222C8200B51C86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,15 +80,17 @@
 		4A6931312032D4F0003A59B1 /* GameBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBubble.swift; sourceTree = "<group>"; };
 		4A6931342032D503003A59B1 /* GameEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
 		4A6931352032D503003A59B1 /* GameRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRenderer.swift; sourceTree = "<group>"; };
-		4A6931392032D51B003A59B1 /* GameObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameObserver.swift; sourceTree = "<group>"; };
-		4A69313A2032D51B003A59B1 /* GameObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
-		4A69313B2032D51B003A59B1 /* CollidableCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollidableCircle.swift; sourceTree = "<group>"; };
-		4A69313C2032D51B003A59B1 /* GameObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameObservable.swift; sourceTree = "<group>"; };
-		4A69313D2032D51B003A59B1 /* Geometrical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometrical.swift; sourceTree = "<group>"; };
 		4A69314320332AA8003A59B1 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		4A693145203331D3003A59B1 /* GameController+BubbleGridRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameController+BubbleGridRenderer.swift"; sourceTree = "<group>"; };
-		4ACCB2D52036D6AF0014DA4B /* Hexagonal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hexagonal.swift; sourceTree = "<group>"; };
 		4ACCB2D820370B160014DA4B /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		4AE4AC9220456CB5008044EF /* GameObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameObservable.swift; sourceTree = "<group>"; };
+		4AE4AC9320456CB6008044EF /* GameObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameObserver.swift; sourceTree = "<group>"; };
+		4FC0FC48E126A3E8A7E9DF36 /* Pods_BubbleMania.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BubbleMania.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F68E30DB12B45C1D421B592 /* Pods-BubbleMania.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BubbleMania.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BubbleMania/Pods-BubbleMania.debug.xcconfig"; sourceTree = "<group>"; };
+		84C1B09F3B3EEE57E16A8525 /* Pods-BubbleManiaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BubbleManiaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BubbleManiaUITests/Pods-BubbleManiaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BAC7C4D06043FC7162FD55A6 /* Pods_BubbleManiaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BubbleManiaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D78F236128D886F762376D27 /* Pods-BubbleManiaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BubbleManiaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BubbleManiaTests/Pods-BubbleManiaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EC62D1F09AE56FF9F424C7C6 /* Pods_BubbleManiaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BubbleManiaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,12 +98,52 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E1B0ED26C04E8C078838C7B /* Pods_BubbleManiaTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		828F5B692DB6CA2464C8B3D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC438C688659DF3763AA7361 /* Pods_BubbleManiaUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B376876BFD53BFA14ADF5B3C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				587AD12E0744EE5E68310A42 /* Pods_BubbleMania.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02E349A96FD8015C645AEE9D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FC0FC48E126A3E8A7E9DF36 /* Pods_BubbleMania.framework */,
+				BAC7C4D06043FC7162FD55A6 /* Pods_BubbleManiaTests.framework */,
+				EC62D1F09AE56FF9F424C7C6 /* Pods_BubbleManiaUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3EF28398ED816A564F4A92F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7F68E30DB12B45C1D421B592 /* Pods-BubbleMania.debug.xcconfig */,
+				203F69B821A8D48E05564F59 /* Pods-BubbleMania.release.xcconfig */,
+				D78F236128D886F762376D27 /* Pods-BubbleManiaTests.debug.xcconfig */,
+				25D825727288781EBBF232A6 /* Pods-BubbleManiaTests.release.xcconfig */,
+				02C51E5DE5053C657EA56669 /* Pods-BubbleManiaUITests.debug.xcconfig */,
+				84C1B09F3B3EEE57E16A8525 /* Pods-BubbleManiaUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4A0FAAF820222C8200B51C86 /* BubbleMania */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,8 +208,7 @@
 		4A69312C2032D479003A59B1 /* GameEngine */ = {
 			isa = PBXGroup;
 			children = (
-				4A78E4B5203ADEC80041FA83 /* PhysicsEngine */,
-				4A6931382032D50E003A59B1 /* GameUnit */,
+				4AE4AC9120456C89008044EF /* GameUnit */,
 				4A69312F2032D4D1003A59B1 /* BubbleManiaUnit */,
 				4A6931342032D503003A59B1 /* GameEngine.swift */,
 				4A6931352032D503003A59B1 /* GameRenderer.swift */,
@@ -180,16 +223,6 @@
 				4A6931302032D4F0003A59B1 /* GameProjectile.swift */,
 			);
 			path = BubbleManiaUnit;
-			sourceTree = "<group>";
-		};
-		4A6931382032D50E003A59B1 /* GameUnit */ = {
-			isa = PBXGroup;
-			children = (
-				4A69313A2032D51B003A59B1 /* GameObject.swift */,
-				4A69313C2032D51B003A59B1 /* GameObservable.swift */,
-				4A6931392032D51B003A59B1 /* GameObserver.swift */,
-			);
-			path = GameUnit;
 			sourceTree = "<group>";
 		};
 		4A765410203B483200EDB5AB /* LevelDesignerController */ = {
@@ -213,22 +246,21 @@
 			path = GameController;
 			sourceTree = "<group>";
 		};
-		4A78E4B5203ADEC80041FA83 /* PhysicsEngine */ = {
-			isa = PBXGroup;
-			children = (
-				4A69313B2032D51B003A59B1 /* CollidableCircle.swift */,
-				4ACCB2D52036D6AF0014DA4B /* Hexagonal.swift */,
-				4A69313D2032D51B003A59B1 /* Geometrical.swift */,
-			);
-			path = PhysicsEngine;
-			sourceTree = "<group>";
-		};
 		4ACCB2D720370ABF0014DA4B /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
 				4ACCB2D820370B160014DA4B /* Queue.swift */,
 			);
 			path = DataStructures;
+			sourceTree = "<group>";
+		};
+		4AE4AC9120456C89008044EF /* GameUnit */ = {
+			isa = PBXGroup;
+			children = (
+				4AE4AC9220456CB5008044EF /* GameObservable.swift */,
+				4AE4AC9320456CB6008044EF /* GameObserver.swift */,
+			);
+			path = GameUnit;
 			sourceTree = "<group>";
 		};
 		BF814E971DFE8B73005A18BE = {
@@ -240,6 +272,8 @@
 				4A0FAB0D20222C8200B51C86 /* LevelDesignerUITests */,
 				4A3915B2202D92A3003C638B /* LevelDesignerTests */,
 				4A3915B1202D92A3003C638B /* BubbleManiaTests.xctest */,
+				3EF28398ED816A564F4A92F1 /* Pods */,
+				02E349A96FD8015C645AEE9D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -250,8 +284,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A0FAB1520222C8200B51C86 /* Build configuration list for PBXNativeTarget "BubbleMania" */;
 			buildPhases = (
+				6ABCD604C6F07346514F1058 /* [CP] Check Pods Manifest.lock */,
 				4A0FAAF320222C8200B51C86 /* Sources */,
 				4A0FAAF520222C8200B51C86 /* Resources */,
+				B376876BFD53BFA14ADF5B3C /* Frameworks */,
+				5AEEDF355E2F3B4AAD3B9042 /* [CP] Embed Pods Frameworks */,
+				6A6FF71EF8CF98BA077BC318 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -266,8 +304,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A0FAB1620222C8200B51C86 /* Build configuration list for PBXNativeTarget "BubbleManiaUITests" */;
 			buildPhases = (
+				06E1DE6EC0A8280AD6BBCBD1 /* [CP] Check Pods Manifest.lock */,
 				4A0FAB0620222C8200B51C86 /* Sources */,
 				4A0FAB0820222C8200B51C86 /* Resources */,
+				828F5B692DB6CA2464C8B3D8 /* Frameworks */,
+				DD698A62706218C096A16D25 /* [CP] Embed Pods Frameworks */,
+				B4F5603D173D4AF7C539A8DC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -283,9 +325,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A3915B8202D92A3003C638B /* Build configuration list for PBXNativeTarget "BubbleManiaTests" */;
 			buildPhases = (
+				3916682EF08C3B1D2138CA90 /* [CP] Check Pods Manifest.lock */,
 				4A3915AD202D92A3003C638B /* Sources */,
 				4A3915AE202D92A3003C638B /* Frameworks */,
 				4A3915AF202D92A3003C638B /* Resources */,
+				B536C9C22DFC5D3490DE68DA /* [CP] Embed Pods Frameworks */,
+				3B09464388B73ED1424EE011 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -373,6 +418,144 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06E1DE6EC0A8280AD6BBCBD1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3916682EF08C3B1D2138CA90 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3B09464388B73ED1424EE011 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BubbleManiaTests/Pods-BubbleManiaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5AEEDF355E2F3B4AAD3B9042 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BubbleMania/Pods-BubbleMania-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A6FF71EF8CF98BA077BC318 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BubbleMania/Pods-BubbleMania-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6ABCD604C6F07346514F1058 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B4F5603D173D4AF7C539A8DC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BubbleManiaUITests/Pods-BubbleManiaUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B536C9C22DFC5D3490DE68DA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BubbleManiaTests/Pods-BubbleManiaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD698A62706218C096A16D25 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BubbleManiaUITests/Pods-BubbleManiaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4A0FAAF320222C8200B51C86 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -383,21 +566,17 @@
 				4A0FAAFA20222C8200B51C86 /* AppDelegate.swift in Sources */,
 				4A6931332032D4F0003A59B1 /* GameBubble.swift in Sources */,
 				4A6931322032D4F0003A59B1 /* GameProjectile.swift in Sources */,
-				4A69313F2032D51B003A59B1 /* GameObject.swift in Sources */,
 				4A6931372032D503003A59B1 /* GameRenderer.swift in Sources */,
-				4A6931412032D51B003A59B1 /* GameObservable.swift in Sources */,
 				4A5E5F8A202A1BBD009846B2 /* LevelDesignerController+DataController.swift in Sources */,
 				4A693146203331D3003A59B1 /* GameController+BubbleGridRenderer.swift in Sources */,
 				4A69314420332AA8003A59B1 /* GameController.swift in Sources */,
-				4A6931422032D51B003A59B1 /* Geometrical.swift in Sources */,
+				4AE4AC9520456CB6008044EF /* GameObserver.swift in Sources */,
 				4A6931362032D503003A59B1 /* GameEngine.swift in Sources */,
-				4ACCB2D62036D6AF0014DA4B /* Hexagonal.swift in Sources */,
-				4A69313E2032D51B003A59B1 /* GameObserver.swift in Sources */,
 				4A08B50420248C9D003F1B8F /* BubbleCell.swift in Sources */,
 				4ACCB2D920370B160014DA4B /* Queue.swift in Sources */,
 				4A51A7812027618F0027250C /* Bubble.swift in Sources */,
 				4A5E5F8C202A1C62009846B2 /* LevelDesignerController+GestureController.swift in Sources */,
-				4A6931402032D51B003A59B1 /* CollidableCircle.swift in Sources */,
+				4AE4AC9420456CB6008044EF /* GameObservable.swift in Sources */,
 				4A5E5F88202A19A3009846B2 /* LevelDesignerController+BubbleGridRenderer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +635,7 @@
 /* Begin XCBuildConfiguration section */
 		4A0FAB1120222C8200B51C86 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F68E30DB12B45C1D421B592 /* Pods-BubbleMania.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -483,6 +663,7 @@
 		};
 		4A0FAB1220222C8200B51C86 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 203F69B821A8D48E05564F59 /* Pods-BubbleMania.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -510,6 +691,7 @@
 		};
 		4A0FAB1320222C8200B51C86 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02C51E5DE5053C657EA56669 /* Pods-BubbleManiaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -537,6 +719,7 @@
 		};
 		4A0FAB1420222C8200B51C86 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84C1B09F3B3EEE57E16A8525 /* Pods-BubbleManiaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -564,6 +747,7 @@
 		};
 		4A3915B9202D92A3003C638B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D78F236128D886F762376D27 /* Pods-BubbleManiaTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -585,6 +769,7 @@
 		};
 		4A3915BA202D92A3003C638B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25D825727288781EBBF232A6 /* Pods-BubbleManiaTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;

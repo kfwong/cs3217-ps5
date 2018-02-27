@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 // allows an object to calculate all geometrical/trigometric functions with reference to self
-protocol Geometrical {
+public protocol Geometrical {
     var xPos: CGFloat { get }
     var yPos: CGFloat { get }
 
@@ -21,7 +21,7 @@ protocol Geometrical {
 extension Geometrical where Self: GameObject {
 
     // return the angle between horizontal x-axis and line form by this object center to target point
-    func verticalAngleFromSelf (to: CGPoint) -> CGFloat {
+    public func verticalAngleFromSelf (to: CGPoint) -> CGFloat {
         let xComponent = self.xPos - to.x
         let yComponent = self.yPos - to.y
 

@@ -9,7 +9,7 @@
 import UIKit
 
 // Gives properties to check if a circle is colliding with another or screen edge with reference to self
-protocol CollidableCircle {
+public protocol CollidableCircle {
     var xPos: CGFloat { get }
     var yPos: CGFloat { get }
     var radius: CGFloat { get }
@@ -23,7 +23,7 @@ protocol CollidableCircle {
 extension CollidableCircle where Self: GameObject {
 
     // uses pythogaras theorem to check if two circles collide
-    func isCollidingWith(target: CollidableCircle) -> Bool {
+    public func isCollidingWith(target: CollidableCircle) -> Bool {
         let xDiff = target.xPos - self.xPos
         let yDiff = target.yPos - self.yPos
 
@@ -35,13 +35,13 @@ extension CollidableCircle where Self: GameObject {
 
     // offset by radius pixels so it does not appear to penetrate the edge
     // can also supply optional edgeOffset
-    func isCollidingWithScreenSideEdge(edgeOffset: CGFloat = 10) -> Bool {
+    public func isCollidingWithScreenSideEdge(edgeOffset: CGFloat = 10) -> Bool {
         return self.xPos <= self.radius + edgeOffset ||
             (self.xPos + self.radius) >= UIScreen.main.bounds.width - edgeOffset
     }
 
     // offset by radius pixels so it does not appear to penetrate the edge
-    func isCollidingWithScreenTopEdge() -> Bool {
+    public func isCollidingWithScreenTopEdge() -> Bool {
         return self.yPos <= self.radius
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PhysicsEngine
 
 class GameBubble: GameObject, Hexagonal, CollidableCircle {
     internal var row: Int

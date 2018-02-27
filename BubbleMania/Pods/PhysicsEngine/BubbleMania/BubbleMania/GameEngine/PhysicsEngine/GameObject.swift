@@ -12,33 +12,33 @@ import UIKit
  GameObject holds the common properties required by various Physics protocol.
  It also conform to Hashable to alow uniquely identify each object
  */
-class GameObject {
+open class GameObject {
 
-    internal var xPos: CGFloat {
+    public var xPos: CGFloat {
         return self.sprite.center.x
     }
-    internal var yPos: CGFloat {
+    public var yPos: CGFloat {
         return self.sprite.center.y
     }
 
-    internal var center: CGPoint {
+    public var center: CGPoint {
         return self.sprite.center
     }
 
-    internal var sprite: UIView
+    public var sprite: UIView
 
-    init (as sprite: UIView) {
+    public init (as sprite: UIView) {
         self.sprite = sprite
     }
 }
 
 extension GameObject: Hashable {
 
-    var hashValue: Int {
+    public var hashValue: Int {
         return self.sprite.hashValue
     }
 
-    static func == (lhs: GameObject, rhs: GameObject) -> Bool {
+    public static func == (lhs: GameObject, rhs: GameObject) -> Bool {
         return lhs.sprite == rhs.sprite
     }
 }
