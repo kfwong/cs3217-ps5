@@ -98,12 +98,23 @@ extension GameController: GameLoopDelegate {
 
     // Deselect any brushes when user tap on gray palette area
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        a.startAnimating()
+        
         if let touch = touches.first {
 
             switch gameEngine.gameState {
 
             case .loadingProjectileComplete:
                 let bearing = touch.location(in: self.view)
+                
+                UIView.animate(withDuration: 0.5,
+                               delay: 0,
+                               options: UIViewAnimationOptions.curveEaseIn,
+                               animations: {
+                                self.a.transform = CGAffineTransform(rotationAngle: 75)
+                }, completion: nil)
+                
                 gameEngine.settingProjectileBearing(to: bearing)
 
             default: return

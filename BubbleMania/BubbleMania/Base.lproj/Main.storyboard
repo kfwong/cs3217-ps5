@@ -320,6 +320,7 @@
                     </view>
                     <connections>
                         <outlet property="bubbleGrid" destination="zsV-sQ-7R1" id="MyW-co-Vti"/>
+                        <outlet property="canonBase" destination="MtB-82-g2p" id="TgY-0J-YP4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jSi-ni-a1w" userLabel="First Responder" sceneMemberID="firstResponder"/>

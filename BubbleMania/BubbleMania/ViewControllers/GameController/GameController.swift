@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SpriteKit
 
 // Main GameController handle display Bubbles at correct position in grid
 // also define throw away alert ui.
@@ -34,6 +35,9 @@ class GameController: UIViewController {
     // crash is impossible because loadProjectile() is always triggered after view is loaded. (whitebox)
     lazy private var bubbleDiameter = (self.bubbleGrid.frame.size.width / CGFloat(max(oddSectionBubbleCount, evenSectionBubbleCount)))
     lazy private(set) var bubbleSize: CGSize = CGSize(width: self.bubbleDiameter, height: self.bubbleDiameter)
+    
+    @IBOutlet weak var canonBase: UIImageView!
+    internal var a: UIAnimatedView!
 
     @IBOutlet private(set) weak var bubbleGrid: UICollectionView!
 
@@ -45,13 +49,22 @@ class GameController: UIViewController {
         self.bubbleGrid.delegate = self
 
         self.gameEngine.delegate = self
-
+        
     }
 
     override func viewDidAppear(_ animated: Bool) {
         // need to hook on viewDidAppear because there is racing condition when reloading passed variables into the grid
         // therefore it's safer to start the renderer after the view is fully loaded. (segue and transition complete)
         self.gameRenderer.start(engine: gameEngine)
+        
+        a = UIAnimatedView(spriteSheet: #imageLiteral(resourceName: "cannon"), rowCount: 2, colCount: 6)
+        
+        let oldFrame = a.frame
+        a.layer.anchorPoint = CGPoint(x:0.25, y: 1.0)
+        a.frame = oldFrame
+        
+        self.view.addSubview(a)
+        
     }
 
     override func didReceiveMemoryWarning() {

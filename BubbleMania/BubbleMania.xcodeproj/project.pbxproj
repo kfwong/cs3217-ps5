@@ -30,6 +30,7 @@
 		4ACCB2D920370B160014DA4B /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCB2D820370B160014DA4B /* Queue.swift */; };
 		4AE4AC9420456CB6008044EF /* GameObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE4AC9220456CB5008044EF /* GameObservable.swift */; };
 		4AE4AC9520456CB6008044EF /* GameObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE4AC9320456CB6008044EF /* GameObserver.swift */; };
+		4AE4AC9720457F93008044EF /* UIAnimatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE4AC9620457F93008044EF /* UIAnimatedView.swift */; };
 		587AD12E0744EE5E68310A42 /* Pods_BubbleMania.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC0FC48E126A3E8A7E9DF36 /* Pods_BubbleMania.framework */; };
 		5E1B0ED26C04E8C078838C7B /* Pods_BubbleManiaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC7C4D06043FC7162FD55A6 /* Pods_BubbleManiaTests.framework */; };
 		AC438C688659DF3763AA7361 /* Pods_BubbleManiaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC62D1F09AE56FF9F424C7C6 /* Pods_BubbleManiaUITests.framework */; };
@@ -85,6 +86,7 @@
 		4ACCB2D820370B160014DA4B /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		4AE4AC9220456CB5008044EF /* GameObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameObservable.swift; sourceTree = "<group>"; };
 		4AE4AC9320456CB6008044EF /* GameObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameObserver.swift; sourceTree = "<group>"; };
+		4AE4AC9620457F93008044EF /* UIAnimatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAnimatedView.swift; sourceTree = "<group>"; };
 		4FC0FC48E126A3E8A7E9DF36 /* Pods_BubbleMania.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BubbleMania.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F68E30DB12B45C1D421B592 /* Pods-BubbleMania.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BubbleMania.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BubbleMania/Pods-BubbleMania.debug.xcconfig"; sourceTree = "<group>"; };
 		84C1B09F3B3EEE57E16A8525 /* Pods-BubbleManiaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BubbleManiaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BubbleManiaUITests/Pods-BubbleManiaUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				4A69314320332AA8003A59B1 /* GameController.swift */,
 				4A693145203331D3003A59B1 /* GameController+BubbleGridRenderer.swift */,
 				4A2224502038810200D1150D /* GameController+GameLoop.swift */,
+				4AE4AC9620457F93008044EF /* UIAnimatedView.swift */,
 			);
 			path = GameController;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				4A5E5F8A202A1BBD009846B2 /* LevelDesignerController+DataController.swift in Sources */,
 				4A693146203331D3003A59B1 /* GameController+BubbleGridRenderer.swift in Sources */,
 				4A69314420332AA8003A59B1 /* GameController.swift in Sources */,
+				4AE4AC9720457F93008044EF /* UIAnimatedView.swift in Sources */,
 				4AE4AC9520456CB6008044EF /* GameObserver.swift in Sources */,
 				4A6931362032D503003A59B1 /* GameEngine.swift in Sources */,
 				4A08B50420248C9D003F1B8F /* BubbleCell.swift in Sources */,
