@@ -9,35 +9,46 @@
 import Foundation
 import UIKit
 
-class UIAnimatedView: UIImageView {
+/*
+ precondition:
+ A subclass of UIImageView that assume the image as spritesheet
+ caller need to explicitly states the rows and cols count for spritesheet
+ 
+ postcondition:
+ each sprite is of equal width and height after slicing.
+ */
+class UIAnimationView: UIImageView {
     
     private(set) var spriteSheet: UIImage?
-    private(set) lazy var idleSprite: UIImage? = self.animationImages?.first
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    init(spriteSheet: UIImage, rowCount: Int, colCount: Int) {
+    init(spriteSheet: UIImage, rowCount: Int, colCount: Int, animationDuration: TimeInterval = 1.0, animationRepeatCount: Int = 1) {
         self.spriteSheet = spriteSheet
         
         super.init(image: spriteSheet)
         
-        sliceSpriteSheet(rowCount: rowCount, colCount: colCount)
+        self.animationImages = sliceSpriteSheet(rowCount: rowCount, colCount: colCount)
+        self.image = self.animationImages?.first // as initial idle image when animation stopped
+        self.animationDuration = animationDuration
+        self.animationRepeatCount = animationRepeatCount
         
-        self.image = idleSprite
-        self.sizeToFit()
+        self.sizeToFit() // resize automaticallty ro idle image instead of spritesheet dimension
     }
     
-    private func sliceSpriteSheet(rowCount: Int, colCount: Int){
+    // slice the spritesheets given row and col count
+    private func sliceSpriteSheet(rowCount: Int, colCount: Int) -> [UIImage]{
         guard let spriteSheet = self.spriteSheet else {
-            return
+            return []
         }
         
         guard let cgImage = spriteSheet.cgImage else {
-            return
+            return []
         }
         
+        // divide each sprite's dimension evenly
         let cropWidth = cgImage.width / colCount
         let cropHeight = cgImage.height / rowCount
         
@@ -50,16 +61,14 @@ class UIAnimatedView: UIImageView {
                                     width: cropWidth,
                                     height: cropHeight)
                 guard let cropped = cgImage.cropping(to: crop) else {
-                    return
+                    continue
                 }
                 
                 sprites.append(UIImage(cgImage: cropped, scale: spriteSheet.scale, orientation: spriteSheet.imageOrientation))
             }
         }
         
-        self.animationImages = sprites
-        self.animationDuration = 0.5
-        self.animationRepeatCount = 1
+        return sprites
     }
     
 }

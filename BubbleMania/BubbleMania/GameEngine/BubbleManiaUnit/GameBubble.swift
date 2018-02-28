@@ -15,6 +15,8 @@ class GameBubble: GameObject, Hexagonal, CollidableCircle {
     internal var col: Int
 
     internal let bubbleType: BubbleType
+    
+    internal let bubbleEffect: BubbleEffectStrategy
 
     private(set) var hasCollidedWithProjectile: Bool = false
 
@@ -26,9 +28,34 @@ class GameBubble: GameObject, Hexagonal, CollidableCircle {
         self.row = row
         self.col = col
         self.bubbleType = type
+        self.bubbleEffect = Star()
 
         super.init(as: sprite)
     }
+    
+    // return list of gamebubbles exploded by this bubble's effect
+    internal func executeExplodeEffect(by projectile: GameProjectile, activeBubbles: [GameBubble]) -> [GameBubble]{
+        return self.bubbleEffect.explode(self, by: projectile, activeBubbles: activeBubbles)
+    }
+    
+    internal func animateExplodeEffect(){
+        let bubbleCell = self.sprite as! BubbleCell
+        
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       options: UIViewAnimationOptions.curveEaseIn,
+                       animations: {
+                            self.sprite.alpha = 0
+                       },
+                       completion: { isFinished in
+                            guard isFinished else {
+                                return
+                            }
+                            bubbleCell.bubbleType = .none
+                            self.sprite.alpha = 1
+                       })
+    }
+
 }
 
 extension GameBubble: GameObserver {

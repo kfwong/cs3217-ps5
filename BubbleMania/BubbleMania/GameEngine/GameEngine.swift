@@ -20,14 +20,20 @@ class GameEngine {
     // so passing param in init propagate the optional up to the controller which makes the code very ugly
     private(set) var projectile: GameProjectile = GameProjectile(size: CGSize(width: 1, height: 1))
     private(set) var bubbles: Set<GameBubble> = []
+    private(set) var cannon: GameCannon?
     private(set) var lastShot: GameBubble?
+    private(set) var upcomingBubbles: Queue<BubbleType> = Queue()
 
     private(set) var bearing: CGFloat?
+    private(set) var cannonInitialAngle: CGFloat = CGFloat.pi/2
+    private(set) var cannonDeltaAngle: CGFloat = 0
 
     private let sectionCount: Int
     private let oddSectionBubbleCount: Int
 
     private(set) var gameState: GameState = .loadGame
+    
+    private(set) var upcomingBubbleCount = 1
 
     init(sectionCount: Int, oddSectionBubbleCount: Int) {
         self.sectionCount = sectionCount
@@ -49,15 +55,21 @@ class GameEngine {
     internal func loadProjectile(gameContext: UIView, size: CGSize) {
 
         self.gameState = .loadingProjectile
-
+        
+        loadUpcomingBubbles()
+        
         print("loading projectile")
+        
+        guard let nextBubble = upcomingBubbles.dequeue() else {
+            fatalError("Game Engine error. Can't pop the upcoming bubble!")
+        }
 
         let projectileMountPoint = getProjectileMountPoint()
-
+        
         // check if the projectile has already been initialized with proper size
         // guard is not appropriate here because it force throw/return to function, cannot fallthrough; if-else too verbose, so ternary is the best choice
         self.projectile = self.projectile.sprite.bounds.size == CGSize(width: 1, height: 1) ? GameProjectile(size: size) : self.projectile
-        self.projectile.bubbleType = .randomInGameBubbleType()
+        self.projectile.bubbleType = nextBubble
         self.projectile.sprite.center.x = projectileMountPoint.x
         self.projectile.sprite.center.y = projectileMountPoint.y
         self.projectile.thrust = 20
@@ -72,6 +84,8 @@ class GameEngine {
 
     internal func loadingProjectileComplete() {
         self.gameState = .loadingProjectileComplete
+        
+        loadUpcomingBubbles()
     }
 
     internal func settingProjectileBearing(to bearing: CGPoint) {
@@ -80,6 +94,12 @@ class GameEngine {
         print("adjusting projectile bearing")
 
         self.bearing = self.projectile.verticalAngleFromSelf(to: bearing)
+        
+        guard let cannon = self.cannon else {
+            return
+        }
+        
+        self.cannonDeltaAngle = cannon.verticalAngleFromSelf(to: bearing) - self.cannonInitialAngle
     }
 
     internal func settingProjectileBearingComplete(to bearing: CGPoint) {
@@ -241,6 +261,32 @@ class GameEngine {
 
         return self.bubbles.filter { !connectedGameBubbles.contains($0) } // activeGameBubbles - connectedGameBubbles = disconnectedGameBubbles
 
+    }
+    
+    internal func setupCannon(as sprite: UIView){
+        self.cannon = GameCannon(as: sprite)
+    }
+    
+    internal func loadUpcomingBubbles() {
+        while upcomingBubbles.count < upcomingBubbleCount {
+            upcomingBubbles.enqueue(BubbleType.randomInGameBubbleType())
+        }
+    }
+    
+    internal func explodeBubbles(gameBubbles: [GameBubble]) {
+        for gameBubble in gameBubbles {
+            guard self.bubbles.contains(gameBubble) else {
+                continue
+            }
+            
+            // first we must remove this gamebubble from game engine state to prevent infinite loop in recursion
+            removeActiveGameBubble(gameBubble)
+            gameBubble.animateExplodeEffect()
+            
+            // use recursion to simulate chain reaction
+            let chainReaction = gameBubble.executeExplodeEffect(by: self.projectile, activeBubbles: Array(self.bubbles))
+            explodeBubbles(gameBubbles: chainReaction)
+        }
     }
 }
 

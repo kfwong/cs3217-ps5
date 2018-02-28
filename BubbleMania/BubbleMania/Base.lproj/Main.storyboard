@@ -234,7 +234,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="65535" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zsV-sQ-7R1">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zsV-sQ-7R1">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="hw1-MS-1gJ">
@@ -306,26 +306,36 @@
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cannon-base" translatesAutoresizingMaskIntoConstraints="NO" id="MtB-82-g2p">
                                 <rect key="frame" x="317" y="885" width="133" height="139"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O3Q-bj-ADq">
+                                <rect key="frame" x="237" y="974" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Gjf-wx-7K8"/>
+                                    <constraint firstAttribute="width" constant="50" id="SU0-hs-sE8"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SiT-pU-OaX" firstAttribute="top" secondItem="Hgo-yc-km8" secondAttribute="top" id="M9x-Xp-irb"/>
                             <constraint firstAttribute="bottom" secondItem="SiT-pU-OaX" secondAttribute="bottom" id="Pie-NZ-Fsv"/>
+                            <constraint firstItem="O3Q-bj-ADq" firstAttribute="bottom" secondItem="Hgo-yc-km8" secondAttribute="bottom" id="V5b-bV-qvM"/>
+                            <constraint firstItem="O3Q-bj-ADq" firstAttribute="trailing" secondItem="MtB-82-g2p" secondAttribute="leading" constant="-30" id="aAa-mY-f2X"/>
                             <constraint firstItem="MtB-82-g2p" firstAttribute="centerX" secondItem="LJF-7a-KeF" secondAttribute="centerX" id="hzu-qr-Dfg"/>
                             <constraint firstItem="SiT-pU-OaX" firstAttribute="trailing" secondItem="Hgo-yc-km8" secondAttribute="trailing" id="vjm-yn-toS"/>
                             <constraint firstItem="SiT-pU-OaX" firstAttribute="leading" secondItem="Hgo-yc-km8" secondAttribute="leading" id="whK-Zp-X5v"/>
-                            <constraint firstItem="Hgo-yc-km8" firstAttribute="bottom" secondItem="MtB-82-g2p" secondAttribute="bottom" id="y7l-hQ-fCT"/>
+                            <constraint firstItem="MtB-82-g2p" firstAttribute="bottom" secondItem="Hgo-yc-km8" secondAttribute="bottom" id="y7l-hQ-fCT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hgo-yc-km8"/>
                     </view>
                     <connections>
                         <outlet property="bubbleGrid" destination="zsV-sQ-7R1" id="MyW-co-Vti"/>
                         <outlet property="canonBase" destination="MtB-82-g2p" id="TgY-0J-YP4"/>
+                        <outlet property="upcomingBubble" destination="O3Q-bj-ADq" id="rkV-rY-fgb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jSi-ni-a1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="761" y="37"/>
+            <point key="canvasLocation" x="760.9375" y="36.9140625"/>
         </scene>
     </scenes>
     <resources>

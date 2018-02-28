@@ -101,20 +101,6 @@ class GameProjectile: GameObject, Geometrical, CollidableCircle {
                         })
     }
 
-    // the projectile effect. To be convert to execute projectile strategy object in PS5
-    internal func executeEffect(gameBubbles: [GameBubble], onAnimateComplete: (() -> Void)? = nil) {
-        UIView.animate(withDuration: 0.2,
-                       delay: 0,
-                       options: UIViewAnimationOptions.curveLinear,
-                       animations: {
-                            gameBubbles.forEach {
-                                $0.sprite.alpha = 0
-                            }
-                        }, completion: { _ in
-                            onAnimateComplete?()
-                        })
-    }
-
     // the projectile also can define how the detach animations are. can be converted into one of the projectile strategy object.
     internal func executeDetachEffect(sprites: [UIView], onAnimateComplete: (() -> Void)? = nil) {
         UIView.animate(withDuration: 0.5,

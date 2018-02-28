@@ -17,14 +17,21 @@ extension GameController: GameLoopDelegate {
             gameEngine.loadProjectile(gameContext: self.view, size: bubbleSize)
             recoverLevelData()
             gameEngine.loadingProjectileComplete()
-            self.view.bringSubview(toFront: a)
+            self.view.bringSubview(toFront: cannon)
             self.view.bringSubview(toFront: canonBase)
+            gameEngine.setupCannon(as: cannon)
+            
+            loadUpcomingBubble()
+        
 
         case .newGame:
             gameEngine.loadProjectile(gameContext: self.view, size: bubbleSize)
             gameEngine.loadingProjectileComplete()
-            self.view.bringSubview(toFront: a)
+            self.view.bringSubview(toFront: cannon)
             self.view.bringSubview(toFront: canonBase)
+            gameEngine.setupCannon(as: cannon)
+            
+            loadUpcomingBubble()
 
         case .firingProjectile:
             if gameEngine.projectile.isCollidingWithScreenTopEdge() || gameEngine.projectile.hasCollidedWithGameBubble() {
@@ -36,7 +43,7 @@ extension GameController: GameLoopDelegate {
 
         case .snappingToPoint:
             gameEngine.animating()
-            snapProjectileToNearestCell { gameBubble in
+            animateSnapProjectileToNearestCell { gameBubble in
                 self.gameEngine.snappingToPointComplete(lastShot: gameBubble)
                 self.gameEngine.executingEffect()
             }
@@ -50,24 +57,11 @@ extension GameController: GameLoopDelegate {
 
             if connectedGameBubblesOfSameType.count >= 3 {
                 gameEngine.animating()
-                gameEngine.projectile.executeEffect(gameBubbles: connectedGameBubblesOfSameType) {
-                    connectedGameBubblesOfSameType.forEach {
-                        guard let bubbleCell = ($0.sprite as? BubbleCell) else {
-                            return
-                        }
-
-                        $0.sprite.alpha = 1
-                        bubbleCell.bubbleType = .none
-                        self.gameEngine.removeActiveGameBubble($0)
-                    }
-
-                    self.gameEngine.executingEffectComplete()
-                    self.gameEngine.detachingDisconnectedGameBubbles()
-                }
-            } else {
-                self.gameEngine.executingEffectComplete()
-                self.gameEngine.detachingDisconnectedGameBubbles()
+                gameEngine.explodeBubbles(gameBubbles: connectedGameBubblesOfSameType)
             }
+            
+            self.gameEngine.executingEffectComplete()
+            self.gameEngine.detachingDisconnectedGameBubbles()
 
         case .detachingDisconnectedGameBubbles:
             let disconnectedGameBubbles = gameEngine.getDisconnectedGameBubbles()
@@ -110,29 +104,15 @@ extension GameController: GameLoopDelegate {
 
             case .loadingProjectileComplete:
                 let bearing = touch.location(in: self.view)
-                
-                let deltaAngle = verticalAngleFromSelf(xPos: self.a.center.x, yPos: self.a.center.y, to: bearing) - self._angle
-                
-                UIView.animate(withDuration: 0.25,
-                               delay: 0,
-                               options: UIViewAnimationOptions.curveEaseIn,
-                               animations: { self.a.transform = CGAffineTransform(rotationAngle: deltaAngle) },
-                               completion: nil)
-                
                 gameEngine.settingProjectileBearing(to: bearing)
+                
+                rotateCannon(deltaRadian: self.gameEngine.cannonDeltaAngle)
 
             default: return
             }
 
         }
 
-    }
-    
-    public func verticalAngleFromSelf (xPos:CGFloat, yPos: CGFloat, to: CGPoint) -> CGFloat {
-        let xComponent = xPos - to.x
-        let yComponent = yPos - to.y
-        
-        return atan2(yComponent, xComponent)
     }
 
     // allow adjustment of angle as long as the finger is not lifting up
@@ -143,12 +123,9 @@ extension GameController: GameLoopDelegate {
 
             case .settingProjectileBearing:
                 let bearing = touch.location(in: self.view)
-                
-                let deltaAngle = verticalAngleFromSelf(xPos: self.a.center.x, yPos: self.a.center.y, to: bearing) - self._angle
-                
-                self.a.transform = CGAffineTransform(rotationAngle: deltaAngle)
-                
                 gameEngine.settingProjectileBearing(to: bearing)
+                
+                rotateCannon(deltaRadian: self.gameEngine.cannonDeltaAngle)
 
             default: return
             }
@@ -164,9 +141,12 @@ extension GameController: GameLoopDelegate {
             case .settingProjectileBearing:
                 let bearing = touch.location(in: self.view)
                 gameEngine.settingProjectileBearingComplete(to: bearing)
-                 a.startAnimating()
-                gameEngine.firingProjectile()
-
+                
+                rotateCannon(deltaRadian: self.gameEngine.cannonDeltaAngle) {
+                    // on rotate animation complete, do these:
+                    self.animateCannonBurst()
+                    self.gameEngine.firingProjectile()
+                }
             default: return
             }
 

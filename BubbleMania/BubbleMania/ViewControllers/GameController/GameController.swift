@@ -39,8 +39,9 @@ class GameController: UIViewController {
     lazy private(set) var bubbleSize: CGSize = CGSize(width: self.bubbleDiameter, height: self.bubbleDiameter)
     
     @IBOutlet weak var canonBase: UIImageView!
-    internal var a: UIAnimatedView!
+    internal var cannon: UIAnimationView!
 
+    @IBOutlet private(set) weak var upcomingBubble: UIImageView!
     @IBOutlet private(set) weak var bubbleGrid: UICollectionView!
 
     override func viewDidLoad() {
@@ -52,23 +53,13 @@ class GameController: UIViewController {
 
         self.gameEngine.delegate = self
         
+        setupCannonView()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         // need to hook on viewDidAppear because there is racing condition when reloading passed variables into the grid
         // therefore it's safer to start the renderer after the view is fully loaded. (segue and transition complete)
         self.gameRenderer.start(engine: gameEngine)
-        
-        a = UIAnimatedView(spriteSheet: #imageLiteral(resourceName: "cannon"), rowCount: 2, colCount: 6)
-        
-        let oldFrame = a.frame
-        a.layer.anchorPoint = CGPoint(x:0.5, y: 0.81)
-        a.frame = oldFrame
-        
-        a.center.x = canonBase.frame.midX
-        a.center.y = canonBase.frame.midY - canonBase.frame.height/4 + 5
-        
-        self.view.addSubview(a)
     }
 
     override func didReceiveMemoryWarning() {
@@ -85,6 +76,24 @@ class GameController: UIViewController {
     
     override var shouldAutorotate: Bool {
         return false
+    }
+    
+    internal func setupCannonView(){
+        cannon = UIAnimationView(spriteSheet: #imageLiteral(resourceName: "cannon"), rowCount: 2, colCount: 6, animationDuration: 0.4)
+        cannon.adjustAnchorPoint(xPercentage: 0.5, yPercentage: 0.81)
+        
+        cannon.center.x = canonBase.frame.midX
+        cannon.center.y = canonBase.frame.midY - canonBase.frame.height/4 + 5
+        
+        self.view.addSubview(cannon)
+    }
+    
+    internal func loadUpcomingBubble() {
+        guard let upcomingBubbleType = gameEngine.upcomingBubbles.peek() else {
+            return
+        }
+        
+        self.upcomingBubble.image = UIImage(named: upcomingBubbleType.rawValue)
     }
 
     // For loading a level into playable game
@@ -112,8 +121,20 @@ class GameController: UIViewController {
         }
 
     }
+    
+    internal func rotateCannon(deltaRadian angle: CGFloat, onAnimateComplete: (() -> Void)? = nil){
+        UIView.animate(withDuration: 0.25,
+                       delay: 0,
+                       options: UIViewAnimationOptions.curveEaseOut,
+                       animations: { self.cannon.transform = CGAffineTransform(rotationAngle: angle) },
+                       completion: { _ in onAnimateComplete?() })
+    }
+    
+    internal func animateCannonBurst(){
+        self.cannon.startAnimating();
+    }
 
-    internal func snapProjectileToNearestCell(onSnapComplete: ((_ gameBubble: GameBubble) -> Void)? = nil) {
+    internal func animateSnapProjectileToNearestCell(onSnapComplete: ((_ gameBubble: GameBubble) -> Void)? = nil) {
         let landingPoint = CGPoint(x: gameEngine.projectile.xPos, y: self.gameEngine.projectile.yPos)
 
         if let nearestCellIndex = bubbleGrid.indexPathForItem(at: landingPoint),
@@ -176,5 +197,20 @@ class GameController: UIViewController {
     @IBAction func exitButtonAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
 
+}
+
+extension UIView{
+    
+    // this technique will preserve the frame before adjusting anchor point (which will changes the frame)
+    // and then restore it later
+    // as a result, anchor point will be repositioned within its own frame instead of from root point of view
+    // ref: https://stackoverflow.com/questions/1968017/changing-my-calayers-anchorpoint-moves-the-view/1968425#1968425
+    public func adjustAnchorPoint(xPercentage x: CGFloat, yPercentage y: CGFloat){
+        let oldFrame = self.frame
+        self.layer.anchorPoint = CGPoint(x:0.5, y: 0.81)
+        self.frame = oldFrame
+    }
 }

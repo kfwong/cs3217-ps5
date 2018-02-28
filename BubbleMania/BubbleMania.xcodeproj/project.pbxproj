@@ -16,6 +16,11 @@
 		4A0FAB0F20222C8200B51C86 /* LevelDesignerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0FAB0E20222C8200B51C86 /* LevelDesignerUITests.swift */; };
 		4A2224512038810200D1150D /* GameController+GameLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2224502038810200D1150D /* GameController+GameLoop.swift */; };
 		4A3915B4202D92A3003C638B /* BubbleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3915B3202D92A3003C638B /* BubbleTests.swift */; };
+		4A50761E20470BCE005DB50F /* GameCannon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50761D20470BCE005DB50F /* GameCannon.swift */; };
+		4A5076212047325A005DB50F /* BubbleEffectStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5076202047325A005DB50F /* BubbleEffectStrategy.swift */; };
+		4A50762320473352005DB50F /* Normal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50762220473352005DB50F /* Normal.swift */; };
+		4A50762520473407005DB50F /* Indestructable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50762420473407005DB50F /* Indestructable.swift */; };
+		4A50762720473444005DB50F /* Lightning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50762620473444005DB50F /* Lightning.swift */; };
 		4A51A7812027618F0027250C /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A51A7802027618F0027250C /* Bubble.swift */; };
 		4A5E5F88202A19A3009846B2 /* LevelDesignerController+BubbleGridRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5E5F87202A19A3009846B2 /* LevelDesignerController+BubbleGridRenderer.swift */; };
 		4A5E5F8A202A1BBD009846B2 /* LevelDesignerController+DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5E5F89202A1BBD009846B2 /* LevelDesignerController+DataController.swift */; };
@@ -30,7 +35,9 @@
 		4ACCB2D920370B160014DA4B /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCB2D820370B160014DA4B /* Queue.swift */; };
 		4AE4AC9420456CB6008044EF /* GameObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE4AC9220456CB5008044EF /* GameObservable.swift */; };
 		4AE4AC9520456CB6008044EF /* GameObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE4AC9320456CB6008044EF /* GameObserver.swift */; };
-		4AE4AC9720457F93008044EF /* UIAnimatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE4AC9620457F93008044EF /* UIAnimatedView.swift */; };
+		4AE4AC9720457F93008044EF /* UIAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE4AC9620457F93008044EF /* UIAnimationView.swift */; };
+		4AEA49B7204752390088D501 /* Bomb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA49B6204752390088D501 /* Bomb.swift */; };
+		4AEA49B9204753C90088D501 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA49B8204753C90088D501 /* Star.swift */; };
 		587AD12E0744EE5E68310A42 /* Pods_BubbleMania.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC0FC48E126A3E8A7E9DF36 /* Pods_BubbleMania.framework */; };
 		5E1B0ED26C04E8C078838C7B /* Pods_BubbleManiaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC7C4D06043FC7162FD55A6 /* Pods_BubbleManiaTests.framework */; };
 		AC438C688659DF3763AA7361 /* Pods_BubbleManiaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC62D1F09AE56FF9F424C7C6 /* Pods_BubbleManiaUITests.framework */; };
@@ -72,6 +79,11 @@
 		4A3915B1202D92A3003C638B /* BubbleManiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BubbleManiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A3915B3202D92A3003C638B /* BubbleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTests.swift; sourceTree = "<group>"; };
 		4A3915B5202D92A3003C638B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A50761D20470BCE005DB50F /* GameCannon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCannon.swift; sourceTree = "<group>"; };
+		4A5076202047325A005DB50F /* BubbleEffectStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleEffectStrategy.swift; sourceTree = "<group>"; };
+		4A50762220473352005DB50F /* Normal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Normal.swift; sourceTree = "<group>"; };
+		4A50762420473407005DB50F /* Indestructable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indestructable.swift; sourceTree = "<group>"; };
+		4A50762620473444005DB50F /* Lightning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lightning.swift; sourceTree = "<group>"; };
 		4A51A7802027618F0027250C /* Bubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
 		4A5E5F87202A19A3009846B2 /* LevelDesignerController+BubbleGridRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelDesignerController+BubbleGridRenderer.swift"; sourceTree = "<group>"; };
 		4A5E5F89202A1BBD009846B2 /* LevelDesignerController+DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelDesignerController+DataController.swift"; sourceTree = "<group>"; };
@@ -86,7 +98,9 @@
 		4ACCB2D820370B160014DA4B /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		4AE4AC9220456CB5008044EF /* GameObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameObservable.swift; sourceTree = "<group>"; };
 		4AE4AC9320456CB6008044EF /* GameObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameObserver.swift; sourceTree = "<group>"; };
-		4AE4AC9620457F93008044EF /* UIAnimatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAnimatedView.swift; sourceTree = "<group>"; };
+		4AE4AC9620457F93008044EF /* UIAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAnimationView.swift; sourceTree = "<group>"; };
+		4AEA49B6204752390088D501 /* Bomb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bomb.swift; sourceTree = "<group>"; };
+		4AEA49B8204753C90088D501 /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		4FC0FC48E126A3E8A7E9DF36 /* Pods_BubbleMania.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BubbleMania.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F68E30DB12B45C1D421B592 /* Pods-BubbleMania.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BubbleMania.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BubbleMania/Pods-BubbleMania.debug.xcconfig"; sourceTree = "<group>"; };
 		84C1B09F3B3EEE57E16A8525 /* Pods-BubbleManiaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BubbleManiaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BubbleManiaUITests/Pods-BubbleManiaUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +163,7 @@
 		4A0FAAF820222C8200B51C86 /* BubbleMania */ = {
 			isa = PBXGroup;
 			children = (
+				4A50761C204704EB005DB50F /* Views */,
 				4ACCB2D720370ABF0014DA4B /* DataStructures */,
 				4A69312C2032D479003A59B1 /* GameEngine */,
 				4A5E5F91202A1E0E009846B2 /* Models */,
@@ -180,6 +195,27 @@
 				4A644F15202D96C5006EAD12 /* ViewController+DataControllerTests.swift */,
 			);
 			path = LevelDesignerTests;
+			sourceTree = "<group>";
+		};
+		4A50761C204704EB005DB50F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4AE4AC9620457F93008044EF /* UIAnimationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4A50761F204731F9005DB50F /* BubbleEffects */ = {
+			isa = PBXGroup;
+			children = (
+				4A5076202047325A005DB50F /* BubbleEffectStrategy.swift */,
+				4A50762220473352005DB50F /* Normal.swift */,
+				4A50762420473407005DB50F /* Indestructable.swift */,
+				4A50762620473444005DB50F /* Lightning.swift */,
+				4AEA49B6204752390088D501 /* Bomb.swift */,
+				4AEA49B8204753C90088D501 /* Star.swift */,
+			);
+			path = BubbleEffects;
 			sourceTree = "<group>";
 		};
 		4A5E5F8F202A1DDE009846B2 /* ViewControllers */ = {
@@ -221,8 +257,10 @@
 		4A69312F2032D4D1003A59B1 /* BubbleManiaUnit */ = {
 			isa = PBXGroup;
 			children = (
+				4A50761F204731F9005DB50F /* BubbleEffects */,
 				4A6931312032D4F0003A59B1 /* GameBubble.swift */,
 				4A6931302032D4F0003A59B1 /* GameProjectile.swift */,
+				4A50761D20470BCE005DB50F /* GameCannon.swift */,
 			);
 			path = BubbleManiaUnit;
 			sourceTree = "<group>";
@@ -244,7 +282,6 @@
 				4A69314320332AA8003A59B1 /* GameController.swift */,
 				4A693145203331D3003A59B1 /* GameController+BubbleGridRenderer.swift */,
 				4A2224502038810200D1150D /* GameController+GameLoop.swift */,
-				4AE4AC9620457F93008044EF /* UIAnimatedView.swift */,
 			);
 			path = GameController;
 			sourceTree = "<group>";
@@ -564,23 +601,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A50761E20470BCE005DB50F /* GameCannon.swift in Sources */,
 				4A2224512038810200D1150D /* GameController+GameLoop.swift in Sources */,
 				4A0FAAFC20222C8200B51C86 /* LevelDesignerController.swift in Sources */,
 				4A0FAAFA20222C8200B51C86 /* AppDelegate.swift in Sources */,
 				4A6931332032D4F0003A59B1 /* GameBubble.swift in Sources */,
+				4AEA49B7204752390088D501 /* Bomb.swift in Sources */,
 				4A6931322032D4F0003A59B1 /* GameProjectile.swift in Sources */,
+				4A50762520473407005DB50F /* Indestructable.swift in Sources */,
+				4A50762320473352005DB50F /* Normal.swift in Sources */,
 				4A6931372032D503003A59B1 /* GameRenderer.swift in Sources */,
 				4A5E5F8A202A1BBD009846B2 /* LevelDesignerController+DataController.swift in Sources */,
 				4A693146203331D3003A59B1 /* GameController+BubbleGridRenderer.swift in Sources */,
 				4A69314420332AA8003A59B1 /* GameController.swift in Sources */,
-				4AE4AC9720457F93008044EF /* UIAnimatedView.swift in Sources */,
+				4AE4AC9720457F93008044EF /* UIAnimationView.swift in Sources */,
 				4AE4AC9520456CB6008044EF /* GameObserver.swift in Sources */,
 				4A6931362032D503003A59B1 /* GameEngine.swift in Sources */,
 				4A08B50420248C9D003F1B8F /* BubbleCell.swift in Sources */,
 				4ACCB2D920370B160014DA4B /* Queue.swift in Sources */,
 				4A51A7812027618F0027250C /* Bubble.swift in Sources */,
 				4A5E5F8C202A1C62009846B2 /* LevelDesignerController+GestureController.swift in Sources */,
+				4A50762720473444005DB50F /* Lightning.swift in Sources */,
+				4A5076212047325A005DB50F /* BubbleEffectStrategy.swift in Sources */,
 				4AE4AC9420456CB6008044EF /* GameObservable.swift in Sources */,
+				4AEA49B9204753C90088D501 /* Star.swift in Sources */,
 				4A5E5F88202A19A3009846B2 /* LevelDesignerController+BubbleGridRenderer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
