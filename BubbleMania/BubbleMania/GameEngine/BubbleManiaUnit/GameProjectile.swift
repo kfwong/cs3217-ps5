@@ -97,6 +97,7 @@ class GameProjectile: GameObject, Geometrical, CollidableCircle {
                             self.sprite.transform = CGAffineTransform(translationX: deltaX, y: deltaY)
                         }, completion: { _ in
                             onAnimateComplete?()
+                            self.sprite.transform = CGAffineTransform.identity
                         })
     }
 

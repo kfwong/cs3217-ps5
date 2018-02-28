@@ -110,7 +110,7 @@ class GameEngine {
         let mountPointX = UIScreen.main.bounds.midX
         let mountPointY = UIScreen.main.bounds.height
 
-        return CGPoint(x: mountPointX, y: mountPointY - 150)
+        return CGPoint(x: mountPointX, y: mountPointY - 100)
     }
 
     // virtually add an active gamebubble into gameEngine

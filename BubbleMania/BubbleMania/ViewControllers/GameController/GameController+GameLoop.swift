@@ -17,10 +17,14 @@ extension GameController: GameLoopDelegate {
             gameEngine.loadProjectile(gameContext: self.view, size: bubbleSize)
             recoverLevelData()
             gameEngine.loadingProjectileComplete()
+            self.view.bringSubview(toFront: a)
+            self.view.bringSubview(toFront: canonBase)
 
         case .newGame:
             gameEngine.loadProjectile(gameContext: self.view, size: bubbleSize)
             gameEngine.loadingProjectileComplete()
+            self.view.bringSubview(toFront: a)
+            self.view.bringSubview(toFront: canonBase)
 
         case .firingProjectile:
             if gameEngine.projectile.isCollidingWithScreenTopEdge() || gameEngine.projectile.hasCollidedWithGameBubble() {
@@ -96,10 +100,9 @@ extension GameController: GameLoopDelegate {
         }
     }
 
+    
     // Deselect any brushes when user tap on gray palette area
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        a.startAnimating()
         
         if let touch = touches.first {
 
@@ -108,12 +111,13 @@ extension GameController: GameLoopDelegate {
             case .loadingProjectileComplete:
                 let bearing = touch.location(in: self.view)
                 
-                UIView.animate(withDuration: 0.5,
+                let deltaAngle = verticalAngleFromSelf(xPos: self.a.center.x, yPos: self.a.center.y, to: bearing) - self._angle
+                
+                UIView.animate(withDuration: 0.25,
                                delay: 0,
                                options: UIViewAnimationOptions.curveEaseIn,
-                               animations: {
-                                self.a.transform = CGAffineTransform(rotationAngle: 75)
-                }, completion: nil)
+                               animations: { self.a.transform = CGAffineTransform(rotationAngle: deltaAngle) },
+                               completion: nil)
                 
                 gameEngine.settingProjectileBearing(to: bearing)
 
@@ -122,6 +126,13 @@ extension GameController: GameLoopDelegate {
 
         }
 
+    }
+    
+    public func verticalAngleFromSelf (xPos:CGFloat, yPos: CGFloat, to: CGPoint) -> CGFloat {
+        let xComponent = xPos - to.x
+        let yComponent = yPos - to.y
+        
+        return atan2(yComponent, xComponent)
     }
 
     // allow adjustment of angle as long as the finger is not lifting up
@@ -132,6 +143,11 @@ extension GameController: GameLoopDelegate {
 
             case .settingProjectileBearing:
                 let bearing = touch.location(in: self.view)
+                
+                let deltaAngle = verticalAngleFromSelf(xPos: self.a.center.x, yPos: self.a.center.y, to: bearing) - self._angle
+                
+                self.a.transform = CGAffineTransform(rotationAngle: deltaAngle)
+                
                 gameEngine.settingProjectileBearing(to: bearing)
 
             default: return
@@ -143,12 +159,12 @@ extension GameController: GameLoopDelegate {
     // set the angle into gameEngine when finger is lifed.
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
-            print(touch)
             switch gameEngine.gameState {
 
             case .settingProjectileBearing:
                 let bearing = touch.location(in: self.view)
                 gameEngine.settingProjectileBearingComplete(to: bearing)
+                 a.startAnimating()
                 gameEngine.firingProjectile()
 
             default: return

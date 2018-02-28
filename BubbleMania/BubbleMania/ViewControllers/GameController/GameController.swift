@@ -12,6 +12,8 @@ import SpriteKit
 // Main GameController handle display Bubbles at correct position in grid
 // also define throw away alert ui.
 class GameController: UIViewController {
+    
+    internal var _angle: CGFloat = CGFloat.pi/2
 
     internal var passedLevelData: [Bubble]?
 
@@ -60,11 +62,13 @@ class GameController: UIViewController {
         a = UIAnimatedView(spriteSheet: #imageLiteral(resourceName: "cannon"), rowCount: 2, colCount: 6)
         
         let oldFrame = a.frame
-        a.layer.anchorPoint = CGPoint(x:0.25, y: 1.0)
+        a.layer.anchorPoint = CGPoint(x:0.5, y: 0.81)
         a.frame = oldFrame
         
-        self.view.addSubview(a)
+        a.center.x = canonBase.frame.midX
+        a.center.y = canonBase.frame.midY - canonBase.frame.height/4 + 5
         
+        self.view.addSubview(a)
     }
 
     override func didReceiveMemoryWarning() {
