@@ -239,7 +239,7 @@ class GameEngine {
 
                 // 1. we don't care if they are the same kind
                 // 2. we want the same kind and the bubble type matches
-                if !ofSameType || (ofSameType && $0.bubbleType == source.bubbleType) {
+                if !ofSameType || (ofSameType && $0.bubbleType.bubbleRootType() == source.bubbleType.bubbleRootType()) {
                     queue.enqueue($0)
                     visited.insert($0)
                 }

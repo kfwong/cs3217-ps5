@@ -6,6 +6,8 @@
 //  Copyright © 2018 nus.cs3217.a0101010. All rights reserved.
 //
 
+import UIKit
+
 // Lightning bubbles destroy all bubbles of same row as it is
 class Lightning: BubbleEffectStrategy {
     func explode(_ itself: GameBubble, by projectile: GameProjectile, activeBubbles: [GameBubble]) -> [GameBubble]{
@@ -13,6 +15,24 @@ class Lightning: BubbleEffectStrategy {
         
         return activeBubbles.filter{ $0.row == itself.row } // get all bubbles same row as itself
         
+    }
+    
+    func explodeAnimation(_ itself: GameBubble) {
+        let bubbleCell = itself.sprite as! BubbleCell
+        
+        UIView.animate(withDuration: 0.3,
+                       delay: 0,
+                       options: UIViewAnimationOptions.curveEaseOut,
+                       animations: {
+                        bubbleCell.alpha = 0
+                        },
+                       completion: { isFinished in
+                        guard isFinished else {
+                            return
+                        }
+                        bubbleCell.bubbleType = .none
+                        bubbleCell.alpha = 1
+                        })
     }
 }
 

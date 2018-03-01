@@ -14,14 +14,15 @@ import UIKit
  - Define concrete action to be taken when triggered.
  - Define all other gestures such as pan, long press actions.
  */
-extension LevelDesignerController: UIGestureRecognizerDelegate {
+extension LevelDesignerController: UIGestureRecognizerDelegate, PaletteGestureDelegate {
     internal func setupPaletteActions() {
+        /*
         blueBubbleBrush.addTarget(self, action: #selector(setupBubbleBrushAction), for: .touchUpInside)
         redBubbleBrush.addTarget(self, action: #selector(setupBubbleBrushAction), for: .touchUpInside)
         orangeBubbleBrush.addTarget(self, action: #selector(setupBubbleBrushAction), for: .touchUpInside)
         greenBubbleBrush.addTarget(self, action: #selector(setupBubbleBrushAction), for: .touchUpInside)
         eraseBubbleBrush.addTarget(self, action: #selector(setupBubbleBrushAction), for: .touchUpInside)
-        noneBubbleBrush.addTarget(self, action: #selector(setupBubbleBrushAction), for: .touchUpInside)
+        noneBubbleBrush.addTarget(self, action: #selector(setupBubbleBrushAction), for: .touchUpInside)*/
 
         resetButton.target = self
         resetButton.action = #selector(resetButtonAction)
@@ -41,6 +42,7 @@ extension LevelDesignerController: UIGestureRecognizerDelegate {
 
     @objc
     private func setupBubbleBrushAction(bubbleBrush: UIButton) {
+        /*
         switch bubbleBrush {
         case blueBubbleBrush: bubbleBrushTapAction(bubbleBrush, brushType: .blue)
         case redBubbleBrush: bubbleBrushTapAction(bubbleBrush, brushType: .red)
@@ -51,13 +53,22 @@ extension LevelDesignerController: UIGestureRecognizerDelegate {
             self.brushType = .none
             self.dehighlightAllBrush()
         default: return
+        }*/
+    }
+    
+    internal func onSelectBrush(brushType: BubbleType, brushCell: BrushCell) {
+        switch brushType {
+        case .none:
+            self.brushType = .none
+            self.dehighlightAllBrush()
+        default: bubbleBrushTapAction(brushType: brushType, brushCell)
         }
     }
 
-    private func bubbleBrushTapAction(_ bubbleBrush: UIButton, brushType: BubbleType) {
+    private func bubbleBrushTapAction(brushType: BubbleType, _ brushCell: BrushCell) {
         self.brushType = brushType
         self.dehighlightAllBrush()
-        self.highlightSelectedBrush(bubbleBrush)
+        self.highlightSelectedBrush(brushCell)
     }
 
     @objc

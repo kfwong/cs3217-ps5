@@ -16,6 +16,8 @@
 		4A0FAB0F20222C8200B51C86 /* LevelDesignerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0FAB0E20222C8200B51C86 /* LevelDesignerUITests.swift */; };
 		4A2224512038810200D1150D /* GameController+GameLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2224502038810200D1150D /* GameController+GameLoop.swift */; };
 		4A3915B4202D92A3003C638B /* BubbleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3915B3202D92A3003C638B /* BubbleTests.swift */; };
+		4A400580204808C400521804 /* PaletteRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A40057F204808C400521804 /* PaletteRenderer.swift */; };
+		4A40058220480E1100521804 /* BrushCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A40058120480E1100521804 /* BrushCell.swift */; };
 		4A50761E20470BCE005DB50F /* GameCannon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50761D20470BCE005DB50F /* GameCannon.swift */; };
 		4A5076212047325A005DB50F /* BubbleEffectStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5076202047325A005DB50F /* BubbleEffectStrategy.swift */; };
 		4A50762320473352005DB50F /* Normal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50762220473352005DB50F /* Normal.swift */; };
@@ -79,6 +81,8 @@
 		4A3915B1202D92A3003C638B /* BubbleManiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BubbleManiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A3915B3202D92A3003C638B /* BubbleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTests.swift; sourceTree = "<group>"; };
 		4A3915B5202D92A3003C638B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A40057F204808C400521804 /* PaletteRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteRenderer.swift; sourceTree = "<group>"; };
+		4A40058120480E1100521804 /* BrushCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrushCell.swift; sourceTree = "<group>"; };
 		4A50761D20470BCE005DB50F /* GameCannon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCannon.swift; sourceTree = "<group>"; };
 		4A5076202047325A005DB50F /* BubbleEffectStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleEffectStrategy.swift; sourceTree = "<group>"; };
 		4A50762220473352005DB50F /* Normal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Normal.swift; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				4A08B50320248C9D003F1B8F /* BubbleCell.swift */,
+				4A40058120480E1100521804 /* BrushCell.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 				4A5E5F8B202A1C62009846B2 /* LevelDesignerController+GestureController.swift */,
 				4A5E5F89202A1BBD009846B2 /* LevelDesignerController+DataController.swift */,
 				4A5E5F87202A19A3009846B2 /* LevelDesignerController+BubbleGridRenderer.swift */,
+				4A40057F204808C400521804 /* PaletteRenderer.swift */,
 			);
 			path = LevelDesignerController;
 			sourceTree = "<group>";
@@ -613,11 +619,13 @@
 				4A6931372032D503003A59B1 /* GameRenderer.swift in Sources */,
 				4A5E5F8A202A1BBD009846B2 /* LevelDesignerController+DataController.swift in Sources */,
 				4A693146203331D3003A59B1 /* GameController+BubbleGridRenderer.swift in Sources */,
+				4A400580204808C400521804 /* PaletteRenderer.swift in Sources */,
 				4A69314420332AA8003A59B1 /* GameController.swift in Sources */,
 				4AE4AC9720457F93008044EF /* UIAnimationView.swift in Sources */,
 				4AE4AC9520456CB6008044EF /* GameObserver.swift in Sources */,
 				4A6931362032D503003A59B1 /* GameEngine.swift in Sources */,
 				4A08B50420248C9D003F1B8F /* BubbleCell.swift in Sources */,
+				4A40058220480E1100521804 /* BrushCell.swift in Sources */,
 				4ACCB2D920370B160014DA4B /* Queue.swift in Sources */,
 				4A51A7812027618F0027250C /* Bubble.swift in Sources */,
 				4A5E5F8C202A1C62009846B2 /* LevelDesignerController+GestureController.swift in Sources */,

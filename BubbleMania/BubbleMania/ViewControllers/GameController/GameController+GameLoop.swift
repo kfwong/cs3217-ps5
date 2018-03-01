@@ -49,16 +49,21 @@ extension GameController: GameLoopDelegate {
             }
 
         case .executingEffect:
-            guard let lastProjectile = self.gameEngine.lastShot else {
+            guard let projectile = self.gameEngine.lastShot else {
                 return
             }
 
-            let connectedGameBubblesOfSameType = gameEngine.getConnectedGameBubbles(ofSameType: true, from: lastProjectile)
-
+            // resolve any crowding bubbles of same type
+            let connectedGameBubblesOfSameType = gameEngine.getConnectedGameBubbles(ofSameType: true, from: projectile)
             if connectedGameBubblesOfSameType.count >= 3 {
                 gameEngine.animating()
                 gameEngine.explodeBubbles(gameBubbles: connectedGameBubblesOfSameType)
             }
+            
+            // resolve any neighbouring star bubbles
+            let starBubbleNeighbours = gameEngine.getActiveNeighours(of: projectile)
+                                                 .filter{ $0.bubbleType.bubbleRootType() == .star}
+            gameEngine.explodeBubbles(gameBubbles: starBubbleNeighbours)
             
             self.gameEngine.executingEffectComplete()
             self.gameEngine.detachingDisconnectedGameBubbles()

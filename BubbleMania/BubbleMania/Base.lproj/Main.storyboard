@@ -26,11 +26,51 @@
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
-                                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJ5-ua-kZR">
-                                        <rect key="frame" x="0.0" y="787" width="768" height="128"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJ5-ua-kZR">
+                                        <rect key="frame" x="0.0" y="851" width="768" height="64"/>
+                                        <subviews>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uqg-AG-r82">
+                                                <rect key="frame" x="0.0" y="0.0" width="768" height="64"/>
+                                                <color key="backgroundColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mlo-25-GPW">
+                                                    <size key="itemSize" width="50" height="50"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="brushCell" id="rML-L4-3bT" customClass="BrushCell" customModule="BubbleMania" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ols-K8-ce0">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                        </view>
+                                                        <constraints>
+                                                            <constraint firstItem="Ols-K8-ce0" firstAttribute="top" secondItem="rML-L4-3bT" secondAttribute="top" id="bXz-a5-3Vp"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Ols-K8-ce0" secondAttribute="bottom" id="eAa-u1-J0b"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Ols-K8-ce0" secondAttribute="trailing" id="fCj-hg-OdW"/>
+                                                            <constraint firstItem="Ols-K8-ce0" firstAttribute="leading" secondItem="rML-L4-3bT" secondAttribute="leading" id="s6F-ue-Afv"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="bubbleImage" destination="Ols-K8-ce0" id="2NX-Op-tEc"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="dR6-2z-QRK"/>
+                                            <constraint firstItem="uqg-AG-r82" firstAttribute="top" secondItem="UJ5-ua-kZR" secondAttribute="top" id="WcA-dm-qKd"/>
+                                            <constraint firstAttribute="trailing" secondItem="uqg-AG-r82" secondAttribute="trailing" id="XZu-uY-4b8"/>
+                                            <constraint firstItem="uqg-AG-r82" firstAttribute="leading" secondItem="UJ5-ua-kZR" secondAttribute="leading" id="XoJ-b5-tA6"/>
+                                            <constraint firstAttribute="height" constant="64" id="eV9-hg-n1W"/>
+                                            <constraint firstAttribute="bottom" secondItem="uqg-AG-r82" secondAttribute="bottom" id="fAZ-kI-kVH"/>
                                         </constraints>
                                     </view>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WTY-HS-Cdj">
@@ -57,76 +97,8 @@
                                             </barButtonItem>
                                         </items>
                                     </toolbar>
-                                    <stackView opaque="NO" contentMode="center" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JKH-qH-7Bm">
-                                        <rect key="frame" x="34" y="800" width="700" height="100"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4Z-93-xWc">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                <accessibility key="accessibilityConfiguration" label="blueBubbleBrush"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="S7b-tM-9Re"/>
-                                                    <constraint firstAttribute="height" constant="100" id="hXX-B5-xB4"/>
-                                                </constraints>
-                                                <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
-                                                <state key="normal" image="bubble-blue"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLn-ZI-Jq5">
-                                                <rect key="frame" x="120" y="0.0" width="100" height="100"/>
-                                                <accessibility key="accessibilityConfiguration" label="redBubbleBrush"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="dn0-fd-JXv"/>
-                                                    <constraint firstAttribute="width" constant="100" id="gFg-V1-8s5"/>
-                                                </constraints>
-                                                <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
-                                                <state key="normal" image="bubble-red"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwL-eI-3qc">
-                                                <rect key="frame" x="240" y="0.0" width="100" height="100"/>
-                                                <accessibility key="accessibilityConfiguration" label="orangeBubbleBrush"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="54T-Ul-C8f"/>
-                                                    <constraint firstAttribute="width" constant="100" id="7mh-OO-6EK"/>
-                                                </constraints>
-                                                <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
-                                                <state key="normal" image="bubble-orange"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJO-Gn-Rry">
-                                                <rect key="frame" x="360" y="0.0" width="100" height="100"/>
-                                                <accessibility key="accessibilityConfiguration" label="greenBubbleBrush"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="eXA-sU-eDK"/>
-                                                    <constraint firstAttribute="height" constant="100" id="wL9-WX-PvU"/>
-                                                </constraints>
-                                                <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
-                                                <state key="normal" image="bubble-green"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1P-cS-P03">
-                                                <rect key="frame" x="480" y="0.0" width="100" height="100"/>
-                                                <accessibility key="accessibilityConfiguration" label="eraseBubbleBrush"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="aAH-bp-7lo"/>
-                                                    <constraint firstAttribute="height" constant="100" id="pCN-lw-HLr"/>
-                                                </constraints>
-                                                <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
-                                                <state key="normal" image="bubble-gray"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBC-qn-AwT">
-                                                <rect key="frame" x="600" y="0.0" width="100" height="100"/>
-                                                <accessibility key="accessibilityConfiguration" label="noneBubbleBrush"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="HTw-Fk-tSI"/>
-                                                    <constraint firstAttribute="height" constant="100" id="Hfo-oh-U6w"/>
-                                                </constraints>
-                                                <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
-                                                <state key="normal" title="Button" image="erase"/>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="700" id="yRx-Dk-GQE"/>
-                                        </constraints>
-                                    </stackView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="93h-rq-JMy">
-                                        <rect key="frame" x="0.0" y="0.0" width="768" height="787"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="851"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="8ND-78-gpt">
                                             <size key="itemSize" width="150" height="150"/>
@@ -171,12 +143,10 @@
                                     <constraint firstItem="FBP-hy-7yT" firstAttribute="top" secondItem="hzD-Gm-Gta" secondAttribute="top" id="2ML-aZ-bJF"/>
                                     <constraint firstItem="FBP-hy-7yT" firstAttribute="leading" secondItem="hzD-Gm-Gta" secondAttribute="leading" id="5Qn-1f-IDW"/>
                                     <constraint firstItem="93h-rq-JMy" firstAttribute="top" secondItem="hzD-Gm-Gta" secondAttribute="top" id="6jX-5t-V0f"/>
-                                    <constraint firstItem="JKH-qH-7Bm" firstAttribute="centerX" secondItem="FBP-hy-7yT" secondAttribute="centerX" id="9IS-3D-1pa"/>
                                     <constraint firstAttribute="trailing" secondItem="WTY-HS-Cdj" secondAttribute="trailing" id="ARz-7T-oyp"/>
                                     <constraint firstAttribute="bottom" secondItem="FBP-hy-7yT" secondAttribute="bottom" id="NIc-PK-sec"/>
                                     <constraint firstAttribute="trailing" secondItem="93h-rq-JMy" secondAttribute="trailing" id="O47-CC-0gR"/>
                                     <constraint firstItem="93h-rq-JMy" firstAttribute="leading" secondItem="hzD-Gm-Gta" secondAttribute="leading" id="OgS-JQ-TJS"/>
-                                    <constraint firstItem="JKH-qH-7Bm" firstAttribute="bottom" secondItem="FBP-hy-7yT" secondAttribute="bottom" constant="-60" id="OkM-Zn-VFh"/>
                                     <constraint firstAttribute="trailing" secondItem="FBP-hy-7yT" secondAttribute="trailing" id="Snq-H3-utA"/>
                                     <constraint firstAttribute="bottom" secondItem="FBP-hy-7yT" secondAttribute="bottom" id="WhW-dM-TDU"/>
                                     <constraint firstItem="UJ5-ua-kZR" firstAttribute="bottom" secondItem="FBP-hy-7yT" secondAttribute="bottom" constant="-45" id="aoc-TH-F8K"/>
@@ -200,15 +170,10 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="blueBubbleBrush" destination="M4Z-93-xWc" id="lgm-i4-fvx"/>
                         <outlet property="bubbleGrid" destination="93h-rq-JMy" id="ibF-06-aWu"/>
-                        <outlet property="eraseBubbleBrush" destination="J1P-cS-P03" id="eX1-V1-hTE"/>
-                        <outlet property="greenBubbleBrush" destination="EJO-Gn-Rry" id="9Ia-pu-eIt"/>
                         <outlet property="loadButton" destination="mRX-Av-vWW" id="70P-7w-iu0"/>
                         <outlet property="manageButton" destination="jll-OR-Bwo" id="g9S-do-U3E"/>
-                        <outlet property="noneBubbleBrush" destination="aBC-qn-AwT" id="XTJ-ap-UFa"/>
-                        <outlet property="orangeBubbleBrush" destination="hwL-eI-3qc" id="HW1-er-T64"/>
-                        <outlet property="redBubbleBrush" destination="SLn-ZI-Jq5" id="A7R-k2-koP"/>
+                        <outlet property="pallete" destination="uqg-AG-r82" id="AIm-qd-SJ2"/>
                         <outlet property="resetButton" destination="sCW-Mi-TsS" id="bgt-tH-hC9"/>
                         <outlet property="saveButton" destination="Hii-BE-78V" id="JUb-EK-Jni"/>
                         <outlet property="startButton" destination="Xwj-KU-CBz" id="BHe-3P-3tp"/>
@@ -340,12 +305,6 @@
     </scenes>
     <resources>
         <image name="background" width="512" height="683"/>
-        <image name="bubble-blue" width="168" height="168"/>
-        <image name="bubble-gray" width="168" height="168"/>
-        <image name="bubble-green" width="168" height="168"/>
-        <image name="bubble-orange" width="168" height="168"/>
-        <image name="bubble-red" width="168" height="168"/>
         <image name="cannon-base" width="133" height="139"/>
-        <image name="erase" width="168" height="168"/>
     </resources>
 </document>

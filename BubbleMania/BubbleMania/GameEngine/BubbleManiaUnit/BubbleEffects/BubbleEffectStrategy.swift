@@ -11,6 +11,11 @@ import UIKit
 protocol BubbleEffectStrategy {
     
     // when executing explode, this method should return a list of affected bubbles
+    // itself: the gamebubble itself
+    // projectile: the projectile that trigger the effect
+    // activeBubbles: current active bubbles in the arena
     func explode(_ itself: GameBubble, by projectile: GameProjectile, activeBubbles: [GameBubble]) -> [GameBubble]
     
+    // define the animation when this bubble explodes
+    func explodeAnimation(_ itself: GameBubble)
 }

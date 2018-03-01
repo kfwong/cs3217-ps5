@@ -32,22 +32,25 @@ class LevelDesignerController: UIViewController {
     // Cannot be declared private because the extensions need to access these references
     // Added allow private set rules to the swiftlint config
     @IBOutlet weak private(set) var bubbleGrid: UICollectionView!
-    @IBOutlet weak private(set) var blueBubbleBrush: UIButton!
-    @IBOutlet weak private(set) var redBubbleBrush: UIButton!
-    @IBOutlet weak private(set) var orangeBubbleBrush: UIButton!
-    @IBOutlet weak private(set) var greenBubbleBrush: UIButton!
-    @IBOutlet weak private(set) var eraseBubbleBrush: UIButton!
-    @IBOutlet weak private(set) var noneBubbleBrush: UIButton!
+
     @IBOutlet weak private(set) var resetButton: UIBarButtonItem!
     @IBOutlet weak private(set) var startButton: UIBarButtonItem!
     @IBOutlet weak private(set) var saveButton: UIBarButtonItem!
     @IBOutlet weak private(set) var loadButton: UIBarButtonItem!
     @IBOutlet weak private(set) var manageButton: UIBarButtonItem!
 
+    @IBOutlet weak private(set) var pallete: UICollectionView!
+    internal let paletteRenderer: PaletteRenderer = PaletteRenderer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.bubbleGrid.delegate = self
+        
+        self.paletteRenderer.gestureDelegate = self
+        
+        self.pallete.dataSource = paletteRenderer
+        self.pallete.delegate = paletteRenderer
 
         setupPaletteActions()
         setupBubbleGridActions()
@@ -72,28 +75,24 @@ class LevelDesignerController: UIViewController {
 
     // Deselect any brushes when user tap on gray palette area
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        dehighlightAllBrush()
+        //dehighlightAllBrush()
         brushType = .none
     }
 
-    internal func highlightSelectedBrush(_ bubbleBrush: UIButton) {
-        bubbleBrush.layer.borderWidth = 3
-        bubbleBrush.layer.cornerRadius = bubbleBrush.frame.size.width / 2
-        bubbleBrush.layer.borderColor = UIColor.white.cgColor
+    internal func highlightSelectedBrush(_ brush: UICollectionViewCell) {
+        brush.layer.borderWidth = 3
+        brush.layer.cornerRadius = brush.frame.size.width / 2
+        brush.layer.borderColor = UIColor.white.cgColor
     }
 
-    internal func dehighlightBrush(_ bubbleBrush: UIButton) {
-        bubbleBrush.layer.borderWidth = 0
-        bubbleBrush.layer.cornerRadius = 0
-        bubbleBrush.layer.borderColor = nil
+    internal func dehighlightBrush(_ brush: UICollectionViewCell) {
+        brush.layer.borderWidth = 0
+        brush.layer.cornerRadius = 0
+        brush.layer.borderColor = nil
     }
 
     internal func dehighlightAllBrush() {
-        dehighlightBrush(blueBubbleBrush)
-        dehighlightBrush(redBubbleBrush)
-        dehighlightBrush(orangeBubbleBrush)
-        dehighlightBrush(greenBubbleBrush)
-        dehighlightBrush(eraseBubbleBrush)
+        pallete.visibleCells.forEach{ dehighlightBrush($0)}
     }
 
     // encode level state and save it to a file

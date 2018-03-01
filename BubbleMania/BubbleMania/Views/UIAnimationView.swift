@@ -25,13 +25,13 @@ class UIAnimationView: UIImageView {
         super.init(coder: aDecoder)
     }
     
-    init(spriteSheet: UIImage, rowCount: Int, colCount: Int, animationDuration: TimeInterval = 1.0, animationRepeatCount: Int = 1) {
+    init(spriteSheet: UIImage, rowCount: Int, colCount: Int, idleSpriteIndex: IndexPath = IndexPath(item: 0,section: 0), animationDuration: TimeInterval = 1.0, animationRepeatCount: Int = 1) {
         self.spriteSheet = spriteSheet
         
         super.init(image: spriteSheet)
         
         self.animationImages = sliceSpriteSheet(rowCount: rowCount, colCount: colCount)
-        self.image = self.animationImages?.first // as initial idle image when animation stopped
+        self.image = self.animationImages![rowCount * idleSpriteIndex.section + idleSpriteIndex.item] // as initial idle image when animation stopped
         self.animationDuration = animationDuration
         self.animationRepeatCount = animationRepeatCount
         

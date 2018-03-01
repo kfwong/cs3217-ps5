@@ -28,7 +28,7 @@ class GameBubble: GameObject, Hexagonal, CollidableCircle {
         self.row = row
         self.col = col
         self.bubbleType = type
-        self.bubbleEffect = Star()
+        self.bubbleEffect = bubbleType.bubbleEffect()
 
         super.init(as: sprite)
     }
@@ -39,21 +39,7 @@ class GameBubble: GameObject, Hexagonal, CollidableCircle {
     }
     
     internal func animateExplodeEffect(){
-        let bubbleCell = self.sprite as! BubbleCell
-        
-        UIView.animate(withDuration: 0.5,
-                       delay: 0,
-                       options: UIViewAnimationOptions.curveEaseIn,
-                       animations: {
-                            self.sprite.alpha = 0
-                       },
-                       completion: { isFinished in
-                            guard isFinished else {
-                                return
-                            }
-                            bubbleCell.bubbleType = .none
-                            self.sprite.alpha = 1
-                       })
+        self.bubbleEffect.explodeAnimation(self)
     }
 
 }

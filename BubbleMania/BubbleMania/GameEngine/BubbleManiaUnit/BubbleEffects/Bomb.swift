@@ -20,4 +20,24 @@ class Bomb: BubbleEffectStrategy {
         return activeBubbles.filter{ affectedIndexes.contains(IndexPath(item: $0.col, section: $0.row))}
         
     }
+    
+    func explodeAnimation(_ itself: GameBubble) {
+        let bubbleCell = itself.sprite as! BubbleCell
+
+        UIView.animate(withDuration: 0.3,
+                       delay: 0,
+                       options: UIViewAnimationOptions.curveEaseOut,
+                       animations: {
+                        bubbleCell.alpha = 0
+                        bubbleCell.transform = CGAffineTransform(scaleX: 2, y: 2)
+                        },
+                       completion: { isFinished in
+                        guard isFinished else {
+                            return
+                        }
+                        bubbleCell.bubbleType = .none
+                        bubbleCell.alpha = 1
+                        bubbleCell.transform = CGAffineTransform.identity
+                        })
+    }
 }

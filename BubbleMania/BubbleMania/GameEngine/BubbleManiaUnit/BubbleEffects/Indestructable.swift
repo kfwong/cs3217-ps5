@@ -8,11 +8,16 @@
 
 // this class exists for completeness
 class Indestructable: BubbleEffectStrategy {
+    
     func explode(_ itself: GameBubble, by projectile: GameProjectile, activeBubbles: [GameBubble]) -> [GameBubble] {
         // Indestructable bubbles has no effect when exploding
         // wts it doesn't even explode at all :/
         
         return []
+    }
+    
+    func explodeAnimation(_ itself: GameBubble) {
+        // nothing to animate
     }
 }
 
