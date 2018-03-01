@@ -141,6 +141,7 @@ class GameController: UIViewController {
             let nearestCell = bubbleGrid.cellForItem(at: nearestCellIndex) as? BubbleCell {
 
             gameEngine.projectile.snapToPoint(at: nearestCell.center) {
+                
                 nearestCell.bubbleType = self.gameEngine.projectile.bubbleType
 
                 let gameBubble = GameBubble(as: nearestCell, type: nearestCell.bubbleType, row: nearestCellIndex.section, col: nearestCellIndex.row)

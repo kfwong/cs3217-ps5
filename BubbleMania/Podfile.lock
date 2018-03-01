@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   PhysicsEngine:
-    :commit: dc3b8fb3a740a3a0e851f0a45b3539b2abefbe47
+    :commit: 6e9b2f32dedd5ba42305804f1939037b29279699
     :git: https://github.com/cs3217/2018-ps4-kfwong
 
 SPEC CHECKSUMS:

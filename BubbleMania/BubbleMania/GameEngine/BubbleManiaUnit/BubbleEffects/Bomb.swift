@@ -11,7 +11,7 @@ import UIKit
 // Bomb bubbles destroy all bubbles adjacent to itself
 class Bomb: BubbleEffectStrategy {
     func explode(_ itself: GameBubble, by projectile: GameProjectile, activeBubbles: [GameBubble]) -> [GameBubble]{
-        print("\(itself.row):\(itself.col) exploded with bomb effect")
+        //print("\(itself.row):\(itself.col) exploded with bomb effect")
         
         // gamebubble can calculate the neighbour index in a hexagon grid
         let affectedIndexes = itself.neighbourIndexes()
@@ -21,6 +21,7 @@ class Bomb: BubbleEffectStrategy {
         
     }
     
+    // bomb animation will expand itself and fade out
     func explodeAnimation(_ itself: GameBubble) {
         let bubbleCell = itself.sprite as! BubbleCell
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import PhysicsEngine
+import Foundation
 
 class GameProjectile: GameObject, Geometrical, CollidableCircle {
 
@@ -16,6 +17,15 @@ class GameProjectile: GameObject, Geometrical, CollidableCircle {
     internal var thrust: CGFloat
 
     internal var isReflected: Bool
+    
+    internal var force: (CGFloat, CGFloat) {
+        return gameBubbleObservers
+            .filter{ $0.bubbleType == .magnetic }
+            .map{ $0.bubbleEffect.effectOnProjectileMovement($0, projectile: self)}
+            .reduce((0,0)){ accumulatedForce, force in
+                return (accumulatedForce.0 + force.0, accumulatedForce.1 + force.1)
+        }
+    }
 
     private(set) var gameBubbleObservers: Set<GameBubble>
 
@@ -53,8 +63,8 @@ class GameProjectile: GameObject, Geometrical, CollidableCircle {
     internal func fire(bearing: CGFloat) {
         let normalizedBearing = normalizeBearing(bearing)
 
-        self.sprite.center.x -= isReflected ? -thrust * cos(normalizedBearing): thrust * cos(normalizedBearing)
-        self.sprite.center.y -= thrust * sin(normalizedBearing)
+        self.sprite.center.x -= (isReflected ? -thrust * cos(normalizedBearing): thrust * cos(normalizedBearing))
+        self.sprite.center.y -= (thrust) * sin(normalizedBearing)
 
         checkReflection()
 

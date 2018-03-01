@@ -10,8 +10,9 @@ import UIKit
 
 // Lightning bubbles destroy all bubbles of same row as it is
 class Lightning: BubbleEffectStrategy {
+    
     func explode(_ itself: GameBubble, by projectile: GameProjectile, activeBubbles: [GameBubble]) -> [GameBubble]{
-        print("\(itself.row):\(itself.col) exploded with lightning effect")
+        //print("\(itself.row):\(itself.col) exploded with lightning effect")
         
         return activeBubbles.filter{ $0.row == itself.row } // get all bubbles same row as itself
         

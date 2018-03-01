@@ -18,4 +18,23 @@ protocol BubbleEffectStrategy {
     
     // define the animation when this bubble explodes
     func explodeAnimation(_ itself: GameBubble)
+    
+    // the effect on projectile movement should return a force of x-component and y-component in a tuple
+    func effectOnProjectileMovement(_ itself: GameBubble, projectile: GameProjectile) -> (CGFloat, CGFloat)
+}
+
+extension BubbleEffectStrategy {
+    // default implementation
+    // so that classes that conforms to this protocol only have to override on-demand
+    
+    // I did not include default implementation for explode() because it's best to leave it explicit in thier respective concrete class for clarity
+    
+    func explodeAnimation(_ itself: GameBubble) {
+        // by default there's no animation
+    }
+    
+    func effectOnProjectileMovement(_ itself: GameBubble, projectile: GameProjectile) -> (CGFloat, CGFloat){
+        // by default it does not affect projectile's movement while firing
+        return (0, 0)
+    }
 }

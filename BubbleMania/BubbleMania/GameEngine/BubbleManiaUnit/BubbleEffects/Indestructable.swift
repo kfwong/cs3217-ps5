@@ -6,18 +6,15 @@
 //  Copyright © 2018 nus.cs3217.a0101010. All rights reserved.
 //
 
-// this class exists for completeness
+// NOTE: this class exists for completeness
 class Indestructable: BubbleEffectStrategy {
     
-    func explode(_ itself: GameBubble, by projectile: GameProjectile, activeBubbles: [GameBubble]) -> [GameBubble] {
+    func explode(_ itself: GameBubble, by projectile: GameProjectile, activeBubbles: [GameBubble]) -> [GameBubble]{
         // Indestructable bubbles has no effect when exploding
         // wts it doesn't even explode at all :/
-        
         return []
     }
     
-    func explodeAnimation(_ itself: GameBubble) {
-        // nothing to animate
-    }
+    // explode animation is not applicable, inherit default implementation (which does nothing)
 }
 

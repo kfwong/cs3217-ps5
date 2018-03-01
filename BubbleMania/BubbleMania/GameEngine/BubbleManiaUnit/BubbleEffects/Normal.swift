@@ -8,17 +8,14 @@
 
 import UIKit
 
-// this class exists for completeness
 class Normal: BubbleEffectStrategy {
     
-    
     func explode(_ itself: GameBubble, by projectile: GameProjectile, activeBubbles: [GameBubble]) -> [GameBubble]{
-        // normal bubbles has no effect when exploding
-        print("\(itself.row):\(itself.col) exploded normally")
-        
+        // does not affect any other gamebubbles
         return []
     }
     
+    // normal explode animation diminished and burst
     func explodeAnimation(_ itself: GameBubble) {
         let burstingBubble = UIAnimationView(spriteSheet: #imageLiteral(resourceName: "bubble-burst"), rowCount: 1, colCount: 4, idleSpriteIndex: IndexPath(item: 3, section: 0), animationDuration: 0.25)
         burstingBubble.center = itself.sprite.center

@@ -15,6 +15,7 @@ public protocol Geometrical {
     var yPos: CGFloat { get }
 
     func verticalAngleFromSelf(to: CGPoint) -> CGFloat
+    func distance(to: CGPoint) -> CGFloat
 
 }
 
@@ -26,6 +27,13 @@ extension Geometrical where Self: GameObject {
         let yComponent = self.yPos - to.y
 
         return atan2(yComponent, xComponent)
+    }
+    
+    public func distance(to: CGPoint) -> CGFloat {
+        let xComponent = self.xPos - to.x
+        let yComponent = self.yPos - to.y
+        
+        return sqrt(xComponent * xComponent + yComponent * yComponent)
     }
 
 }

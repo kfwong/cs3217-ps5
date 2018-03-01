@@ -11,7 +11,7 @@ import UIKit
 // Star bubbles destroy all bubbles of same type on the entire grid
 class Star: BubbleEffectStrategy {
     func explode(_ itself: GameBubble, by projectile: GameProjectile, activeBubbles: [GameBubble]) -> [GameBubble]{
-        print("\(itself.row):\(itself.col) exploded with star effect")
+        //print("\(itself.row):\(itself.col) exploded with star effect")
 
         // filter the list of gamebubbles of same type as the projectile
         return activeBubbles.filter{ $0.bubbleType == projectile.bubbleType}
