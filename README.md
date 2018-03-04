@@ -44,14 +44,17 @@ My previous assumption on the special bubbles was incorrect since they are not f
 
 However, the Strategy Pattern can still be applied in a reversed direction. In my final design, each `GameBubble` now carries a `BubbleEffectStrategy` object as their property. In short, the effect is executed on `GameBubble` by `GameEngine` when resolving the game state.
 
+![bubble-effect-strategy](https://i.imgur.com/8MuMSlO.png)
+
+
 `GameEngine` execute the effect through the method defined by `GameBubble`. Each `GameBubble` does not know the exact behaviour since it is masked by the `BubbleEffectStrategy` interface. The effect will only be known when it is executed in runtime.
 
 Since the bubble effect correspond to their `BubbleType`, it will be resolved by the `BubbleType` enum in its `bubbleEffect()` method. This method return the corresponding strategy object to the `GameBubble`.
 
 In addition, the `BubbleEffectStrategy` defines very simple interfaces, easy enough for any developer to understand its purpose without looking at the technical documentation. For example:
 
-- `explode()` method requires developer to describe what are the affected `GameBubbles`, resolve and return them as an array object. The required parameters (i.e. `Projectile` that triggers it, and the overall game state) are synthetic sugars passed into the method by the `GameEngine` so the developers can use them to implement the effect. Removal of the `GameBubble` is done by the `GameEngine` so the developers do not have to handle such logic.
-- `explodeAnimation()` method defines the animation to run when this special bubble explodes. This delegates the responsibility of defining animation from `GameController` to the strategy object.
+- **`explode()` method requires developer to describe what are the affected `GameBubbles`, resolve and return them as an array object.** The required parameters (i.e. `Projectile` that triggers it, and the overall game state) are synthetic sugars passed into the method by the `GameEngine` so the developers can use them to implement the effect. Removal of the `GameBubble` is done by the `GameEngine` so the developers do not have to handle such logic.
+- **`explodeAnimation()` method defines the animation to run when this special bubble explodes.** This delegates the responsibility of defining animation from `GameController` to the strategy object.
 
 In case when the bubble effect does not simply apply to just exploding, such as magnetic bubble which only applies its effect on the `Projectile`, then a new interface should be registered in the `BubbleEffectStrategy` interface. A default implementation can be written as `extension` so that existing special bubbles are not affected by such changes.
 
@@ -61,7 +64,10 @@ I find that this design pattern is a perfect fit for this game because I do not 
 
 The corresponding logic to resolve chaining effects are defined in the `GameEngine` under `explodeBubbles()` method.
 
-The main implementation is written as recursion:
+![](https://i.imgur.com/mMerhgC.png)
+
+
+The main implementation is written as **recursion**:
 1. `GameController` calls to the `explodeBubbles()` method to trigger explosion of first set of bubbles.
 2. `GameEngine` remove those bubbles. In return, exploding bubbles return an array of more affected bubbles back to the `explodeBubbles()` method.
 3. `explodeBubbles()` method is called again until no more affected bubbles are returned (i.e. empty array).
