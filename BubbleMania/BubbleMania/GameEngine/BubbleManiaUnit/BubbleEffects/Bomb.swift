@@ -10,6 +10,9 @@ import UIKit
 
 // Bomb bubbles destroy all bubbles adjacent to itself
 class Bomb: BubbleEffectStrategy {
+    
+    private(set) var isDestructible: Bool = true
+    
     func explode(_ itself: GameBubble, by projectile: GameProjectile, activeBubbles: [GameBubble]) -> [GameBubble]{
         //print("\(itself.row):\(itself.col) exploded with bomb effect")
         
@@ -22,15 +25,29 @@ class Bomb: BubbleEffectStrategy {
     }
     
     // bomb animation will expand itself and fade out
-    func explodeAnimation(_ itself: GameBubble) {
+    func explodeAnimation(_ itself: GameBubble, affectedGameBubbles: [GameBubble]) {
+
+        var bombs: [UIAnimationView] = []
+        
+        var animateGameBubbles = affectedGameBubbles
+        animateGameBubbles.append(itself)
+        
+        animateGameBubbles.forEach{
+            let bomb = UIAnimationView(spriteSheet: #imageLiteral(resourceName: "fire"), rowCount: 4, colCount: 5)
+            bomb.center = $0.sprite.center
+            $0.sprite.superview?.addSubview(bomb)
+            bombs.append(bomb)
+        }
+        
         let bubbleCell = itself.sprite as! BubbleCell
 
-        UIView.animate(withDuration: 0.3,
+        UIView.animate(withDuration: 1,
                        delay: 0,
                        options: UIViewAnimationOptions.curveEaseOut,
                        animations: {
                         bubbleCell.alpha = 0
                         bubbleCell.transform = CGAffineTransform(scaleX: 2, y: 2)
+                        bombs.forEach{ $0.startAnimating() }
                         },
                        completion: { isFinished in
                         guard isFinished else {
@@ -39,6 +56,7 @@ class Bomb: BubbleEffectStrategy {
                         bubbleCell.bubbleType = .none
                         bubbleCell.alpha = 1
                         bubbleCell.transform = CGAffineTransform.identity
+                        bombs.forEach{ $0.removeFromSuperview() }
                         })
     }
 }

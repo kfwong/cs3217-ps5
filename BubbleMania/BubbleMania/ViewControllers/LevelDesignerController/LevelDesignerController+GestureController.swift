@@ -16,13 +16,6 @@ import UIKit
  */
 extension LevelDesignerController: UIGestureRecognizerDelegate, PaletteGestureDelegate {
     internal func setupPaletteActions() {
-        /*
-        blueBubbleBrush.addTarget(self, action: #selector(setupBubbleBrushAction), for: .touchUpInside)
-        redBubbleBrush.addTarget(self, action: #selector(setupBubbleBrushAction), for: .touchUpInside)
-        orangeBubbleBrush.addTarget(self, action: #selector(setupBubbleBrushAction), for: .touchUpInside)
-        greenBubbleBrush.addTarget(self, action: #selector(setupBubbleBrushAction), for: .touchUpInside)
-        eraseBubbleBrush.addTarget(self, action: #selector(setupBubbleBrushAction), for: .touchUpInside)
-        noneBubbleBrush.addTarget(self, action: #selector(setupBubbleBrushAction), for: .touchUpInside)*/
 
         resetButton.target = self
         resetButton.action = #selector(resetButtonAction)
@@ -38,24 +31,11 @@ extension LevelDesignerController: UIGestureRecognizerDelegate, PaletteGestureDe
 
         manageButton.target = self
         manageButton.action = #selector(manageButtonAction)
+        
+        exitButton.target = self
+        exitButton.action = #selector(exitButtonAction)
     }
 
-    @objc
-    private func setupBubbleBrushAction(bubbleBrush: UIButton) {
-        /*
-        switch bubbleBrush {
-        case blueBubbleBrush: bubbleBrushTapAction(bubbleBrush, brushType: .blue)
-        case redBubbleBrush: bubbleBrushTapAction(bubbleBrush, brushType: .red)
-        case orangeBubbleBrush: bubbleBrushTapAction(bubbleBrush, brushType: .orange)
-        case greenBubbleBrush: bubbleBrushTapAction(bubbleBrush, brushType: .green)
-        case eraseBubbleBrush: bubbleBrushTapAction(bubbleBrush, brushType: .erase)
-        case noneBubbleBrush:
-            self.brushType = .none
-            self.dehighlightAllBrush()
-        default: return
-        }*/
-    }
-    
     internal func onSelectBrush(brushType: BubbleType, brushCell: BrushCell) {
         switch brushType {
         case .none:
@@ -114,6 +94,12 @@ extension LevelDesignerController: UIGestureRecognizerDelegate, PaletteGestureDe
             return $0
         })
     }
+    
+    @objc
+    private func exitButtonAction(sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
 
     internal func setupBubbleGridActions() {
         setupBubbleGridPanAction()

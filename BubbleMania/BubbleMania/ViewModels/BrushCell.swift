@@ -15,7 +15,14 @@ class BrushCell: UICollectionViewCell {
     
     internal var bubbleType = BubbleType.none {
         willSet(brushType) {
+            self.layer.cornerRadius = self.frame.width / 2
             self.bubbleImage.image = UIImage(named: brushType.rawValue)
+            
+            if brushType == .erase {
+                self.layer.borderWidth = 2
+                self.layer.borderColor = UIColor.white.withAlphaComponent(0.3).cgColor
+                self.layer.backgroundColor = UIColor.white.withAlphaComponent(0.3).cgColor
+            }
         }
     }
     

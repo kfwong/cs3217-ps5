@@ -38,9 +38,12 @@ class LevelDesignerController: UIViewController {
     @IBOutlet weak private(set) var saveButton: UIBarButtonItem!
     @IBOutlet weak private(set) var loadButton: UIBarButtonItem!
     @IBOutlet weak private(set) var manageButton: UIBarButtonItem!
-
+    @IBOutlet weak private(set) var exitButton: UIBarButtonItem!
+    
     @IBOutlet weak private(set) var pallete: UICollectionView!
     internal let paletteRenderer: PaletteRenderer = PaletteRenderer()
+    
+    private let dataController = DataController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,13 +84,11 @@ class LevelDesignerController: UIViewController {
 
     internal func highlightSelectedBrush(_ brush: UICollectionViewCell) {
         brush.layer.borderWidth = 3
-        brush.layer.cornerRadius = brush.frame.size.width / 2
         brush.layer.borderColor = UIColor.white.cgColor
     }
 
     internal func dehighlightBrush(_ brush: UICollectionViewCell) {
         brush.layer.borderWidth = 0
-        brush.layer.cornerRadius = 0
         brush.layer.borderColor = nil
     }
 
@@ -97,18 +98,19 @@ class LevelDesignerController: UIViewController {
 
     // encode level state and save it to a file
     internal func saveLevel(filename: String) throws {
-        if let json = try String(data: encodeLevelData(levelData), encoding: .utf8) {
-            try saveToFile(filename: filename, json: json)
+        if let json = try String(data: dataController.encodeLevelData(levelData), encoding: .utf8) {
+            //print(json)
+            try dataController.saveToFile(filename: filename, json: json)
         }
     }
 
     // load a file and decode it to recover game level state
     internal func loadLevel(filename: String) throws {
 
-        if let json = try loadFromFile(filename: filename),
+        if let json = try dataController.loadFromFile(filename: filename),
             let data = json.data(using: .utf8) {
 
-            let decoded = try decodeLevelData(data: data)
+            let decoded = try dataController.decodeLevelData(data: data)
 
             reloadBubbleGrid(bubbles: decoded)
         }
@@ -116,7 +118,7 @@ class LevelDesignerController: UIViewController {
 
     // not in the specs. For management of save files otherwise it'll be too many files but no way to remove them.
     internal func manageLevel(filename: String) throws {
-        try removeFile(filename: filename)
+        try dataController.removeFile(filename: filename)
     }
 
     // Shows a save file dialog that prompt user for filename. Overwrites any existing file with the same name.
@@ -145,7 +147,7 @@ class LevelDesignerController: UIViewController {
 
     // Show a list of saved files that can be loaded.
     internal func showLoadFileDialog() {
-        guard let levelDataFiles = try? listLevelDataFiles() else {
+        guard let levelDataFiles = try? dataController.listLevelDataFiles() else {
             showToast(message: "Fail to list data files. Try again?")
             return
         }
@@ -172,7 +174,7 @@ class LevelDesignerController: UIViewController {
 
     // Show a list of saved files. Tapping prompt for confirmation to remove the file from device.
     internal func showManageFileDialog() {
-        guard let levelDataFiles = try? listLevelDataFiles() else {
+        guard let levelDataFiles = try? dataController.listLevelDataFiles() else {
             showToast(message: "Fail to list data files. Try again?")
             return
         }

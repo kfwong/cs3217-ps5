@@ -38,17 +38,16 @@ enum BubbleType: String, Codable {
     static let paletteBubbleTypes: [BubbleType] = [.blue, .red, .orange, .green, .erase, .indestructible, .lightning, .bomb, .star, .magnetic]
 
     // the raw values corresponds to the image file we use in assets
-    case blue = "bubble-blue"
-    case red = "bubble-red"
-    case orange = "bubble-orange"
-    case green = "bubble-green"
-    case erase = "bubble-gray"
-    case none = "bubble-none"
-    case indestructible = "bubble-indestructible"
-    case lightning = "bubble-lightning"
-    case bomb = "bubble-bomb"
-    case star = "bubble-star"
-    case magnetic = "bubble-magnetic"
+    case blue = "squirtle"
+    case red = "charmander"
+    case orange = "pikachu"
+    case green = "bulbasaur"
+    case none, erase = "bubble-none"
+    case indestructible = "gengar"
+    case lightning = "raichu"
+    case bomb = "tepig"
+    case star = "masterball"
+    case magnetic = "magnemite"
 
     // Simple Finite State Machine that transition from one state to another
     func next() -> BubbleType {

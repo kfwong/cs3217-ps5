@@ -10,6 +10,8 @@ import UIKit
 
 protocol BubbleEffectStrategy {
     
+    var isDestructible: Bool { get }
+    
     // when executing explode, this method should return a list of affected bubbles
     // itself: the gamebubble itself
     // projectile: the projectile that trigger the effect
@@ -17,7 +19,7 @@ protocol BubbleEffectStrategy {
     func explode(_ itself: GameBubble, by projectile: GameProjectile, activeBubbles: [GameBubble]) -> [GameBubble]
     
     // define the animation when this bubble explodes
-    func explodeAnimation(_ itself: GameBubble)
+    func explodeAnimation(_ itself: GameBubble, affectedGameBubbles: [GameBubble])
     
     // the effect on projectile movement should return a force of x-component and y-component in a tuple
     func effectOnProjectileMovement(_ itself: GameBubble, projectile: GameProjectile) -> (CGFloat, CGFloat)
@@ -29,7 +31,7 @@ extension BubbleEffectStrategy {
     
     // I did not include default implementation for explode() because it's best to leave it explicit in thier respective concrete class for clarity
     
-    func explodeAnimation(_ itself: GameBubble) {
+    func explodeAnimation(_ itself: GameBubble, affectedGameBubbles: [GameBubble]) {
         // by default there's no animation
     }
     

@@ -38,8 +38,8 @@ class GameBubble: GameObject, Hexagonal, CollidableCircle {
         return self.bubbleEffect.explode(self, by: projectile, activeBubbles: activeBubbles)
     }
     
-    internal func animateExplodeEffect(){
-        self.bubbleEffect.explodeAnimation(self)
+    internal func animateExplodeEffect(affectedGameBubbles: [GameBubble]){
+        self.bubbleEffect.explodeAnimation(self, affectedGameBubbles: affectedGameBubbles)
     }
 
 }

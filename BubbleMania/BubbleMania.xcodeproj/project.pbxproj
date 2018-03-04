@@ -15,6 +15,9 @@
 		4A0FAB0420222C8200B51C86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0FAB0220222C8200B51C86 /* LaunchScreen.storyboard */; };
 		4A0FAB0F20222C8200B51C86 /* LevelDesignerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0FAB0E20222C8200B51C86 /* LevelDesignerUITests.swift */; };
 		4A2224512038810200D1150D /* GameController+GameLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2224502038810200D1150D /* GameController+GameLoop.swift */; };
+		4A230A72204B737D007B477D /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A230A71204B737D007B477D /* MenuController.swift */; };
+		4A230A75204B8232007B477D /* LevelSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A230A74204B8232007B477D /* LevelSelectionController.swift */; };
+		4A230A78204B8EF4007B477D /* level1.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A230A77204B8EF4007B477D /* level1.json */; };
 		4A3915B4202D92A3003C638B /* BubbleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3915B3202D92A3003C638B /* BubbleTests.swift */; };
 		4A400580204808C400521804 /* PaletteRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A40057F204808C400521804 /* PaletteRenderer.swift */; };
 		4A40058220480E1100521804 /* BrushCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A40058120480E1100521804 /* BrushCell.swift */; };
@@ -26,7 +29,7 @@
 		4A50762720473444005DB50F /* Lightning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50762620473444005DB50F /* Lightning.swift */; };
 		4A51A7812027618F0027250C /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A51A7802027618F0027250C /* Bubble.swift */; };
 		4A5E5F88202A19A3009846B2 /* LevelDesignerController+BubbleGridRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5E5F87202A19A3009846B2 /* LevelDesignerController+BubbleGridRenderer.swift */; };
-		4A5E5F8A202A1BBD009846B2 /* LevelDesignerController+DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5E5F89202A1BBD009846B2 /* LevelDesignerController+DataController.swift */; };
+		4A5E5F8A202A1BBD009846B2 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5E5F89202A1BBD009846B2 /* DataController.swift */; };
 		4A5E5F8C202A1C62009846B2 /* LevelDesignerController+GestureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5E5F8B202A1C62009846B2 /* LevelDesignerController+GestureController.swift */; };
 		4A644F16202D96C5006EAD12 /* ViewController+DataControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A644F15202D96C5006EAD12 /* ViewController+DataControllerTests.swift */; };
 		4A6931322032D4F0003A59B1 /* GameProjectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6931302032D4F0003A59B1 /* GameProjectile.swift */; };
@@ -79,6 +82,9 @@
 		4A0FAB0E20222C8200B51C86 /* LevelDesignerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDesignerUITests.swift; sourceTree = "<group>"; };
 		4A0FAB1020222C8200B51C86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A2224502038810200D1150D /* GameController+GameLoop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameController+GameLoop.swift"; sourceTree = "<group>"; };
+		4A230A71204B737D007B477D /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		4A230A74204B8232007B477D /* LevelSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectionController.swift; sourceTree = "<group>"; };
+		4A230A77204B8EF4007B477D /* level1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level1.json; sourceTree = "<group>"; };
 		4A3915B1202D92A3003C638B /* BubbleManiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BubbleManiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A3915B3202D92A3003C638B /* BubbleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTests.swift; sourceTree = "<group>"; };
 		4A3915B5202D92A3003C638B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,7 +98,7 @@
 		4A50762620473444005DB50F /* Lightning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lightning.swift; sourceTree = "<group>"; };
 		4A51A7802027618F0027250C /* Bubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
 		4A5E5F87202A19A3009846B2 /* LevelDesignerController+BubbleGridRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelDesignerController+BubbleGridRenderer.swift"; sourceTree = "<group>"; };
-		4A5E5F89202A1BBD009846B2 /* LevelDesignerController+DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelDesignerController+DataController.swift"; sourceTree = "<group>"; };
+		4A5E5F89202A1BBD009846B2 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		4A5E5F8B202A1C62009846B2 /* LevelDesignerController+GestureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelDesignerController+GestureController.swift"; sourceTree = "<group>"; };
 		4A644F15202D96C5006EAD12 /* ViewController+DataControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+DataControllerTests.swift"; sourceTree = "<group>"; };
 		4A6931302032D4F0003A59B1 /* GameProjectile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameProjectile.swift; sourceTree = "<group>"; };
@@ -169,6 +175,7 @@
 		4A0FAAF820222C8200B51C86 /* BubbleMania */ = {
 			isa = PBXGroup;
 			children = (
+				4A230A76204B8EDF007B477D /* resources */,
 				4A50761C204704EB005DB50F /* Views */,
 				4ACCB2D720370ABF0014DA4B /* DataStructures */,
 				4A69312C2032D479003A59B1 /* GameEngine */,
@@ -191,6 +198,30 @@
 				4A0FAB1020222C8200B51C86 /* Info.plist */,
 			);
 			path = LevelDesignerUITests;
+			sourceTree = "<group>";
+		};
+		4A230A70204B7348007B477D /* MenuController */ = {
+			isa = PBXGroup;
+			children = (
+				4A230A71204B737D007B477D /* MenuController.swift */,
+			);
+			path = MenuController;
+			sourceTree = "<group>";
+		};
+		4A230A73204B8209007B477D /* LevelSelectionController */ = {
+			isa = PBXGroup;
+			children = (
+				4A230A74204B8232007B477D /* LevelSelectionController.swift */,
+			);
+			path = LevelSelectionController;
+			sourceTree = "<group>";
+		};
+		4A230A76204B8EDF007B477D /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				4A230A77204B8EF4007B477D /* level1.json */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 		4A3915B2202D92A3003C638B /* LevelDesignerTests */ = {
@@ -228,6 +259,9 @@
 		4A5E5F8F202A1DDE009846B2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4A5E5F89202A1BBD009846B2 /* DataController.swift */,
+				4A230A73204B8209007B477D /* LevelSelectionController */,
+				4A230A70204B7348007B477D /* MenuController */,
 				4A765410203B483200EDB5AB /* LevelDesignerController */,
 				4A765411203B483C00EDB5AB /* GameController */,
 			);
@@ -278,7 +312,6 @@
 			children = (
 				4A0FAAFB20222C8200B51C86 /* LevelDesignerController.swift */,
 				4A5E5F8B202A1C62009846B2 /* LevelDesignerController+GestureController.swift */,
-				4A5E5F89202A1BBD009846B2 /* LevelDesignerController+DataController.swift */,
 				4A5E5F87202A19A3009846B2 /* LevelDesignerController+BubbleGridRenderer.swift */,
 				4A40057F204808C400521804 /* PaletteRenderer.swift */,
 			);
@@ -445,6 +478,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A230A78204B8EF4007B477D /* level1.json in Resources */,
 				4A0FAB0420222C8200B51C86 /* LaunchScreen.storyboard in Resources */,
 				4A0FAB0120222C8200B51C86 /* Assets.xcassets in Resources */,
 				4A0FAAFF20222C8200B51C86 /* Main.storyboard in Resources */,
@@ -615,13 +649,15 @@
 				4A2224512038810200D1150D /* GameController+GameLoop.swift in Sources */,
 				4A0FAAFC20222C8200B51C86 /* LevelDesignerController.swift in Sources */,
 				4A0FAAFA20222C8200B51C86 /* AppDelegate.swift in Sources */,
+				4A230A75204B8232007B477D /* LevelSelectionController.swift in Sources */,
+				4A230A72204B737D007B477D /* MenuController.swift in Sources */,
 				4A6931332032D4F0003A59B1 /* GameBubble.swift in Sources */,
 				4AEA49B7204752390088D501 /* Bomb.swift in Sources */,
 				4A6931322032D4F0003A59B1 /* GameProjectile.swift in Sources */,
 				4A50762520473407005DB50F /* Indestructable.swift in Sources */,
 				4A50762320473352005DB50F /* Normal.swift in Sources */,
 				4A6931372032D503003A59B1 /* GameRenderer.swift in Sources */,
-				4A5E5F8A202A1BBD009846B2 /* LevelDesignerController+DataController.swift in Sources */,
+				4A5E5F8A202A1BBD009846B2 /* DataController.swift in Sources */,
 				4A693146203331D3003A59B1 /* GameController+BubbleGridRenderer.swift in Sources */,
 				4A400580204808C400521804 /* PaletteRenderer.swift in Sources */,
 				4A69314420332AA8003A59B1 /* GameController.swift in Sources */,

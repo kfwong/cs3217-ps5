@@ -13,7 +13,7 @@ import UIKit
  - Define the format to encode/decode Game Level state into files.
  - Define how to save/load/delete file on devices.
  */
-extension LevelDesignerController {
+class DataController {
 
     // encode bubble object in memory as data
     internal func encodeLevelData(_ bubbles: [Bubble]) throws -> Data {
@@ -73,4 +73,5 @@ extension LevelDesignerController {
         return directoryContents.map { $0.lastPathComponent }
 
     }
+
 }

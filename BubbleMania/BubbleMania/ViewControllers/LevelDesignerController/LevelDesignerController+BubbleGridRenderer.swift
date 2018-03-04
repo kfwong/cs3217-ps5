@@ -34,7 +34,7 @@ extension LevelDesignerController: UICollectionViewDelegateFlowLayout, UICollect
             fatalError("Fail to initialize BubbleCell!")
         }
         let bubble = Bubble(xIndex: indexPath.section, yIndex: indexPath.item)
-        bubbleCell.backgroundView = UIImageView(image: UIImage(named: BubbleType.erase.rawValue))
+        bubbleCell.bubbleType = .erase
 
         bubbleCell.render(bubble: bubble)
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QyD-fl-au2">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,101 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Chalkduster.ttf">
+            <string>Chalkduster</string>
+        </array>
+    </customFonts>
     <scenes>
+        <!--Menu Controller-->
+        <scene sceneID="Lzs-pa-3tH">
+            <objects>
+                <viewController id="QyD-fl-au2" customClass="MenuController" customModule="BubbleMania" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TqT-EW-hBI">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu" translatesAutoresizingMaskIntoConstraints="NO" id="EkA-VL-sfA">
+                                <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bg6-do-qNe">
+                                <rect key="frame" x="100" y="780" width="160" height="94"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="50"/>
+                                <state key="normal" backgroundImage="play"/>
+                                <connections>
+                                    <segue destination="z7R-kE-ecC" kind="popoverPresentation" popoverAnchorView="bg6-do-qNe" id="OOJ-Wr-fuX">
+                                        <popoverArrowDirection key="popoverArrowDirection" down="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efY-Qx-cbj">
+                                <rect key="frame" x="100" y="882" width="160" height="106"/>
+                                <state key="normal" backgroundImage="load"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="yOi-R6-ha6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="P8Z-pi-p05" firstAttribute="bottom" secondItem="efY-Qx-cbj" secondAttribute="bottom" constant="36" id="2Dg-yS-R1h"/>
+                            <constraint firstItem="EkA-VL-sfA" firstAttribute="leading" secondItem="P8Z-pi-p05" secondAttribute="leading" id="Giw-FI-ces"/>
+                            <constraint firstItem="P8Z-pi-p05" firstAttribute="bottom" secondItem="EkA-VL-sfA" secondAttribute="bottom" id="TId-sJ-Gac"/>
+                            <constraint firstItem="efY-Qx-cbj" firstAttribute="top" secondItem="bg6-do-qNe" secondAttribute="bottom" constant="8" id="eVJ-Yi-jb3"/>
+                            <constraint firstItem="efY-Qx-cbj" firstAttribute="leading" secondItem="P8Z-pi-p05" secondAttribute="leading" constant="100" id="f9c-e7-e7A"/>
+                            <constraint firstItem="bg6-do-qNe" firstAttribute="leading" secondItem="P8Z-pi-p05" secondAttribute="leading" constant="100" id="gHs-du-NNv"/>
+                            <constraint firstItem="P8Z-pi-p05" firstAttribute="trailing" secondItem="EkA-VL-sfA" secondAttribute="trailing" id="gIA-ha-JaT"/>
+                            <constraint firstItem="EkA-VL-sfA" firstAttribute="top" secondItem="P8Z-pi-p05" secondAttribute="top" id="trF-Ui-KeH"/>
+                            <constraint firstItem="P8Z-pi-p05" firstAttribute="bottom" secondItem="bg6-do-qNe" secondAttribute="bottom" constant="150" id="vkL-ec-SCp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="P8Z-pi-p05"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Mh-oi-tMt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="67" y="-880"/>
+        </scene>
+        <!--Level Selection Controller-->
+        <scene sceneID="ovY-bG-L5J">
+            <objects>
+                <tableViewController id="z7R-kE-ecC" customClass="LevelSelectionController" customModule="BubbleMania" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wmb-Hj-3sc">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="13"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="fileCell" textLabel="PpK-Xx-nmn" style="IBUITableViewCellStyleDefault" id="R3W-Mq-fNX">
+                                <rect key="frame" x="0.0" y="28" width="0.0" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R3W-Mq-fNX" id="6lp-3Q-tML">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PpK-Xx-nmn">
+                                            <rect key="frame" x="-15" y="0.0" width="30" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="z7R-kE-ecC" id="PKa-jA-YI2"/>
+                            <outlet property="delegate" destination="z7R-kE-ecC" id="Mtv-rn-lUX"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="SuD-4O-PaI" kind="show" identifier="LevelSelectionController" id="7RI-2b-MDi"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MKJ-4K-S6u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1027" y="-733"/>
+        </scene>
         <!--Level Designer Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -95,6 +189,8 @@
                                             <barButtonItem title="MANAGE" id="jll-OR-Bwo">
                                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             </barButtonItem>
+                                            <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Nnf-oz-yFm"/>
+                                            <barButtonItem title="Exit" id="lZ2-pI-vNL"/>
                                         </items>
                                     </toolbar>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="93h-rq-JMy">
@@ -171,6 +267,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bubbleGrid" destination="93h-rq-JMy" id="ibF-06-aWu"/>
+                        <outlet property="exitButton" destination="lZ2-pI-vNL" id="TKs-sB-qk8"/>
                         <outlet property="loadButton" destination="mRX-Av-vWW" id="70P-7w-iu0"/>
                         <outlet property="manageButton" destination="jll-OR-Bwo" id="g9S-do-U3E"/>
                         <outlet property="pallete" destination="uqg-AG-r82" id="AIm-qd-SJ2"/>
@@ -304,7 +401,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="512" height="683"/>
+        <image name="background" width="300" height="400"/>
         <image name="cannon-base" width="133" height="139"/>
+        <image name="load" width="160" height="94"/>
+        <image name="menu" width="427" height="480"/>
+        <image name="play" width="160" height="94"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="fzM-iV-gSg"/>
+    </inferredMetricsTieBreakers>
 </document>

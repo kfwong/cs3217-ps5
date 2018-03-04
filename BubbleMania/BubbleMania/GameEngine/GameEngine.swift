@@ -73,8 +73,13 @@ class GameEngine {
         self.projectile.sprite.center.x = projectileMountPoint.x
         self.projectile.sprite.center.y = projectileMountPoint.y
         self.projectile.thrust = 20
+        self.projectile.prevBearing = nil
         self.projectile.isReflected = false
         self.projectile.sprite.isHidden = false
+        self.projectile.sprite.layer.borderWidth = 2
+        self.projectile.sprite.layer.cornerRadius = self.projectile.sprite.bounds.size.width / 2
+        self.projectile.sprite.layer.borderColor = UIColor.white.withAlphaComponent(0.3).cgColor
+        self.projectile.sprite.layer.backgroundColor = UIColor.white.withAlphaComponent(0.3).cgColor
 
         if !(self.projectile.sprite.isDescendant(of: gameContext)) {
             gameContext.addSubview(self.projectile.sprite)
@@ -274,17 +279,19 @@ class GameEngine {
     }
     
     internal func explodeBubbles(gameBubbles: [GameBubble]) {
-        for gameBubble in gameBubbles {
+        let destructibleGameBubbles = gameBubbles.filter{ $0.bubbleEffect.isDestructible }
+        
+        for gameBubble in destructibleGameBubbles {
             guard self.bubbles.contains(gameBubble) else {
                 continue
             }
             
             // first we must remove this gamebubble from game engine state to prevent infinite loop in recursion
             removeActiveGameBubble(gameBubble)
-            gameBubble.animateExplodeEffect()
             
             // use recursion to simulate chain reaction
             let chainReaction = gameBubble.executeExplodeEffect(by: self.projectile, activeBubbles: Array(self.bubbles))
+            gameBubble.animateExplodeEffect(affectedGameBubbles: chainReaction)
             explodeBubbles(gameBubbles: chainReaction)
         }
     }
