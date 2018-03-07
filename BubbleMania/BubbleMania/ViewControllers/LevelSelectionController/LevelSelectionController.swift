@@ -20,6 +20,7 @@ class LevelSelectionController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "fileCell")
     }
     
     override func viewDidAppear(_ animated: Bool) {

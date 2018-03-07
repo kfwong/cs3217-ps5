@@ -109,6 +109,11 @@ extension GameController: GameLoopDelegate {
 
             case .loadingProjectileComplete:
                 let bearing = touch.location(in: self.view)
+                
+                guard !isRestrictedAngle(bearing: bearing) else {
+                    return
+                }
+                
                 gameEngine.settingProjectileBearing(to: bearing)
                 
                 rotateCannon(deltaRadian: self.gameEngine.cannonDeltaAngle)
@@ -128,6 +133,11 @@ extension GameController: GameLoopDelegate {
 
             case .settingProjectileBearing:
                 let bearing = touch.location(in: self.view)
+                
+                guard !isRestrictedAngle(bearing: bearing) else {
+                    return
+                }
+                
                 gameEngine.settingProjectileBearing(to: bearing)
                 
                 rotateCannon(deltaRadian: self.gameEngine.cannonDeltaAngle)
@@ -145,7 +155,8 @@ extension GameController: GameLoopDelegate {
 
             case .settingProjectileBearing:
                 let bearing = touch.location(in: self.view)
-                gameEngine.settingProjectileBearingComplete(to: bearing)
+                
+                gameEngine.settingProjectileBearingComplete(to: isRestrictedAngle(bearing: bearing) ? CGPoint(x: bearing.x, y: gameEngine.projectile.yPos - 50) : bearing)
                 
                 rotateCannon(deltaRadian: self.gameEngine.cannonDeltaAngle) {
                     // on rotate animation complete, do these:

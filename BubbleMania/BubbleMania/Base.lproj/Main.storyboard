@@ -32,9 +32,8 @@
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="50"/>
                                 <state key="normal" backgroundImage="play"/>
                                 <connections>
-                                    <segue destination="z7R-kE-ecC" kind="popoverPresentation" popoverAnchorView="bg6-do-qNe" id="OOJ-Wr-fuX">
-                                        <popoverArrowDirection key="popoverArrowDirection" down="YES"/>
-                                    </segue>
+                                    <action selector="playButtonAction:" destination="oNY-QM-9DG" eventType="touchUpInside" id="ZRk-gq-ziz"/>
+                                    <action selector="playButtonAction:" destination="QyD-fl-au2" eventType="touchUpInside" id="tKt-hA-NrW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efY-Qx-cbj">
@@ -44,45 +43,60 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="yOi-R6-ha6"/>
                                 </connections>
                             </button>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N7w-dl-bTs">
+                                <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <viewLayoutGuide key="safeArea" id="18D-pr-ey7"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="P8Z-pi-p05" firstAttribute="bottom" secondItem="efY-Qx-cbj" secondAttribute="bottom" constant="36" id="2Dg-yS-R1h"/>
+                            <constraint firstItem="P8Z-pi-p05" firstAttribute="bottom" secondItem="N7w-dl-bTs" secondAttribute="bottom" id="4Bq-sK-fUc"/>
                             <constraint firstItem="EkA-VL-sfA" firstAttribute="leading" secondItem="P8Z-pi-p05" secondAttribute="leading" id="Giw-FI-ces"/>
                             <constraint firstItem="P8Z-pi-p05" firstAttribute="bottom" secondItem="EkA-VL-sfA" secondAttribute="bottom" id="TId-sJ-Gac"/>
+                            <constraint firstItem="N7w-dl-bTs" firstAttribute="top" secondItem="P8Z-pi-p05" secondAttribute="top" id="cEd-4r-KLa"/>
                             <constraint firstItem="efY-Qx-cbj" firstAttribute="top" secondItem="bg6-do-qNe" secondAttribute="bottom" constant="8" id="eVJ-Yi-jb3"/>
                             <constraint firstItem="efY-Qx-cbj" firstAttribute="leading" secondItem="P8Z-pi-p05" secondAttribute="leading" constant="100" id="f9c-e7-e7A"/>
                             <constraint firstItem="bg6-do-qNe" firstAttribute="leading" secondItem="P8Z-pi-p05" secondAttribute="leading" constant="100" id="gHs-du-NNv"/>
                             <constraint firstItem="P8Z-pi-p05" firstAttribute="trailing" secondItem="EkA-VL-sfA" secondAttribute="trailing" id="gIA-ha-JaT"/>
+                            <constraint firstItem="N7w-dl-bTs" firstAttribute="leading" secondItem="P8Z-pi-p05" secondAttribute="leading" id="tio-Nv-bgp"/>
                             <constraint firstItem="EkA-VL-sfA" firstAttribute="top" secondItem="P8Z-pi-p05" secondAttribute="top" id="trF-Ui-KeH"/>
+                            <constraint firstItem="P8Z-pi-p05" firstAttribute="trailing" secondItem="N7w-dl-bTs" secondAttribute="trailing" id="v8E-Xe-Y9Q"/>
                             <constraint firstItem="P8Z-pi-p05" firstAttribute="bottom" secondItem="bg6-do-qNe" secondAttribute="bottom" constant="150" id="vkL-ec-SCp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P8Z-pi-p05"/>
                     </view>
+                    <connections>
+                        <outlet property="dim" destination="N7w-dl-bTs" id="EdI-wh-2eR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Mh-oi-tMt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="oNY-QM-9DG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="67" y="-880"/>
         </scene>
         <!--Level Selection Controller-->
         <scene sceneID="ovY-bG-L5J">
             <objects>
-                <tableViewController id="z7R-kE-ecC" customClass="LevelSelectionController" customModule="BubbleMania" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="levelSelection" id="z7R-kE-ecC" customClass="LevelSelectionController" customModule="BubbleMania" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wmb-Hj-3sc">
-                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="13"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="fileCell" textLabel="PpK-Xx-nmn" style="IBUITableViewCellStyleDefault" id="R3W-Mq-fNX">
-                                <rect key="frame" x="0.0" y="28" width="0.0" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R3W-Mq-fNX" id="6lp-3Q-tML">
-                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PpK-Xx-nmn">
-                                            <rect key="frame" x="-15" y="0.0" width="30" height="43.5"/>
+                                            <rect key="frame" x="20" y="0.0" width="728" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -408,6 +422,6 @@
         <image name="play" width="160" height="94"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fzM-iV-gSg"/>
+        <segue reference="7RI-2b-MDi"/>
     </inferredMetricsTieBreakers>
 </document>

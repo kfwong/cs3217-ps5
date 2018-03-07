@@ -199,7 +199,9 @@ class GameController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
+    internal func isRestrictedAngle(bearing: CGPoint) -> Bool {
+        return bearing.y > gameEngine.projectile.center.y - 50
+    }
 
 }
 
