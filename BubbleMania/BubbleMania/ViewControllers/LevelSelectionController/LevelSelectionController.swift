@@ -12,92 +12,106 @@ import SpriteKit
 // Main GameController handle display Bubbles at correct position in grid
 // also define throw away alert ui.
 class LevelSelectionController: UITableViewController {
-    
+
     private let dataController = DataController()
     lazy private var files = (try? dataController.listLevelDataFiles())
     private var levelData: [Bubble]?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "fileCell")
+
+        // these level will always be regenerated even if the user deleted them
+        // any levels user saved with the same name will be overwritten as well
+        try? dataController.saveToFile(filename: "sample-level-1", json: self.initDefaultLevel(name: "sample-level-1"))
+        try? dataController.saveToFile(filename: "sample-level-2", json: self.initDefaultLevel(name: "sample-level-2"))
+        try? dataController.saveToFile(filename: "sample-level-3", json: self.initDefaultLevel(name: "sample-level-3"))
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-        try? dataController.saveToFile(filename: "level1", json: self.initDefault())
-    }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
+
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.portrait //return the value as per the required orientation
     }
-    
+
     override var shouldAutorotate: Bool {
         return false
     }
-    
+
     internal func loadLevel(filename: String) throws {
-        
+
     }
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return files?.count ?? 0
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "fileCell", for: indexPath)
-        
+
         cell.textLabel?.text = files?[indexPath.item]
-        
+        cell.textLabel?.font = UIFont(name: "Chalkduster", size: 20)
+        cell.textLabel?.backgroundColor = UIColor.clear
+        cell.backgroundView = nil
+        cell.backgroundColor = UIColor.clear
+
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let tableCell = tableView.cellForRow(at: indexPath),
             let selectedLabel = tableCell.textLabel,
-            let selectedFile = selectedLabel.text {
-            
-            let json = try? dataController.loadFromFile(filename: selectedFile)!
-            
-            
-            self.levelData = try? dataController.decodeLevelData(data: json!.data(using: .utf8)!)
-            
-            
+            let selectedFile = selectedLabel.text,
+            let json = try? dataController.loadFromFile(filename: selectedFile),
+            let data = json?.data(using: .utf8) {
+
+            self.levelData = try? dataController.decodeLevelData(data: data)
+
             self.performSegue(withIdentifier: "LevelSelectionController", sender: self)
         }
-        
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "LevelSelectionController" {
+        guard let segueId = segue.identifier else {
+            return
+        }
+
+        switch segueId {
+        case "LevelSelectionController":
             guard let gameController = segue.destination as? GameController else {
                 return
             }
-            
-            gameController.passedLevelData = self.levelData!.map {
+
+            guard let levelData = self.levelData else {
+                return
+            }
+
+            gameController.passedLevelData = levelData.map {
                 if $0.type == .erase {
                     $0.type = .none
                 }
-                
+
                 return $0
             }
+
+        default: return
         }
+
     }
-    
-    func initDefault() -> String {
-        if let path = Bundle.main.path(forResource: "level1", ofType: "json") {
+
+    func initDefaultLevel(name: String) -> String {
+        if let path = Bundle.main.path(forResource: name, ofType: "json") {
             do {
                 let contents = try String(contentsOfFile: path)
                 return contents
@@ -108,4 +122,3 @@ class LevelSelectionController: UITableViewController {
         return ""
     }
 }
-

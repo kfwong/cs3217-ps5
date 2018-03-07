@@ -60,7 +60,7 @@ enum BubbleType: String, Codable {
         default: return .none
         }
     }
-    
+
     // return a strategy object that defines the behaviour of corresponding bubbletype
     func bubbleEffect() -> BubbleEffectStrategy {
         switch self {
@@ -73,7 +73,7 @@ enum BubbleType: String, Codable {
         default: return Normal()
         }
     }
-    
+
     // some special bubbles are associated with normal colored bubble type,
     // therefore they can only be triggered by same colored bubble.
     // this method resolve the root type of this special bubble

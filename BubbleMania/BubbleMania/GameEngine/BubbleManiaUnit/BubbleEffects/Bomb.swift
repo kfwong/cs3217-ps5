@@ -10,36 +10,37 @@ import UIKit
 
 // Bomb bubbles destroy all bubbles adjacent to itself
 class Bomb: BubbleEffectStrategy {
-    
+
     private(set) var isDestructible: Bool = true
-    
-    func explode(_ itself: GameBubble, by projectile: GameProjectile, activeBubbles: [GameBubble]) -> [GameBubble]{
+
+    func explode(_ itself: GameBubble, by projectile: GameProjectile, activeBubbles: [GameBubble]) -> [GameBubble] {
         //print("\(itself.row):\(itself.col) exploded with bomb effect")
-        
+
         // gamebubble can calculate the neighbour index in a hexagon grid
         let affectedIndexes = itself.neighbourIndexes()
-        
+
         // filter active bubbles to leave only those adjacent to this gamebubble
-        return activeBubbles.filter{ affectedIndexes.contains(IndexPath(item: $0.col, section: $0.row))}
-        
+        return activeBubbles.filter { affectedIndexes.contains(IndexPath(item: $0.col, section: $0.row)) }
+
     }
-    
+
     // bomb animation will expand itself and fade out
     func explodeAnimation(_ itself: GameBubble, affectedGameBubbles: [GameBubble]) {
+        guard let bubbleCell = itself.sprite as? BubbleCell else {
+            return
+        }
 
         var bombs: [UIAnimationView] = []
-        
+
         var animateGameBubbles = affectedGameBubbles
         animateGameBubbles.append(itself)
-        
-        animateGameBubbles.forEach{
+
+        animateGameBubbles.forEach {
             let bomb = UIAnimationView(spriteSheet: #imageLiteral(resourceName: "fire"), rowCount: 4, colCount: 5)
             bomb.center = $0.sprite.center
             $0.sprite.superview?.addSubview(bomb)
             bombs.append(bomb)
         }
-        
-        let bubbleCell = itself.sprite as! BubbleCell
 
         UIView.animate(withDuration: 1,
                        delay: 0,
@@ -47,7 +48,7 @@ class Bomb: BubbleEffectStrategy {
                        animations: {
                         bubbleCell.alpha = 0
                         bubbleCell.transform = CGAffineTransform(scaleX: 2, y: 2)
-                        bombs.forEach{ $0.startAnimating() }
+                        bombs.forEach { $0.startAnimating() }
                         },
                        completion: { isFinished in
                         guard isFinished else {
@@ -56,7 +57,7 @@ class Bomb: BubbleEffectStrategy {
                         bubbleCell.bubbleType = .none
                         bubbleCell.alpha = 1
                         bubbleCell.transform = CGAffineTransform.identity
-                        bombs.forEach{ $0.removeFromSuperview() }
+                        bombs.forEach { $0.removeFromSuperview() }
                         })
     }
 }

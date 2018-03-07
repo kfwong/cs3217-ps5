@@ -37,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0DB524100609DC2228C48F81D724A614 /* PhysicsEngine.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = PhysicsEngine.modulemap; sourceTree = "<group>"; };
+		0DB524100609DC2228C48F81D724A614 /* PhysicsEngine.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PhysicsEngine.modulemap; sourceTree = "<group>"; };
 		1504398DEFA178C807382D1CD8659D9E /* Pods-BubbleManiaTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BubbleManiaTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		1A6A9C8843909106FDCE28D52E068157 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BC73E3470E6C279858633AC8253F1EA /* Pods-BubbleManiaTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BubbleManiaTests-resources.sh"; sourceTree = "<group>"; };
@@ -49,36 +49,36 @@
 		4304FDFFCADB0DEC3DFFFCE66FB6654A /* Pods-BubbleMania.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BubbleMania.release.xcconfig"; sourceTree = "<group>"; };
 		46D69297C794CF9F589A27847808B6F0 /* Pods-BubbleMania-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BubbleMania-acknowledgements.plist"; sourceTree = "<group>"; };
 		4A92EE6C0A0306AF4271E5A090032DBA /* PhysicsEngine.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PhysicsEngine.xcconfig; sourceTree = "<group>"; };
-		51FA0A42C914D78386CB0B76056DE6B9 /* PhysicsEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PhysicsEngine.framework; path = PhysicsEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51FA0A42C914D78386CB0B76056DE6B9 /* PhysicsEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhysicsEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BF82BA4DC36F036336FD6D9FE93654 /* Pods-BubbleMania.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BubbleMania.debug.xcconfig"; sourceTree = "<group>"; };
 		58778B585A74DB60CFA82D5D2DC61352 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		59CBE65882D4126B1E1372C43D354221 /* Pods-BubbleMania.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BubbleMania.modulemap"; sourceTree = "<group>"; };
+		59CBE65882D4126B1E1372C43D354221 /* Pods-BubbleMania.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BubbleMania.modulemap"; sourceTree = "<group>"; };
 		5BB2EDC43A032046042EFF38F4251CCD /* CollidableCircle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollidableCircle.swift; path = BubbleMania/BubbleMania/GameEngine/PhysicsEngine/CollidableCircle.swift; sourceTree = "<group>"; };
 		5C5FB18015368B00778B04DFA9AD99D2 /* Pods-BubbleMania-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BubbleMania-acknowledgements.markdown"; sourceTree = "<group>"; };
 		616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6EDC02984ECF1855469A4A5FE02220D2 /* Pods_BubbleManiaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BubbleManiaTests.framework; path = "Pods-BubbleManiaTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EDC02984ECF1855469A4A5FE02220D2 /* Pods_BubbleManiaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BubbleManiaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73DCD7F6BAD5D70269761016DC1933A1 /* Pods-BubbleManiaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BubbleManiaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7755F6658C6CD80BE08D3E11F4415368 /* PhysicsEngine-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PhysicsEngine-dummy.m"; sourceTree = "<group>"; };
 		7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		8485A2B37D00CDC2805223170B637162 /* GameObject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameObject.swift; path = BubbleMania/BubbleMania/GameEngine/PhysicsEngine/GameObject.swift; sourceTree = "<group>"; };
 		8C481572B2BBF601D58F8F990754371C /* Pods-BubbleManiaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BubbleManiaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8FFD06C19E370A4A67294621A39B2EA5 /* Pods-BubbleManiaTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BubbleManiaTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93E23A73D48F71156CB2F01771C80F7D /* Pods-BubbleManiaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BubbleManiaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		94B14CEDCCD8B91DC3EF579108D4DF56 /* Pods-BubbleManiaUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BubbleManiaUITests-frameworks.sh"; sourceTree = "<group>"; };
 		98115DA36CBAA93BF468F37D166DD843 /* Pods-BubbleMania-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BubbleMania-umbrella.h"; sourceTree = "<group>"; };
-		98F558D8A71411FD286F313325C78492 /* Pods_BubbleManiaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BubbleManiaUITests.framework; path = "Pods-BubbleManiaUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F4AC4C05FEF945D5180B30EEAF0650D /* Pods-BubbleManiaUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BubbleManiaUITests.modulemap"; sourceTree = "<group>"; };
+		98F558D8A71411FD286F313325C78492 /* Pods_BubbleManiaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BubbleManiaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F4AC4C05FEF945D5180B30EEAF0650D /* Pods-BubbleManiaUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BubbleManiaUITests.modulemap"; sourceTree = "<group>"; };
 		9FDD416BCCB3D8FC776330351D868F3F /* Pods-BubbleMania-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BubbleMania-resources.sh"; sourceTree = "<group>"; };
 		9FF85BB4D5DBF975923EA8623DB381A0 /* Pods-BubbleMania-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BubbleMania-frameworks.sh"; sourceTree = "<group>"; };
 		A004A5B44A86ACF890A0E7C713F18C72 /* Pods-BubbleManiaUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BubbleManiaUITests-umbrella.h"; sourceTree = "<group>"; };
-		BAC461FD0B26E647A9C2FA4931FD0AB8 /* Pods_BubbleMania.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BubbleMania.framework; path = "Pods-BubbleMania.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAC461FD0B26E647A9C2FA4931FD0AB8 /* Pods_BubbleMania.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BubbleMania.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C11846B2A98B3DDC589979302574373C /* Pods-BubbleManiaTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BubbleManiaTests-umbrella.h"; sourceTree = "<group>"; };
 		CBFCC71F65F03D0908C1356A3984B8D1 /* Geometrical.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Geometrical.swift; path = BubbleMania/BubbleMania/GameEngine/PhysicsEngine/Geometrical.swift; sourceTree = "<group>"; };
 		CDA86CC535F2E0335E1F4D92FC5F16DB /* Hexagonal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Hexagonal.swift; path = BubbleMania/BubbleMania/GameEngine/PhysicsEngine/Hexagonal.swift; sourceTree = "<group>"; };
 		CE030423F97E8C46B44D4E34186D9D6F /* Pods-BubbleManiaUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BubbleManiaUITests-resources.sh"; sourceTree = "<group>"; };
 		D04E60D958B139A949185D9A94763F9B /* Pods-BubbleManiaUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BubbleManiaUITests-dummy.m"; sourceTree = "<group>"; };
-		D3A98EC0DE04C1206A453507871584D8 /* Pods-BubbleManiaTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BubbleManiaTests.modulemap"; sourceTree = "<group>"; };
+		D3A98EC0DE04C1206A453507871584D8 /* Pods-BubbleManiaTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BubbleManiaTests.modulemap"; sourceTree = "<group>"; };
 		DD3616D65457AA046B304384D61A3DB3 /* PhysicsEngine-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PhysicsEngine-umbrella.h"; sourceTree = "<group>"; };
 		DF8E16F372A4CAEBB883A282FAD8C43A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEFF9EBA4574712A2F75C8292B8F3F86 /* Pods-BubbleMania-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BubbleMania-dummy.m"; sourceTree = "<group>"; };
@@ -208,7 +208,6 @@
 				CDA86CC535F2E0335E1F4D92FC5F16DB /* Hexagonal.swift */,
 				59A19C9F7CA4D6073326D5B1F2525AA9 /* Support Files */,
 			);
-			name = PhysicsEngine;
 			path = PhysicsEngine;
 			sourceTree = "<group>";
 		};
@@ -375,7 +374,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0920;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -490,19 +489,29 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
@@ -516,6 +525,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -771,20 +781,30 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",

@@ -20,9 +20,8 @@ extension GameController: GameLoopDelegate {
             self.view.bringSubview(toFront: cannon)
             self.view.bringSubview(toFront: canonBase)
             gameEngine.setupCannon(as: cannon)
-            
+
             loadUpcomingBubble()
-        
 
         case .newGame:
             gameEngine.loadProjectile(gameContext: self.view, size: bubbleSize)
@@ -30,7 +29,7 @@ extension GameController: GameLoopDelegate {
             self.view.bringSubview(toFront: cannon)
             self.view.bringSubview(toFront: canonBase)
             gameEngine.setupCannon(as: cannon)
-            
+
             loadUpcomingBubble()
 
         case .firingProjectile:
@@ -59,12 +58,13 @@ extension GameController: GameLoopDelegate {
                 gameEngine.animating()
                 gameEngine.explodeBubbles(gameBubbles: connectedGameBubblesOfSameType)
             }
-            
+
             // resolve any neighbouring star bubbles
             let starBubbleNeighbours = gameEngine.getActiveNeighours(of: projectile)
-                                                 .filter{ $0.bubbleType.bubbleRootType() == .star}
+                                                 .filter { $0.bubbleType.bubbleRootType() == .star }
+            gameEngine.animating()
             gameEngine.explodeBubbles(gameBubbles: starBubbleNeighbours)
-            
+
             self.gameEngine.executingEffectComplete()
             self.gameEngine.detachingDisconnectedGameBubbles()
 
@@ -99,23 +99,22 @@ extension GameController: GameLoopDelegate {
         }
     }
 
-    
     // Deselect any brushes when user tap on gray palette area
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+
         if let touch = touches.first {
 
             switch gameEngine.gameState {
 
             case .loadingProjectileComplete:
                 let bearing = touch.location(in: self.view)
-                
+
                 guard !isRestrictedAngle(bearing: bearing) else {
                     return
                 }
-                
+
                 gameEngine.settingProjectileBearing(to: bearing)
-                
+
                 rotateCannon(deltaRadian: self.gameEngine.cannonDeltaAngle)
 
             default: return
@@ -133,13 +132,13 @@ extension GameController: GameLoopDelegate {
 
             case .settingProjectileBearing:
                 let bearing = touch.location(in: self.view)
-                
+
                 guard !isRestrictedAngle(bearing: bearing) else {
                     return
                 }
-                
+
                 gameEngine.settingProjectileBearing(to: bearing)
-                
+
                 rotateCannon(deltaRadian: self.gameEngine.cannonDeltaAngle)
 
             default: return
@@ -155,9 +154,9 @@ extension GameController: GameLoopDelegate {
 
             case .settingProjectileBearing:
                 let bearing = touch.location(in: self.view)
-                
+
                 gameEngine.settingProjectileBearingComplete(to: isRestrictedAngle(bearing: bearing) ? CGPoint(x: bearing.x, y: gameEngine.projectile.yPos - 50) : bearing)
-                
+
                 rotateCannon(deltaRadian: self.gameEngine.cannonDeltaAngle) {
                     // on rotate animation complete, do these:
                     self.animateCannonBurst()

@@ -9,8 +9,8 @@
 import UIKit
 import PhysicsEngine
 
-class GameCannon: GameObject, Geometrical{
+class GameCannon: GameObject, Geometrical {
     // nothing to see here, because it already inherited default implementation from Geometrical protocol
-    
+
     // GameCannon is created so that GameEngine can compute its states, mainly the rotational value
 }

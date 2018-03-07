@@ -39,19 +39,19 @@ class LevelDesignerController: UIViewController {
     @IBOutlet weak private(set) var loadButton: UIBarButtonItem!
     @IBOutlet weak private(set) var manageButton: UIBarButtonItem!
     @IBOutlet weak private(set) var exitButton: UIBarButtonItem!
-    
+
     @IBOutlet weak private(set) var pallete: UICollectionView!
     internal let paletteRenderer: PaletteRenderer = PaletteRenderer()
-    
+
     private let dataController = DataController()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.bubbleGrid.delegate = self
-        
+
         self.paletteRenderer.gestureDelegate = self
-        
+
         self.pallete.dataSource = paletteRenderer
         self.pallete.delegate = paletteRenderer
 
@@ -67,11 +67,11 @@ class LevelDesignerController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
+
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.portrait //return the value as per the required orientation
     }
-    
+
     override var shouldAutorotate: Bool {
         return false
     }
@@ -93,13 +93,23 @@ class LevelDesignerController: UIViewController {
     }
 
     internal func dehighlightAllBrush() {
-        pallete.visibleCells.forEach{ dehighlightBrush($0)}
+        pallete.visibleCells.forEach { dehighlightBrush($0) }
     }
 
     // encode level state and save it to a file
     internal func saveLevel(filename: String) throws {
+        levelData = levelData.map {
+            guard $0.type == .none else {
+                return $0
+            }
+
+            $0.type = .erase
+
+            return $0
+        }
+
         if let json = try String(data: dataController.encodeLevelData(levelData), encoding: .utf8) {
-            //print(json)
+            print(json)
             try dataController.saveToFile(filename: filename, json: json)
         }
     }

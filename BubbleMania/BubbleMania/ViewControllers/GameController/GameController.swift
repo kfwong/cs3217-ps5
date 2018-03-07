@@ -12,8 +12,8 @@ import SpriteKit
 // Main GameController handle display Bubbles at correct position in grid
 // also define throw away alert ui.
 class GameController: UIViewController {
-    
-    internal var _angle: CGFloat = CGFloat.pi/2
+
+    internal var _angle: CGFloat = CGFloat.pi / 2
 
     internal var passedLevelData: [Bubble]?
 
@@ -29,6 +29,8 @@ class GameController: UIViewController {
     lazy internal var gameEngine = GameEngine(sectionCount: sectionCount, oddSectionBubbleCount: oddSectionBubbleCount)
     private let gameRenderer = GameRenderer()
 
+    private let projectileYOffset: CGFloat = 50
+
     // http://blog.scottlogic.com/2014/11/20/swift-initialisation.html
     // note that we cannot override the init function. (view is not loaded, will crash if access UI variables that is not yet inited)
     // we have to wait for viewDidLoad() so we can calculate the actual size.
@@ -37,9 +39,9 @@ class GameController: UIViewController {
     // crash is impossible because loadProjectile() is always triggered after view is loaded. (whitebox)
     lazy private var bubbleDiameter = (self.bubbleGrid.frame.size.width / CGFloat(max(oddSectionBubbleCount, evenSectionBubbleCount)))
     lazy private(set) var bubbleSize: CGSize = CGSize(width: self.bubbleDiameter, height: self.bubbleDiameter)
-    
-    @IBOutlet weak var canonBase: UIImageView!
-    internal var cannon: UIAnimationView!
+
+    @IBOutlet private(set) weak var canonBase: UIImageView!
+    internal var cannon = UIAnimationView(spriteSheet: #imageLiteral(resourceName: "cannon"), rowCount: 2, colCount: 6, animationDuration: 0.4)
 
     @IBOutlet private(set) weak var upcomingBubble: UIImageView!
     @IBOutlet private(set) weak var bubbleGrid: UICollectionView!
@@ -52,8 +54,11 @@ class GameController: UIViewController {
         self.bubbleGrid.delegate = self
 
         self.gameEngine.delegate = self
-        
+
         setupCannonView()
+
+        self.view.bringSubview(toFront: cannon)
+        self.view.bringSubview(toFront: canonBase)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -69,30 +74,30 @@ class GameController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
+
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.portrait //return the value as per the required orientation
     }
-    
+
     override var shouldAutorotate: Bool {
         return false
     }
-    
-    internal func setupCannonView(){
-        cannon = UIAnimationView(spriteSheet: #imageLiteral(resourceName: "cannon"), rowCount: 2, colCount: 6, animationDuration: 0.4)
+
+    internal func setupCannonView() {
         cannon.adjustAnchorPoint(xPercentage: 0.5, yPercentage: 0.81)
-        
+
+        let yOffset: CGFloat = 5
         cannon.center.x = canonBase.frame.midX
-        cannon.center.y = canonBase.frame.midY - canonBase.frame.height/4 + 5
-        
+        cannon.center.y = canonBase.frame.midY - canonBase.frame.height / 4 + yOffset
+
         self.view.addSubview(cannon)
     }
-    
+
     internal func loadUpcomingBubble() {
         guard let upcomingBubbleType = gameEngine.upcomingBubbles.peek() else {
             return
         }
-        
+
         self.upcomingBubble.image = UIImage(named: upcomingBubbleType.rawValue)
     }
 
@@ -121,17 +126,17 @@ class GameController: UIViewController {
         }
 
     }
-    
-    internal func rotateCannon(deltaRadian angle: CGFloat, onAnimateComplete: (() -> Void)? = nil){
+
+    internal func rotateCannon(deltaRadian angle: CGFloat, onAnimateComplete: (() -> Void)? = nil) {
         UIView.animate(withDuration: 0.25,
                        delay: 0,
                        options: UIViewAnimationOptions.curveEaseOut,
                        animations: { self.cannon.transform = CGAffineTransform(rotationAngle: angle) },
                        completion: { _ in onAnimateComplete?() })
     }
-    
-    internal func animateCannonBurst(){
-        self.cannon.startAnimating();
+
+    internal func animateCannonBurst() {
+        self.cannon.startAnimating()
     }
 
     internal func animateSnapProjectileToNearestCell(onSnapComplete: ((_ gameBubble: GameBubble) -> Void)? = nil) {
@@ -139,9 +144,9 @@ class GameController: UIViewController {
 
         if let nearestCellIndex = bubbleGrid.indexPathForItem(at: landingPoint),
             let nearestCell = bubbleGrid.cellForItem(at: nearestCellIndex) as? BubbleCell {
-            
+
             gameEngine.projectile.snapToPoint(at: nearestCell.center) {
-                
+
                 nearestCell.bubbleType = self.gameEngine.projectile.bubbleType
 
                 let gameBubble = GameBubble(as: nearestCell, type: nearestCell.bubbleType, row: nearestCellIndex.section, col: nearestCellIndex.row)
@@ -198,22 +203,22 @@ class GameController: UIViewController {
     @IBAction func exitButtonAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
+
     internal func isRestrictedAngle(bearing: CGPoint) -> Bool {
-        return bearing.y > gameEngine.projectile.center.y - 50
+        return bearing.y > gameEngine.projectile.center.y - projectileYOffset
     }
 
 }
 
-extension UIView{
-    
+extension UIView {
+
     // this technique will preserve the frame before adjusting anchor point (which will changes the frame)
     // and then restore it later
     // as a result, anchor point will be repositioned within its own frame instead of from root point of view
     // ref: https://stackoverflow.com/questions/1968017/changing-my-calayers-anchorpoint-moves-the-view/1968425#1968425
-    public func adjustAnchorPoint(xPercentage x: CGFloat, yPercentage y: CGFloat){
+    public func adjustAnchorPoint(xPercentage x: CGFloat, yPercentage y: CGFloat) {
         let oldFrame = self.frame
-        self.layer.anchorPoint = CGPoint(x:0.5, y: 0.81)
+        self.layer.anchorPoint = CGPoint(x: 0.5, y: 0.81)
         self.frame = oldFrame
     }
 }

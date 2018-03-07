@@ -17,14 +17,14 @@ class GameProjectile: GameObject, Geometrical, CollidableCircle {
     internal var thrust: CGFloat
 
     internal var isReflected: Bool
-    
+
     internal var prevBearing: CGFloat?
-    
+
     internal var force: (CGFloat, CGFloat) {
         return gameBubbleObservers
-            .filter{ $0.bubbleType == .magnetic }
-            .map{ $0.bubbleEffect.effectOnProjectileMovement($0, projectile: self)}
-            .reduce((0,0), { accum, force in (accum.0 + force.0, accum.1 + force.1) })
+            .filter { $0.bubbleType == .magnetic }
+            .map { $0.bubbleEffect.effectOnProjectileMovement($0, projectile: self) }
+            .reduce((0, 0)) { accum, force in (accum.0 + force.0, accum.1 + force.1) }
     }
 
     private(set) var gameBubbleObservers: Set<GameBubble>
@@ -61,20 +61,14 @@ class GameProjectile: GameObject, Geometrical, CollidableCircle {
 
     // for projectile to move. It also do reflection when it hits the screen edge
     internal func fire(bearing: CGFloat) {
+        // the computed value scan through all magnetic bubble in O(n) time
+        // we compute once and store the value instead of recompute everytime we need it
         let theforce = force
-        
-        //let normalizedBearing = bearing + theforce.1
-        
-        /*self.sprite.center.x -= (isReflected ? -(thrust) * cos(normalizedBearing - theforce.1): (thrust) * cos(normalizedBearing))
-        self.sprite.center.y -= (thrust) * sin(normalizedBearing)*/
-        
-        print(theforce)
-        
-        let normalizedBearing = bearing
-        
-        self.sprite.center.x -= theforce.0 + (isReflected ? -(thrust) * cos(normalizedBearing): (thrust) * cos(normalizedBearing))
-        self.sprite.center.y -= theforce.1 + (thrust) * sin(normalizedBearing)
-        
+
+        // force return tuple: (x-component, y-component)
+        self.sprite.center.x -= theforce.0 + (isReflected ? -(thrust) * cos(bearing): (thrust) * cos(bearing))
+        self.sprite.center.y -= theforce.1 + (thrust) * sin(bearing)
+
         checkReflection()
 
         notify()

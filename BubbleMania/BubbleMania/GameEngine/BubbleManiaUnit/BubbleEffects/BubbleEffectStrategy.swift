@@ -9,18 +9,22 @@
 import UIKit
 
 protocol BubbleEffectStrategy {
-    
+
+    // for game engine to check if this bubble can be destroy by other special bubbles effect
     var isDestructible: Bool { get }
-    
+
     // when executing explode, this method should return a list of affected bubbles
+    // the parameters are synthetic sugars passed into the method from game engine
+    // caller will use these variables to describe the effect of the bubble
+    //
     // itself: the gamebubble itself
     // projectile: the projectile that trigger the effect
     // activeBubbles: current active bubbles in the arena
     func explode(_ itself: GameBubble, by projectile: GameProjectile, activeBubbles: [GameBubble]) -> [GameBubble]
-    
+
     // define the animation when this bubble explodes
     func explodeAnimation(_ itself: GameBubble, affectedGameBubbles: [GameBubble])
-    
+
     // the effect on projectile movement should return a force of x-component and y-component in a tuple
     func effectOnProjectileMovement(_ itself: GameBubble, projectile: GameProjectile) -> (CGFloat, CGFloat)
 }
@@ -28,14 +32,14 @@ protocol BubbleEffectStrategy {
 extension BubbleEffectStrategy {
     // default implementation
     // so that classes that conforms to this protocol only have to override on-demand
-    
-    // I did not include default implementation for explode() because it's best to leave it explicit in thier respective concrete class for clarity
-    
+
+    // I did not include default implementation for explode() because I feel it's best to leave it explicit in thier respective concrete class for clarity
+
     func explodeAnimation(_ itself: GameBubble, affectedGameBubbles: [GameBubble]) {
         // by default there's no animation
     }
-    
-    func effectOnProjectileMovement(_ itself: GameBubble, projectile: GameProjectile) -> (CGFloat, CGFloat){
+
+    func effectOnProjectileMovement(_ itself: GameBubble, projectile: GameProjectile) -> (CGFloat, CGFloat) {
         // by default it does not affect projectile's movement while firing
         return (0, 0)
     }

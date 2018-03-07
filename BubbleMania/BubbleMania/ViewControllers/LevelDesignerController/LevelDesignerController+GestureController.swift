@@ -31,7 +31,7 @@ extension LevelDesignerController: UIGestureRecognizerDelegate, PaletteGestureDe
 
         manageButton.target = self
         manageButton.action = #selector(manageButtonAction)
-        
+
         exitButton.target = self
         exitButton.action = #selector(exitButtonAction)
     }
@@ -94,12 +94,11 @@ extension LevelDesignerController: UIGestureRecognizerDelegate, PaletteGestureDe
             return $0
         })
     }
-    
+
     @objc
     private func exitButtonAction(sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
-
 
     internal func setupBubbleGridActions() {
         setupBubbleGridPanAction()

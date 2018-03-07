@@ -26,7 +26,7 @@ class BubbleCell: UICollectionViewCell {
             self.bubbleImage.alpha = 1
             self.bubble?.type = brushType
             self.layer.cornerRadius = self.frame.size.width / 2
-            
+
             if brushType == .none {
                 self.layer.borderWidth = 0
                 self.layer.borderColor = UIColor.clear.cgColor
@@ -36,14 +36,13 @@ class BubbleCell: UICollectionViewCell {
                 self.layer.borderColor = UIColor.white.withAlphaComponent(0.3).cgColor
                 self.layer.backgroundColor = UIColor.white.withAlphaComponent(0.3).cgColor
             }
-            
-            
+
         }
     }
 
     private(set) var bubble: Bubble?
 
-    @IBOutlet weak internal var bubbleImage: UIImageView!
+    @IBOutlet private(set) weak internal var bubbleImage: UIImageView!
 
     // the following method must be called at least once to intialize the parameters.
     // overriding init() will not work because it throws runtime exception due to how iOS handles UI render lifecycle

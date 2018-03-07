@@ -15,7 +15,7 @@ class GameBubble: GameObject, Hexagonal, CollidableCircle {
     internal var col: Int
 
     internal let bubbleType: BubbleType
-    
+
     internal let bubbleEffect: BubbleEffectStrategy
 
     private(set) var hasCollidedWithProjectile: Bool = false
@@ -32,13 +32,14 @@ class GameBubble: GameObject, Hexagonal, CollidableCircle {
 
         super.init(as: sprite)
     }
-    
+
     // return list of gamebubbles exploded by this bubble's effect
-    internal func executeExplodeEffect(by projectile: GameProjectile, activeBubbles: [GameBubble]) -> [GameBubble]{
+    internal func executeExplodeEffect(by projectile: GameProjectile, activeBubbles: [GameBubble]) -> [GameBubble] {
         return self.bubbleEffect.explode(self, by: projectile, activeBubbles: activeBubbles)
     }
-    
-    internal func animateExplodeEffect(affectedGameBubbles: [GameBubble]){
+
+    // it knows how to handle its own exploding animation from its strategy object
+    internal func animateExplodeEffect(affectedGameBubbles: [GameBubble]) {
         self.bubbleEffect.explodeAnimation(self, affectedGameBubbles: affectedGameBubbles)
     }
 

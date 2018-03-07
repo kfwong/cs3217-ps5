@@ -48,8 +48,7 @@ extension GameController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let numberOfCell: CGFloat = 12
-        let cellWidth = collectionView.frame.size.width / numberOfCell
+        let cellWidth = collectionView.frame.size.width / CGFloat(self.evenSectionBubbleCount)
 
         return CGSize(width: cellWidth, height: cellWidth)
     }
