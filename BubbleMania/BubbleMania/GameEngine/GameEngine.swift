@@ -307,7 +307,7 @@ class GameEngine {
     // check if the player has cleared all active bubbles except indestructibles
     internal func hasClearedAllActiveBubbles() -> Bool {
         return self.bubbles.reduce(true) { hasCleared, bubble in
-            hasCleared && (bubble.bubbleType == .none && bubble.bubbleEffect.isDestructible)
+            hasCleared && (bubble.bubbleType == .none || !bubble.bubbleEffect.isDestructible)
         }
     }
 }

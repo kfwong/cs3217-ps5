@@ -38,7 +38,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efY-Qx-cbj">
                                 <rect key="frame" x="100" y="882" width="160" height="106"/>
-                                <state key="normal" backgroundImage="load"/>
+                                <state key="normal" backgroundImage="edit"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="yOi-R6-ha6"/>
                                 </connections>
@@ -430,7 +430,7 @@
     <resources>
         <image name="background" width="300" height="400"/>
         <image name="cannon-base" width="133" height="139"/>
-        <image name="load" width="160" height="94"/>
+        <image name="edit" width="160" height="94"/>
         <image name="menu" width="427" height="480"/>
         <image name="play" width="160" height="94"/>
     </resources>
