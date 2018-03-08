@@ -38,7 +38,7 @@ extension LevelDesignerController: UIGestureRecognizerDelegate, PaletteGestureDe
 
     internal func onSelectBrush(brushType: BubbleType, brushCell: BrushCell) {
         switch brushType {
-        case .none:
+        case .none, .deselect:
             self.brushType = .none
             self.dehighlightAllBrush()
         default: bubbleBrushTapAction(brushType: brushType, brushCell)

@@ -35,7 +35,7 @@ class Bubble: Codable {
 enum BubbleType: String, Codable {
 
     static let inGameBubbleTypes: [BubbleType] = [.blue, .red, .orange, .green]
-    static let paletteBubbleTypes: [BubbleType] = [.blue, .red, .orange, .green, .erase, .indestructible, .lightning, .bomb, .star, .magnetic]
+    static let paletteBubbleTypes: [BubbleType] = [.blue, .red, .orange, .green, .indestructible, .lightning, .bomb, .star, .magnetic, .erase, .deselect]
 
     // the raw values corresponds to the image file we use in assets
     case blue = "squirtle"
@@ -48,6 +48,7 @@ enum BubbleType: String, Codable {
     case bomb = "tepig"
     case star = "masterball"
     case magnetic = "magnemite"
+    case deselect = "deselect"
 
     // Simple Finite State Machine that transition from one state to another
     func next() -> BubbleType {
@@ -55,9 +56,8 @@ enum BubbleType: String, Codable {
         case .blue: return .red
         case .red: return .orange
         case .orange: return .green
-        case .green: return .erase
-        case .erase: return .blue
-        default: return .none
+        case .green: return .blue
+        default: return .blue
         }
     }
 

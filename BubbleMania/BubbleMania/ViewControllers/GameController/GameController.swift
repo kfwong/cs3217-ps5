@@ -13,7 +13,13 @@ import SpriteKit
 // also define throw away alert ui.
 class GameController: UIViewController {
 
-    internal var _angle: CGFloat = CGFloat.pi / 2
+    private let GAME_OVER = "Game Over"
+    private let RETRY_LEVEL = "Retry the level?"
+    private let YES = "Yes please!"
+    private let NO = "No I give up!"
+    private let GAME_CLEAR = "Game Cleared"
+    private let QUIT = "Quit"
+    private let CONGRATS = "Congratulation!"
 
     internal var passedLevelData: [Bubble]?
 
@@ -145,7 +151,7 @@ class GameController: UIViewController {
         if let nearestCellIndex = bubbleGrid.indexPathForItem(at: landingPoint),
             let nearestCell = bubbleGrid.cellForItem(at: nearestCellIndex) as? BubbleCell {
 
-            gameEngine.projectile.snapToPoint(at: nearestCell.center) {
+            snapToPoint(target: gameEngine.projectile, at: nearestCell.center) {
 
                 nearestCell.bubbleType = self.gameEngine.projectile.bubbleType
 
@@ -158,6 +164,22 @@ class GameController: UIViewController {
         } else {
             showGameOverDialog()
         }
+    }
+
+    // snapping to point with animation.
+    internal func snapToPoint(target: GameProjectile, at: CGPoint, onAnimateComplete: (() -> Void)? = nil) {
+        let deltaX = at.x - target.xPos
+        let deltaY = at.y - target.yPos
+
+        UIView.animate(withDuration: 0.2,
+                       delay: 0,
+                       options: UIViewAnimationOptions.curveEaseOut,
+                       animations: {
+                        target.sprite.transform = CGAffineTransform(translationX: deltaX, y: deltaY)
+        }, completion: { _ in
+            onAnimateComplete?()
+            target.sprite.transform = CGAffineTransform.identity
+        })
     }
 
     // the projectile also can define how the detach animations are. can be converted into one of the projectile strategy object.
@@ -200,14 +222,14 @@ class GameController: UIViewController {
     }
 
     internal func showGameOverDialog() {
-        let alert = UIAlertController(title: "Game Over", message: "Retry the level?", preferredStyle: .alert)
+        let alert = UIAlertController(title: GAME_OVER, message: RETRY_LEVEL, preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "Yes please!", style: .default) { _ in
+        alert.addAction(UIAlertAction(title: YES, style: .default) { _ in
             self.gameEngine.resetGame()
             self.recoverLevelData()
         })
 
-        alert.addAction(UIAlertAction(title: "No I give up!", style: .cancel) { _ in
+        alert.addAction(UIAlertAction(title: NO, style: .cancel) { _ in
             self.dismiss(animated: true, completion: nil)
         })
 
@@ -215,9 +237,9 @@ class GameController: UIViewController {
     }
 
     internal func showGameClearedDialog( action: (() -> Void)? = nil) {
-        let alert = UIAlertController(title: "Game Cleared", message: "Congratulation!", preferredStyle: .alert)
+        let alert = UIAlertController(title: GAME_CLEAR, message: CONGRATS, preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "Quit", style: .default) { _ in
+        alert.addAction(UIAlertAction(title: QUIT, style: .default) { _ in
             action?()
         })
 

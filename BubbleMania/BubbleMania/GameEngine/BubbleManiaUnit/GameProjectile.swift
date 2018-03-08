@@ -21,6 +21,7 @@ class GameProjectile: GameObject, Geometrical, CollidableCircle {
     internal var prevBearing: CGFloat?
 
     internal var force: (CGFloat, CGFloat) {
+        // if there are multiple magnetic forces, add their vectors
         return gameBubbleObservers
             .filter { $0.bubbleType == .magnetic }
             .map { $0.bubbleEffect.effectOnProjectileMovement($0, projectile: self) }
@@ -96,22 +97,6 @@ class GameProjectile: GameObject, Geometrical, CollidableCircle {
         return gameBubbleObservers.reduce(false) {hasCollided, gameBubble in
             return hasCollided || gameBubble.hasCollidedWithProjectile
         }
-    }
-
-    // snapping to point with animation.
-    internal func snapToPoint(at: CGPoint, onAnimateComplete: (() -> Void)? = nil) {
-        let deltaX = at.x - self.xPos
-        let deltaY = at.y - self.yPos
-
-        UIView.animate(withDuration: 0.2,
-                       delay: 0,
-                       options: UIViewAnimationOptions.curveEaseOut,
-                       animations: {
-                            self.sprite.transform = CGAffineTransform(translationX: deltaX, y: deltaY)
-                        }, completion: { _ in
-                            onAnimateComplete?()
-                            self.sprite.transform = CGAffineTransform.identity
-                        })
     }
 }
 

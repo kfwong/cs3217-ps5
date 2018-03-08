@@ -147,53 +147,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
-                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJ5-ua-kZR">
-                                        <rect key="frame" x="0.0" y="851" width="768" height="64"/>
-                                        <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uqg-AG-r82">
-                                                <rect key="frame" x="0.0" y="0.0" width="768" height="64"/>
-                                                <color key="backgroundColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mlo-25-GPW">
-                                                    <size key="itemSize" width="50" height="50"/>
-                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                </collectionViewFlowLayout>
-                                                <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="brushCell" id="rML-L4-3bT" customClass="BrushCell" customModule="BubbleMania" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ols-K8-ce0">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                                </imageView>
-                                                            </subviews>
-                                                        </view>
-                                                        <constraints>
-                                                            <constraint firstItem="Ols-K8-ce0" firstAttribute="top" secondItem="rML-L4-3bT" secondAttribute="top" id="bXz-a5-3Vp"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Ols-K8-ce0" secondAttribute="bottom" id="eAa-u1-J0b"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Ols-K8-ce0" secondAttribute="trailing" id="fCj-hg-OdW"/>
-                                                            <constraint firstItem="Ols-K8-ce0" firstAttribute="leading" secondItem="rML-L4-3bT" secondAttribute="leading" id="s6F-ue-Afv"/>
-                                                        </constraints>
-                                                        <connections>
-                                                            <outlet property="bubbleImage" destination="Ols-K8-ce0" id="2NX-Op-tEc"/>
-                                                        </connections>
-                                                    </collectionViewCell>
-                                                </cells>
-                                            </collectionView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="uqg-AG-r82" firstAttribute="top" secondItem="UJ5-ua-kZR" secondAttribute="top" id="WcA-dm-qKd"/>
-                                            <constraint firstAttribute="trailing" secondItem="uqg-AG-r82" secondAttribute="trailing" id="XZu-uY-4b8"/>
-                                            <constraint firstItem="uqg-AG-r82" firstAttribute="leading" secondItem="UJ5-ua-kZR" secondAttribute="leading" id="XoJ-b5-tA6"/>
-                                            <constraint firstAttribute="height" constant="64" id="eV9-hg-n1W"/>
-                                            <constraint firstAttribute="bottom" secondItem="uqg-AG-r82" secondAttribute="bottom" id="fAZ-kI-kVH"/>
-                                        </constraints>
-                                    </view>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WTY-HS-Cdj">
                                         <rect key="frame" x="0.0" y="916" width="768" height="44"/>
                                         <items>
@@ -260,6 +213,53 @@
                                             <outlet property="dataSource" destination="BYZ-38-t0r" id="wN7-J7-x9V"/>
                                         </connections>
                                     </collectionView>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJ5-ua-kZR">
+                                        <rect key="frame" x="0.0" y="851" width="768" height="64"/>
+                                        <subviews>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uqg-AG-r82">
+                                                <rect key="frame" x="0.0" y="0.0" width="768" height="64"/>
+                                                <color key="backgroundColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mlo-25-GPW">
+                                                    <size key="itemSize" width="50" height="50"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="brushCell" id="rML-L4-3bT" customClass="BrushCell" customModule="BubbleMania" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ols-K8-ce0">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                        </view>
+                                                        <constraints>
+                                                            <constraint firstItem="Ols-K8-ce0" firstAttribute="top" secondItem="rML-L4-3bT" secondAttribute="top" id="bXz-a5-3Vp"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Ols-K8-ce0" secondAttribute="bottom" id="eAa-u1-J0b"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Ols-K8-ce0" secondAttribute="trailing" id="fCj-hg-OdW"/>
+                                                            <constraint firstItem="Ols-K8-ce0" firstAttribute="leading" secondItem="rML-L4-3bT" secondAttribute="leading" id="s6F-ue-Afv"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="bubbleImage" destination="Ols-K8-ce0" id="2NX-Op-tEc"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="uqg-AG-r82" firstAttribute="top" secondItem="UJ5-ua-kZR" secondAttribute="top" id="WcA-dm-qKd"/>
+                                            <constraint firstAttribute="trailing" secondItem="uqg-AG-r82" secondAttribute="trailing" id="XZu-uY-4b8"/>
+                                            <constraint firstItem="uqg-AG-r82" firstAttribute="leading" secondItem="UJ5-ua-kZR" secondAttribute="leading" id="XoJ-b5-tA6"/>
+                                            <constraint firstAttribute="height" constant="64" id="eV9-hg-n1W"/>
+                                            <constraint firstAttribute="bottom" secondItem="uqg-AG-r82" secondAttribute="bottom" id="fAZ-kI-kVH"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -435,6 +435,6 @@
         <image name="play" width="160" height="94"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7RI-2b-MDi"/>
+        <segue reference="fzM-iV-gSg"/>
     </inferredMetricsTieBreakers>
 </document>

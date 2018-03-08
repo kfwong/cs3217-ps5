@@ -76,12 +76,6 @@ class LevelDesignerController: UIViewController {
         return false
     }
 
-    // Deselect any brushes when user tap on gray palette area
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //dehighlightAllBrush()
-        brushType = .none
-    }
-
     internal func highlightSelectedBrush(_ brush: UICollectionViewCell) {
         brush.layer.borderWidth = 3
         brush.layer.borderColor = UIColor.white.cgColor

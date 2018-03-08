@@ -17,6 +17,12 @@ class LevelSelectionController: UITableViewController {
     lazy private var files = (try? dataController.listLevelDataFiles())
     private var levelData: [Bubble]?
 
+    private let segueId = "LevelSelectionController"
+
+    private let sampleLevel1 = "sample-level-1"
+    private let sampleLevel2 = "sample-level-2"
+    private let sampleLevel3 = "sample-level-3"
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,9 +30,9 @@ class LevelSelectionController: UITableViewController {
 
         // these level will always be regenerated even if the user deleted them
         // any levels user saved with the same name will be overwritten as well
-        try? dataController.saveToFile(filename: "sample-level-1", json: self.initDefaultLevel(name: "sample-level-1"))
-        try? dataController.saveToFile(filename: "sample-level-2", json: self.initDefaultLevel(name: "sample-level-2"))
-        try? dataController.saveToFile(filename: "sample-level-3", json: self.initDefaultLevel(name: "sample-level-3"))
+        try? dataController.saveToFile(filename: sampleLevel1, json: self.initDefaultLevel(name: sampleLevel1))
+        try? dataController.saveToFile(filename: sampleLevel2, json: self.initDefaultLevel(name: sampleLevel2))
+        try? dataController.saveToFile(filename: sampleLevel3, json: self.initDefaultLevel(name: sampleLevel3))
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,7 +84,7 @@ class LevelSelectionController: UITableViewController {
 
             self.levelData = try? dataController.decodeLevelData(data: data)
 
-            self.performSegue(withIdentifier: "LevelSelectionController", sender: self)
+            self.performSegue(withIdentifier: segueId, sender: self)
         }
     }
 
@@ -88,7 +94,7 @@ class LevelSelectionController: UITableViewController {
         }
 
         switch segueId {
-        case "LevelSelectionController":
+        case segueId:
             guard let gameController = segue.destination as? GameController else {
                 return
             }

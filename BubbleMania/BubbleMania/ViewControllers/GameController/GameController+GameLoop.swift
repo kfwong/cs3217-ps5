@@ -98,7 +98,6 @@ extension GameController: GameLoopDelegate {
                 self.showGameClearedDialog {
                     self.dismiss(animated: true, completion: nil)
                 }
-                return
             } else {
                 self.gameEngine.newGame()
             }
