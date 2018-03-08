@@ -16,7 +16,16 @@ CS3217 Problem Set 5
 
 ### Rules of Your Game
 
+To capture as many pokemon as possible!
 
+Game Clear when all "catchable" pokemon are caught. Game Over when the pokemons line up with more than 13 rows.
+
+Special Pokemons:
+- **Tepig:** Damage adjacent pokemons when it form a clique of more than or equal to 3 fire-types (i.e. Charmander).
+- **Raichu:** Damage the row of pokemons when it forms a clique of more than or equal to 3 lightning-types (i.e. Pikachu).
+- **Masterball:** Capture any pokemons of same type on the field.
+- **Magnemite:** Magnet that affect projectile.
+- **Gengar:** Ghost type which is uncatchable nor be damaged by other special effects. They can only be scared off from field (detached).
 
 ### Problem 1: Cannon Direction
 
@@ -82,14 +91,49 @@ Please save your diagram as `class-diagram.png` in the root directory of the rep
 
 ### Problem 8: Testing
 
-Your answer here
+#### Black Box
+##### Select & Play Default Level
 
+##### Launch Designer
+
+##### Play from Level Designer Directly
+
+##### Cannon Rotation
+
+##### Gengar (Indestructible Bubble)
+
+##### Raichu (Lightning Bubble)
+
+##### Tepig (Bomb)
+
+##### Masterball (Star)
+
+##### Magnemite (Magnet)
+
+##### Chain Reaction
+
+##### Game Over
+
+##### Game Clear
+
+#### White Box
 
 ### Problem 9: The Bells & Whistles
 
-Your answer here
-
+1. Added special effects animations to all special bubbles
 
 ### Problem 10: Final Reflection
 
-Your answer here
+I think I'm satisfied with my work so far, given that my design goes according to my plan most of the time. I was able to apply design patterns I've learned in this project. However, it's also my first time designing the GameEngine so I didn't know what to plan ahead or expect. I feel that major improvement still can be done to decouple the controller and gameEngine.
+
+It's regrettable that I wasn't able to implement more bell and whistles due to time constraint. I actually had more plans to make the game more fun (i.e. capture Pokemon with different scores, game sharing feature.).
+
+I spent most of my time trying to understand how the magnetic physics work. Well math is not really my forte but I tried my best to implement it! It's still buggy but I guess I can revisit another time.
+
+The non-snapping bubble is out-of-norm change request. Since my basic design uses Hexagons I decided not to spend my time rework on that. It could be done with Graph structure but then all tests has to be rework as well. Judging for the impact level I do not think it's worth the time to rework the project for such little value added.
+
+It's my first time designing a game and I actually enjoy it a lot! It's a tiring but satisfying to work on!
+
+### Footnotes
+#### Known Bugs
+- Snapping will fail if the magnet increases the thrust of projectile.
