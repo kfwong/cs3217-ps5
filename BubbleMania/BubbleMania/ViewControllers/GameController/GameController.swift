@@ -156,9 +156,23 @@ class GameController: UIViewController {
                 onSnapComplete?(gameBubble)
             }
         } else {
-            print("game over")
             showGameOverDialog()
         }
+    }
+
+    // the projectile also can define how the detach animations are. can be converted into one of the projectile strategy object.
+    internal func executeDetachEffect(sprites: [UIView], onAnimateComplete: (() -> Void)? = nil) {
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       options: UIViewAnimationOptions.curveEaseIn,
+                       animations: {
+                        sprites.forEach {
+                            $0.alpha = 0
+                            $0.transform = CGAffineTransform(translationX: 0, y: 300)
+                        }
+        }, completion: { _ in
+            onAnimateComplete?()
+        })
     }
 
     // Create a dummy rendered image for animations. (fade out/falling animations)
@@ -195,6 +209,16 @@ class GameController: UIViewController {
 
         alert.addAction(UIAlertAction(title: "No I give up!", style: .cancel) { _ in
             self.dismiss(animated: true, completion: nil)
+        })
+
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    internal func showGameClearedDialog( action: (() -> Void)? = nil) {
+        let alert = UIAlertController(title: "Game Cleared", message: "Congratulation!", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Quit", style: .default) { _ in
+            action?()
         })
 
         self.present(alert, animated: true, completion: nil)

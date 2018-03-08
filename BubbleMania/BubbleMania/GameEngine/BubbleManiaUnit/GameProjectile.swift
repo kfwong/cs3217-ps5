@@ -113,21 +113,6 @@ class GameProjectile: GameObject, Geometrical, CollidableCircle {
                             self.sprite.transform = CGAffineTransform.identity
                         })
     }
-
-    // the projectile also can define how the detach animations are. can be converted into one of the projectile strategy object.
-    internal func executeDetachEffect(sprites: [UIView], onAnimateComplete: (() -> Void)? = nil) {
-        UIView.animate(withDuration: 0.5,
-                       delay: 0,
-                       options: UIViewAnimationOptions.curveEaseIn,
-                       animations: {
-                            sprites.forEach {
-                                $0.alpha = 0
-                                $0.transform = CGAffineTransform(translationX: 0, y: 300)
-                            }
-                        }, completion: { _ in
-                            onAnimateComplete?()
-                        })
-    }
 }
 
 extension GameProjectile: GameObservable {

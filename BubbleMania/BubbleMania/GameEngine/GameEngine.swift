@@ -184,6 +184,10 @@ class GameEngine {
         self.newGame()
     }
 
+    internal func gameClear() {
+        self.gameState = .gameClear
+    }
+
     // return valid neighbour indexes given the grid size.
     internal func neighbourIndexes(of gameBubble: GameBubble) -> [IndexPath] {
         let maxEvenRowIndex = oddSectionBubbleCount
@@ -299,6 +303,11 @@ class GameEngine {
             explodeBubbles(gameBubbles: chainReaction)
         }
     }
+
+    // check if the player has cleared all active bubbles except indestructibles
+    internal func hasClearedAllActiveBubbles() -> Bool {
+        return self.bubbles.reduce(true) { hasCleared, bubble in hasCleared && (bubble.bubbleType == .none && bubble.bubbleEffect.isDestructible) }
+    }
 }
 
 protocol GameLoopDelegate: class {
@@ -322,4 +331,5 @@ enum GameState {
     case detachingDisconnectedGameBubblesComplete
     case animating
     case gameOver
+    case gameClear
 }

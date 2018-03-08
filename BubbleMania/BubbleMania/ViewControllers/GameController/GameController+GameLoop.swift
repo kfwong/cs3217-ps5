@@ -84,7 +84,7 @@ extension GameController: GameLoopDelegate {
                 bubbleCell.bubbleType = .none
             }
 
-            gameEngine.projectile.executeDetachEffect(sprites: snapshots) {
+            executeDetachEffect(sprites: snapshots) {
                 disconnectedGameBubbles.forEach { self.gameEngine.removeActiveGameBubble($0) }
 
                 snapshots.forEach { $0.removeFromSuperview() }
@@ -93,8 +93,15 @@ extension GameController: GameLoopDelegate {
             }
 
         case .detachingDisconnectedGameBubblesComplete:
-            gameEngine.newGame()
-
+            if gameEngine.hasClearedAllActiveBubbles() {
+                self.gameEngine.gameClear()
+                self.showGameClearedDialog {
+                    self.dismiss(animated: true, completion: nil)
+                }
+                return
+            } else {
+                self.gameEngine.newGame()
+            }
         default: return
         }
     }
