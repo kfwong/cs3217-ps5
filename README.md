@@ -217,7 +217,9 @@ Below is the class diagram for integration in PS5, as well as extra view (`UIAni
 #### White Box
 
 ##### BubbleEffects
+
 All special bubbles logic are unit testable. The exception is the animation itself.
+
 | Class:Methods     | Configuration Under Test  | Expected Result |
 | -------- | -------- | ----------------|
 | `Bomb:explode()` | valid active game bubbles | return adjacent active bubbles |
