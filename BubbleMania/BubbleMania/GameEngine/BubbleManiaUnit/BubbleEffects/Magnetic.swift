@@ -21,7 +21,7 @@ class Magnetic: BubbleEffectStrategy {
         // to prevent divide by zero
         let distance: CGFloat = max(projectile.distance(to: itself.center), 30)
 
-        let gravity: CGFloat = 140_000
+        let gravity: CGFloat = 140000
 
         let dx = (itself.xPos - projectile.xPos)
         let dy = (itself.yPos - projectile.yPos)
