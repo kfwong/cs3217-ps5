@@ -113,8 +113,9 @@ Below is the class diagram for integration in PS5, as well as extra view (`UIAni
 ### Problem 8: Testing
 
 #### Previous Test cases:
-[https://github.com/cs3217/2018-ps3-kfwong#black-box-testing](https://github.com/cs3217/2018-ps3-kfwong#black-box-testing)
-[https://github.com/cs3217/2018-ps4-kfwong#problem-3-testing](https://github.com/cs3217/2018-ps4-kfwong#problem-3-testing)
+
+- [https://github.com/cs3217/2018-ps3-kfwong#black-box-testing](https://github.com/cs3217/2018-ps3-kfwong#black-box-testing)
+- [https://github.com/cs3217/2018-ps4-kfwong#problem-3-testing](https://github.com/cs3217/2018-ps4-kfwong#problem-3-testing)
 
 #### Black Box
 ##### Select & Play Default Level
